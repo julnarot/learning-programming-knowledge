@@ -1,0 +1,14 @@
+FROM golang:1.15-alpine as dev
+
+WORKDIR /work
+
+FROM golang:1.15-alpine as build
+
+WORKDIR /inventory
+COPY ./inventory/* /inventory/
+RUN go build -o inventory
+
+FROM alpine as runtime
+COPY --from=build /inventory/inventory /
+COPY ./inventory/items.json /
+CMD ./inventory
