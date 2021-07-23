@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  julnarot_db:
+    container_name: julnarot_db
+    image: mysql:5.7
+    restart: "no"
+    volumes:
+       - ./db_data:/var/lib/mysql
+       - ./init.sql:/data/application/init.sql  
+    ports:
+       - "3306:3306"
+    env_file:
+       - .env

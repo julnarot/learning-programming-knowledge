@@ -1,0 +1,10 @@
+services:
+  juln_db:
+    container_name: juln_db
+    image: "mysql:8"
+    volumes:
+      - ./db:/var/lib/mysql
+    ports: 
+    - "3306:3306"
+    env_file:
+    - production.env
