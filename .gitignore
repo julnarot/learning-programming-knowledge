@@ -1,1 +1,5 @@
-ng/api-rest/api-inventory/.idea
+.idea
+
+*.swp
+.env
+*.env
