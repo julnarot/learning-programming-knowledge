@@ -7,7 +7,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     container_name: php-server
-    restart: always
+    restart: no
     ports:
       - 8080:80
     volumes:
@@ -15,7 +15,7 @@ services:
       - ./config:/usr/local/etc/php
   delivery_db:
     image: mysql:5.7
-    restart: always
+    restart: no
     environment:
       MYSQL_ROOT_PASSWORD: myUserPass
       MYSQL_DATABASE: mydb
@@ -27,7 +27,7 @@ services:
     depends_on:
       - delivery_db
     image: phpmyadmin/phpmyadmin
-    restart: always
+    restart: no
     ports:
       - 8089:80
     environment:
