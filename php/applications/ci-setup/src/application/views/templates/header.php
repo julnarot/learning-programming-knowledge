@@ -16,6 +16,8 @@
 <html>
 <head>
 	<title>CodeIgniter Tutorial</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -23,6 +25,7 @@
 
 
 
-<em>&copy; 2015</em>
+<!--<em>&copy; 2015</em>-->
+
 </body>
 </html>
