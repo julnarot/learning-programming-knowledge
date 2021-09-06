@@ -8,6 +8,8 @@
 ?>
 
 <h2><?php echo $title; ?></h2>
+<br>
+<button class="btn btn-info"  onclick="location.href='<?php echo base_url();?>index.php/news/create'"> Agregar</button>
 
 <?php foreach ($news as $news_item): ?>
 
