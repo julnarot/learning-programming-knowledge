@@ -16,12 +16,23 @@
 <html>
 <head>
 	<title>CodeIgniter Tutorial</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css">
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<style>
+		.el-element {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			z-index: 1;
+		}
+	</style>
 </head>
 <body>
 
 <h1>Header <?php echo $title; ?></h1>
+
+
+
+
 
 
 
