@@ -18,12 +18,17 @@ class News extends CI_Controller
 
 	public function index()
 	{
+		$this->output->enable_profiler(TRUE);
+		$this->benchmark->mark('first');
 		$data['news'] = $this->news_model->get_news();
+
 		$data['title'] = 'NewsModel archive';
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('news/index', $data);
 		$this->load->view('templates/footer');
+		$this->benchmark->mark('second');
+		echo $this->benchmark->elapsed_time('first', 'second');
 	}
 
 	public function view($slug = NULL)
@@ -59,6 +64,29 @@ class News extends CI_Controller
 		} else {
 			$this->news_model->set_news();
 			$this->load->view('news/success');
+		}
+	}
+
+	public function importar()
+	{
+		$apiKey = "baca4a7e8b8240468f4f37e358906f02";
+		$urlNewsSearch = 'https://newsapi.org/v2/everything?q=te&sortBy=publishedAt&apiKey='.$apiKey;
+		$urlNewsUS = 'https://newsapi.org/v2/top-headlines?country=us&apiKey='.$apiKey;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_URL, $urlNewsUS);
+		$result = curl_exec($ch);
+		curl_close($ch);
+		$data = json_decode($result, true);
+		foreach ($data['articles'] as $item) {
+			$slug = url_title($item['title'], 'dash', TRUE);
+			$this->db->insert('news', array(
+				'title' => $item['title'],
+				'slug' => $slug,
+				'text' => $item['description'],
+				'category' => isset($item['category']) ? $item['category'] : '',
+				'urlToImage' => isset($item['urlToImage']) ? $item['urlToImage'] : '',
+			));
 		}
 	}
 }

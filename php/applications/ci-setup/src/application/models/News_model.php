@@ -17,7 +17,7 @@ class News_model extends CI_Model
 	{
 		if ($slug === FALSE)
 		{
-			$query = $this->db->get('news');
+			$query = $this->db->order_by('id', 'DESC')->get('news');
 			return $query->result_array();
 		}
 

@@ -24,6 +24,12 @@
 			right: 20px;
 			z-index: 1;
 		}
+		.el-import {
+			position: fixed;
+			bottom: 80px;
+			right: 20px;
+			z-index: 1;
+		}
 	</style>
 </head>
 <body>
