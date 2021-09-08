@@ -74,12 +74,12 @@ class News extends CI_Controller
 		$urlNewsUS = 'https://newsapi.org/v2/top-headlines?country=us&apiKey='.$apiKey;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_URL, $urlNewsUS);
+		curl_setopt($ch, CURLOPT_URL, $urlNewsSearch);
 		$result = curl_exec($ch);
 		curl_close($ch);
 		$data = json_decode($result, true);
 		foreach ($data['articles'] as $item) {
-			$slug = url_title($item['title'], 'dash', TRUE);
+			$slug = url_title(json_encode($item['title']), 'dash', TRUE);
 			$this->db->insert('news', array(
 				'title' => $item['title'],
 				'slug' => $slug,
@@ -88,5 +88,6 @@ class News extends CI_Controller
 				'urlToImage' => isset($item['urlToImage']) ? $item['urlToImage'] : '',
 			));
 		}
+		$this->load->view('news/success');
 	}
 }

@@ -28,35 +28,35 @@
 							<div class="flex items-center space-x-6 lg:space-x-8">
 								<div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 									<div class="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
-										<img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+										<img src="<?php echo $news_item['urlToImage']?>"
 											 alt="" class="w-full h-full object-center object-cover">
 									</div>
 									<div class="w-44 h-64 rounded-lg overflow-hidden">
-										<img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-											 alt="" class="w-full h-full object-center object-cover">
-									</div>
-								</div>
-								<div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-									<div class="w-44 h-64 rounded-lg overflow-hidden">
-										<img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-											 alt="" class="w-full h-full object-center object-cover">
-									</div>
-									<div class="w-44 h-64 rounded-lg overflow-hidden">
-										<img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-											 alt="" class="w-full h-full object-center object-cover">
-									</div>
-									<div class="w-44 h-64 rounded-lg overflow-hidden">
-										<img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+										<img src="<?php echo $news_item['urlToImage']?>"
 											 alt="" class="w-full h-full object-center object-cover">
 									</div>
 								</div>
 								<div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
 									<div class="w-44 h-64 rounded-lg overflow-hidden">
-										<img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+										<img src="<?php echo $news_item['urlToImage']?>"
 											 alt="" class="w-full h-full object-center object-cover">
 									</div>
 									<div class="w-44 h-64 rounded-lg overflow-hidden">
-										<img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+										<img src="<?php echo $news_item['urlToImage']?>"
+											 alt="" class="w-full h-full object-center object-cover">
+									</div>
+									<div class="w-44 h-64 rounded-lg overflow-hidden">
+										<img src="<?php echo $news_item['urlToImage']?>"
+											 alt="" class="w-full h-full object-center object-cover">
+									</div>
+								</div>
+								<div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+									<div class="w-44 h-64 rounded-lg overflow-hidden">
+										<img src="<?php echo $news_item['urlToImage']?>"
+											 alt="" class="w-full h-full object-center object-cover">
+									</div>
+									<div class="w-44 h-64 rounded-lg overflow-hidden">
+										<img src="<?php echo $news_item['urlToImage']?>"
 											 alt="" class="w-full h-full object-center object-cover">
 									</div>
 								</div>
