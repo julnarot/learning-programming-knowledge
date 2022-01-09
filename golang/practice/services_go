@@ -1,0 +1,35 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"time"
+)
+
+func main() {
+
+	timeIni := time.Now()
+	servers := []string{ // slide
+		"https://rauljhonatan.com",
+		"https://alwaysdata.com",
+		"https://google.com",
+	}
+
+	for _, serv := range servers {
+		checServer(serv)
+	}
+
+	timeTransc := time.Since(timeIni)
+
+	fmt.Println("Time Execution: %s\n", timeTransc)
+
+}
+
+func checServer(server string) {
+	_, err := http.Get(server)
+	if err != nil {
+		fmt.Println(server, ", server is not available")
+	} else {
+		fmt.Println(server, ", server is available")
+	}
+}
