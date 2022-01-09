@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="AcreditacionUpeuPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>upeu.edu.pe.modelo.SacuEvaluacion</class>
+    <class>upeu.edu.pe.modelo.SacuFacultad</class>
+    <class>upeu.edu.pe.modelo.SacuMenu</class>
+    <class>upeu.edu.pe.modelo.SacuObservacion</class>
+    <class>upeu.edu.pe.modelo.SacuArea</class>
+    <class>upeu.edu.pe.modelo.SacuDetalleCambioFa</class>
+    <class>upeu.edu.pe.modelo.SacuEstandar</class>
+    <class>upeu.edu.pe.modelo.SacuCriterio</class>
+    <class>upeu.edu.pe.modelo.SacuEap</class>
+    <class>upeu.edu.pe.modelo.SacuFilial</class>
+    <class>upeu.edu.pe.modelo.SacuFactor</class>
+    <class>upeu.edu.pe.modelo.SacuResponsable</class>
+    <class>upeu.edu.pe.modelo.SacuEvidenciaCumplida</class>
+    <class>upeu.edu.pe.modelo.SacuDetalleFilial</class>
+    <class>upeu.edu.pe.modelo.SacuEvaluador</class>
+    <class>upeu.edu.pe.modelo.SacuDetalleEvidenciaCambio</class>
+    <class>upeu.edu.pe.modelo.SacuPlanMejora</class>
+    <class>upeu.edu.pe.modelo.SacuDetalleEap</class>
+    <class>upeu.edu.pe.modelo.SacuEstandarEvaluacionEap</class>
+    <class>upeu.edu.pe.modelo.SacuAcceso</class>
+    <class>upeu.edu.pe.modelo.SacuDimension</class>
+    <class>upeu.edu.pe.modelo.SacuUsuario</class>
+    <class>upeu.edu.pe.modelo.SacuPrivilegios</class>
+    <class>upeu.edu.pe.modelo.SacuInstitucion</class>
+    <class>upeu.edu.pe.modelo.SacuPeriodo</class>
+    <class>upeu.edu.pe.modelo.SacuCategoriaUsuario</class>
+    <class>upeu.edu.pe.modelo.SacuInvolucrado</class>
+    <class>upeu.edu.pe.modelo.SacuEstandarInvolucrado</class>
+    <class>upeu.edu.pe.modelo.SacuAsignacionEvidencia</class>
+    <class>upeu.edu.pe.modelo.SacuAreaFactor</class>
+    <class>upeu.edu.pe.modelo.SacuPersona</class>
+    <class>upeu.edu.pe.modelo.SacuDireccionEvidencia</class>
+    <class>upeu.edu.pe.modelo.SacuTipoEstandar</class>
+    <class>upeu.edu.pe.modelo.SacuEvaluacionEstandar</class>
+    <class>upeu.edu.pe.modelo.SacuUsuarioFilial</class>
+    <class>upeu.edu.pe.modelo.SacuDetalleFacultad</class>
+    <class>upeu.edu.pe.modelo.SacuEvidencia</class>
+    <class>upeu.edu.pe.modelo.SacuCargarArchivo</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+      <property name="javax.persistence.jdbc.password" value="123456"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.user" value="acreditacionupeu"/>
+    </properties>
+  </persistence-unit>
+</persistence>

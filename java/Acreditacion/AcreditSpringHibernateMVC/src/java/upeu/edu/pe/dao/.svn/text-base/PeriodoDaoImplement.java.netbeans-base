@@ -1,0 +1,47 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package upeu.edu.pe.dao;
+
+import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import upeu.edu.pe.modelo.SauPeriodo;
+
+/**
+ *
+ * @author Alumno
+ */
+@Repository("PeriodoDao")
+public class PeriodoDaoImplement implements PeriodoDao{    
+    @Autowired
+    public SessionFactory sesionFactory;
+    
+    
+    @Override
+    public List<SauPeriodo> listaPeriodo(){
+    return sesionFactory.getCurrentSession().createCriteria(SauPeriodo.class).list();         
+    }
+    
+    @Override
+    public void insertarPeriodo(SauPeriodo periodo ){
+        System.out.println(periodo.getPeriodo());        
+          Session session =sesionFactory.openSession();
+          session.beginTransaction().begin();
+          //  session.persist(periodo);
+            session.save(periodo);
+          session.beginTransaction().commit();          
+    }
+    
+    @Override
+    public void eliminarPeriodo(String idPeriodo){
+    sesionFactory.getCurrentSession()
+            .createQuery("delete SauPeriodo per where per.idPeriodo=?")
+            .setString(0, idPeriodo)            
+            .executeUpdate();
+    }
+    
+}

@@ -1,0 +1,286 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"bode",
+				"border"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"bod",
+				"border"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/wamp/www/SistemGestionDeContenidosParatia/modulos/usuario/registro.php",
+		"/C/wamp/www/SistemGestionDeContenidosParatia/index.php",
+		"/D/Jonatan/ProyectosTesisEjemplos/Programacion/Web/MyWebSitesServlet/MyWebSitesServletMVC/src/java/rj/upeu/utilitarios/DBConexion.java",
+		"/D/Jonatan/ProyectosTesisEjemplos/Sistemas/MywebSite/MyWebSiteDBSQL/backup02.sql",
+		"/C/wamp/www/MyWebSite/index.php",
+		"/D/Jonatan/Practica/ResponsiveDesign/Ejemplo01/index.html",
+		"/C/Users/jonatan/Desktop/temporales/tempos/alexandra/SystemMatricula/src/java/pe/edu/upeu/modelo/Cursos.java",
+		"/C/Users/jonatan/Desktop/temporales/SystemMatricula/web/index.jsp",
+		"/C/Users/jonatan/Desktop/temporales/SystemMatricula/web/fx.slide.css",
+		"/C/Users/jonatan/Desktop/temporales/SystemMatricula/src/java/pe/edu/upeu/modelo/Tipo.java",
+		"/C/Users/jonatan/Desktop/temporales/SystemMatricula/src/java/pe/edu/upeu/modelo/Auxiliar.java",
+		"/C/Users/jonatan/Desktop/temporales/SystemMatricula/src/java/pe/edu/upeu/modelo/Grado.java",
+		"/C/Users/jonatan/Desktop/temporales/SystemMatricula/src/java/pe/edu/upeu/modelo/Docente.java",
+		"/C/Users/jonatan/Desktop/temporales/SystemMatricula/src/java/pe/edu/upeu/modelo/Periodo.java",
+		"/C/Windows/Panther/setupact.log",
+		"/D/Jonatan/Practica/ResponsiveDesign/Ejemplo01/estilos.css",
+		"/C/Users/jonatan/Desktop/friendly-future-master/css/styles.css",
+		"/C/Users/jonatan/Desktop/raul1387431795539-t=1.webflow/css/raul1387431795539_t=1.webflow.css",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.076/webflow.css",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.776/webflow.js",
+		"/C/Users/jonatan/Desktop/raul1387431795539-t=1.webflow/css/normalize.css",
+		"/C/Users/jonatan/Desktop/friendly-future-master/index.html",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.615/backup.sql",
+		"/C/Users/jonatan/Desktop/vacante/index.php",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.877/version.sh",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.869/startup.sh",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.496/shutdown.sh",
+		"/C/Users/jonatan/Desktop/vacante/borrar.php",
+		"/C/Users/jonatan/Desktop/vacante/consulta.html",
+		"/C/Users/jonatan/Desktop/allmotors_ventas_phpmv_1b/seguro.php",
+		"/C/Users/jonatan/Desktop/allmotors_ventas_phpmv_1b/autentica.php",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.235/backup.sql",
+		"/C/Users/jonatan/Desktop/cool.html",
+		"/C/Users/jonatan/Desktop/SysContableCepreUPeU/backup.sql",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.979/backup.sql",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.170/backup.sql",
+		"/D/Jonatan/ProyectosTesisEjemplos/Programacion/Web/SysCaja/web/index.jsp",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.633/tabla.sql",
+		"/C/Users/jonatan/Desktop/proyecto.dmp",
+		"/D/proyecto.dmp",
+		"/C/Boot/Resources/es-ES/bootres.dll.mui",
+		"/D/Jonatan/tutoriales/sysdb.sql",
+		"/C/Boot/BCD.LOG1",
+		"/C/Boot/BCD.LOG2",
+		"/C/Boot/BCD.Backup.0001",
+		"/C/Boot/BCD",
+		"/C/Boot/memtest.exe",
+		"/C/Boot/es-ES/memtest.exe.mui",
+		"/C/Boot/es-ES/bootmgr.exe.mui",
+		"/D/Jonatan/IngenieriaDeSistemasUPeU/lp2/Session 5/CulturaServlets/src/java/upeu/util/DBConnPg.java",
+		"/C/Users/jonatan/Desktop/tempos/backup.sql",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.557/backup.sql",
+		"/C/Program Files (x86)/Apache Software Foundation/Apache2.2/conf/httpd.conf",
+		"/C/Users/jonatan/Desktop/httpd.conf",
+		"/C/Users/jonatan/Desktop/8gb/RedesWork/dhcp",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.681/DataBaseConexion.java",
+		"/D/Jonatan/IngenieriaDeSistemasUPeU/lp2/Session 5/CulturaServlets/src/java/upeu/data/ActividadDAO.java",
+		"/D/Jonatan/IngenieriaDeSistemasUPeU/lp2/Session 5/CulturaServlets/src/java/upeu/bussines/ActividadBussines.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.792/AdministradorController.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DIa0.592/AdministradorController.java",
+		"/D/Jonatan/rjota/MisProyectos/Sistemas/ControlDeAsistenciaDocentes/ProyectNetBean/AsistenciadocenteWorkspace/SysControlDeAsistenciaMante/src/java/upeu/rrhh/controller/TrabajadorController.java",
+		"/D/Jonatan/rjota/IngenieriaDeSistemasUPeU/lp2/CulturaServletXml/src/java/upeu/bussines/ActividadBussines.java",
+		"/D/Jonatan/rjota/IngenieriaDeSistemasUPeU/lp2/Resolucion_exam2lp2/RaulJonatanExamen2/src/java/upeu/cticsperu/controlador/CticsperuControl.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI01.607/IndexControl.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI02.254/UsuarioBussines.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI58.815/IndexControl.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI87.990/UsuarioDAO.java",
+		"/D/Jonatan/rjota/IngenieriaDeSistemasUPeU/lp2/Session 5/CulturaServlets/web/index.jsp",
+		"/D/Jonatan/rjota/IngenieriaDeSistemasUPeU/lp2/Resolucion_exam2lp2/RaulJonatanExamen2/web/index.jsp",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI00.360/index.jsp",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI61.4941/AlumnoControl.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI62.4893/AlumnoDAO.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI96.2236/AlumnoControl.java",
+		"/C/Users/jonatan/Desktop/ExamenI-Mija/modelo-oracle.sql",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI01.082/MenuReporteLmcm.jsp",
+		"/C/Users/jonatan/Desktop/Sesion 10/Sesion 09/alumno.sql",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI37.19249/alumno.sql",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI00.659/index.jsp",
+		"/D/Jonatan/rjota/MisProyectos/Sistemas/ControlDeAsistenciaDocentes/ProyectNetBean/AsistenciadocenteWorkspace/SysControlDeAsistenciaMante/src/java/upeu/rrhh/dao/TrabajadorDAO.java",
+		"/D/rjota/IngenieriaDeSistemasUPeU/LP1/BibliotecaUPeUJSP L/web/web/globalIncludes.jsp",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI00.439/AlumnoDAO.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI02.778/AlumnoControl.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI18.4354/FormEditAlumno.jsp",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI52.7157/AlumnoBussines.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI52.3428/AlumnoControl.java",
+		"/C/Users/jonatan/AppData/Local/Temp/Rar$DI32.770/AlumnoDAO.java",
+		"/D/rjota/Practica/ResponsiveDesign/Ejemplo01/index.html",
+		"/D/rjota/MisProyectos/Sistemas/ControlDeAsistenciaDocentes/ProyectNetBean/v1.2_3C/ProyectoControlRecursosVer0.0.1/web/modulos/administrador/administrador_carga-docente_fm_add.jsp",
+		"/D/rjota/MisProyectos/Sistemas/ControlDeAsistenciaDocentes/ProyectNetBean/AsistenciadocenteWorkspace/SysControlDeAsistenciaMante/web/Modulos/CargaDocente/CargaDocenteReport.jsp",
+		"/D/rjota/MisProyectos/Sistemas/ControlDeAsistenciaDocentes/ProyectNetBean/VServletBeta/ContAsistenciaDocente/src/java/upeu/dao/DocenteDAO.java",
+		"/D/rjota/IngenieriaDeSistemasUPeU/LP1/BibliotecaUPeUJSP L/web/web/modulos/areas/controlAreas.jsp",
+		"/J/JavaJSPLP2/web/index3.jsp",
+		"/D/rjota/IngenieriaDeSistemasUPeU/LP1/BibliotecaUPeUJSP L/web/web/seguro.jsp",
+		"/D/rjota/IngenieriaDeSistemasUPeU/LP1/BibliotecaUPeUJSP L/web/web/modulos/areas/formAreas.jsp",
+		"/D/rjota/IngenieriaDeSistemasUPeU/lp2/Pagina-Jsp/CulturaServlets/web/Cultura/Modulos/Actividad/ActividadFm.jsp",
+		"/D/rjota/IngenieriaDeSistemasUPeU/lp2/Pagina-Jsp/CulturaServlets/src/java/upeu/bussines/ActividadBussines.java",
+		"/D/rjota/IngenieriaDeSistemasUPeU/lp2/Pagina-Jsp/CulturaServlets/src/java/upeu/control/ActividadControl.java",
+		"/C/Users/jonatan/Downloads/AlumnoDAO.java",
+		"/D/rjota/IngenieriaDeSistemasUPeU/lp2/Pagina-Jsp/CulturaServlets/src/java/upeu/data/ActividadDAO.java",
+		"/D/rjota/IngenieriaDeSistemasUPeU/LP1/BibliotecaUPeUJSP L/web/web/modulos/areas/mainAreas.jsp",
+		"/D/rjota/Practica/ResponsiveDesign/Ejemplo01/estilos.css"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"documenteroot",
+			"servername",
+			"server name",
+			"listen",
+			"areas"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <context:property-placeholder location="classpath:jdbc.properties" />
+    <context:component-scan base-package="upeu.edu.pe" />
+
+    <tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
+
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${database.driver}" />
+        <property name="url" value="${database.url}" />
+        <property name="username" value="${database.user}" />
+        <property name="password" value="${database.password}" />
+    </bean>
+        
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />        
+
+
+    <bean id="jspViewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/acreditacion/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+            <list>            
+                
+                <value>upeu.edu.pe.modelo.SacuEvaluacion</value>
+                <value>upeu.edu.pe.modelo.SacuFacultad</value>
+                <value>upeu.edu.pe.modelo.SacuMenu</value>
+                <value>upeu.edu.pe.modelo.SacuObservacion</value>
+                <value>upeu.edu.pe.modelo.SacuArea</value>
+                <value>upeu.edu.pe.modelo.SacuDetalleCambioFa</value>
+                <value>upeu.edu.pe.modelo.SacuEstandar</value>
+                <value>upeu.edu.pe.modelo.SacuCriterio</value>
+                <value>upeu.edu.pe.modelo.SacuEap</value>
+                <value>upeu.edu.pe.modelo.SacuFilial</value>
+                <value>upeu.edu.pe.modelo.SacuFactor</value>
+                <value>upeu.edu.pe.modelo.SacuResponsable</value>
+                <value>upeu.edu.pe.modelo.SacuEvidenciaCumplida</value>
+                <value>upeu.edu.pe.modelo.SacuDetalleFilial</value>
+                <value>upeu.edu.pe.modelo.SacuEvaluador</value>
+                <value>upeu.edu.pe.modelo.SacuDetalleEvidenciaCambio</value>
+                <value>upeu.edu.pe.modelo.SacuPlanMejora</value>
+                <value>upeu.edu.pe.modelo.SacuDetalleEap</value>
+                <value>upeu.edu.pe.modelo.SacuEstandarEvaluacionEap</value>
+                <value>upeu.edu.pe.modelo.SacuAcceso</value>
+                <value>upeu.edu.pe.modelo.SacuDimension</value>
+                <value>upeu.edu.pe.modelo.SacuUsuario</value>
+                <value>upeu.edu.pe.modelo.SacuPrivilegios</value>
+                <value>upeu.edu.pe.modelo.SacuInstitucion</value>
+                <value>upeu.edu.pe.modelo.SacuPeriodo</value>
+                <value>upeu.edu.pe.modelo.SacuCategoriaUsuario</value>
+                <value>upeu.edu.pe.modelo.SacuInvolucrado</value>
+                <value>upeu.edu.pe.modelo.SacuEstandarInvolucrado</value>
+                <value>upeu.edu.pe.modelo.SacuAsignacionEvidencia</value>
+                <value>upeu.edu.pe.modelo.SacuAreaFactor</value>
+                <value>upeu.edu.pe.modelo.SacuPersona</value>
+                <value>upeu.edu.pe.modelo.SacuDireccionEvidencia</value>
+                <value>upeu.edu.pe.modelo.SacuTipoEstandar</value>
+                <value>upeu.edu.pe.modelo.SacuEvaluacionEstandar</value>
+                <value>upeu.edu.pe.modelo.SacuUsuarioFilial</value>
+                <value>upeu.edu.pe.modelo.SacuDetalleFacultad</value>
+                <value>upeu.edu.pe.modelo.SacuEvidencia</value>							
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>				
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>				
+            </props>
+        </property>
+    </bean>
+    <bean id="hibernateTransactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>                             
+</beans>

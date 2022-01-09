@@ -1,0 +1,28 @@
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW REDIRECTID:uQuMuSuXug
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^yosoyjota.ekiwi.es$ [OR]
+RewriteCond %{HTTP_HOST} ^www.yosoyjota.ekiwi.es$
+RewriteRule ^demo$ http://demo.yosoyjota.ekiwi.es [R=301,L]
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE uQuMuSuXug:REDIRECTID
+
+
+
+
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW REDIRECTID:aPyDujyZag
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^yosoyjota.ekiwi.es$ [OR]
+RewriteCond %{HTTP_HOST} ^www.yosoyjota.ekiwi.es$
+RewriteRule ^web$ http://menu.yosoyjota.ekiwi.es [R=301,L]
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE aPyDujyZag:REDIRECTID
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW REDIRECTID:gaButyzePa
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^yosoyjota.ekiwi.es$ [OR]
+RewriteCond %{HTTP_HOST} ^www.yosoyjota.ekiwi.es$
+RewriteRule ^menu$ http://menu.yosoyjota.ekiwi.es [R=301,L]
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE gaButyzePa:REDIRECTID
+

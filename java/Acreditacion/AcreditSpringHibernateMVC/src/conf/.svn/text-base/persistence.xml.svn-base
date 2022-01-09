@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="AcreditSpringHibernateMVCPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>upeu.edu.pe.modelo.SauMenu</class>
+    <class>upeu.edu.pe.modelo.SauFilial</class>
+    <class>upeu.edu.pe.modelo.SauDimension</class>
+    <class>upeu.edu.pe.modelo.SauInstitucion</class>
+    <class>upeu.edu.pe.modelo.SauAreas</class>
+    <class>upeu.edu.pe.modelo.SauEapRepresentante</class>
+    <class>upeu.edu.pe.modelo.SauCriterio</class>
+    <class>upeu.edu.pe.modelo.SauCategoriaUsuario</class>
+    <class>upeu.edu.pe.modelo.SauEap</class>
+    <class>upeu.edu.pe.modelo.SauPersona</class>
+    <class>upeu.edu.pe.modelo.SauAcceso</class>
+    <class>upeu.edu.pe.modelo.SauFuenteVerificacion</class>
+    <class>upeu.edu.pe.modelo.SauEstandar</class>
+    <class>upeu.edu.pe.modelo.SauEvaluacionEstandar</class>
+    <class>upeu.edu.pe.modelo.SauEstandarEvidencia</class>
+    <class>upeu.edu.pe.modelo.SauPeriodo</class>
+    <class>upeu.edu.pe.modelo.SauEstandarEvaluacion</class>
+    <class>upeu.edu.pe.modelo.SauFacultad</class>
+    <class>upeu.edu.pe.modelo.SauGrupoareas</class>
+    <class>upeu.edu.pe.modelo.SauEstandarFuenteEvidencia</class>
+    <class>upeu.edu.pe.modelo.SauUsuario</class>
+    <class>upeu.edu.pe.modelo.SauResponsables</class>
+    <class>upeu.edu.pe.modelo.SauFactor</class>
+    <class>upeu.edu.pe.modelo.SauPrivilegios</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+      <property name="javax.persistence.jdbc.password" value="123456"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.user" value="acreditacion"/>
+    </properties>
+  </persistence-unit>
+</persistence>

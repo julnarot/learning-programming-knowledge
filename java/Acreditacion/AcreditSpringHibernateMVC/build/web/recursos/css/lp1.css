@@ -1,0 +1,36 @@
+/* 
+    Document   : lp1
+    Created on : 05-jun-2012, 10:27:04
+    Author     : Alumno
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.mamanipari{
+ background-image: url(../img/profile.gif);  
+ background-repeat: no-repeat;
+ padding-left: 20px;
+ color: #0F61C1;
+}
+
+#codigo{
+ background-image: url(../img/profile.gif);  
+ background-repeat: no-repeat;
+ padding-left: 20px;
+ color: #0F61C1;  
+}
+
+input{
+ background-image: url(../img/dvd_edit.png);  
+ background-repeat: no-repeat;
+ padding-left: 20px;
+ color: #0F61C1;         
+}
+
+
+
+

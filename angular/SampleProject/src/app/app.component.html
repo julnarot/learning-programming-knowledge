@@ -1,0 +1,33 @@
+<nb-layout withScroll [class.header-hidden]="!(layout$ | async)?.header">
+
+  <nb-layout-header *ngIf="(layout$ | async)?.header" class="Header header">
+    <div class="space Space1 space1" >
+      <div class="space Space111 space111" >
+        <button nbButton class="Button button size-xl-medium" appearance="ghost" status="primary" (click)="toggleSidebar($event)">
+          <nb-icon class="icon btn-icon" icon="menu"></nb-icon>
+          <span></span>
+        </button>
+        <img class="Image10 image10" [src]="src$ | async">
+      </div>
+      <div class="space Space11 space11" >
+        <nb-icon class="Icon icon" icon="search"></nb-icon>
+        <nb-icon class="Icon1 icon1" icon="bell-outline"></nb-icon>
+        <nb-icon class="Icon2 icon2" icon="email-outline"></nb-icon>
+        <img class="Image image" src="./assets/images/ezgif.com-gif-maker (6).jpg">
+        <p class="Text text text-undefined text-bold text-alignment-left text-transform-none paragraph">Ajay</p>
+        <nb-icon class="Icon3 icon3" icon="chevron-down-outline"></nb-icon>
+      </div>
+    </div>
+  </nb-layout-header>
+
+  <nb-sidebar *ngIf="(layout$ | async)?.sidebar" class="Sidebar sidebar" responsive="true" [collapsedBreakpoints]="['xs', 'is', 'sm']" [compactedBreakpoints]="[]">
+    <div class="space SidebarSpace sidebar-space" >
+      <nb-menu class="Menu menu" [items]="items"></nb-menu>
+    </div>
+  </nb-sidebar>
+
+  <nb-layout-column [style.padding]="padding$ | async">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>

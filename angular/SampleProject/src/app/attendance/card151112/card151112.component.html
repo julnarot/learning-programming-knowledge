@@ -1,0 +1,42 @@
+<nb-card class="Card151112 card151112">
+  <nb-card-header>
+    <div class="space Space541112 space541112" >
+      <h6 class="Heading20 heading20 text-undefined text-alignment-left text-transform-none">Attendance Sheet</h6>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="space Space641112 space641112" >
+      <div class="space Space722123 space722123" >
+        <label class="Text121 text121 text-undefined text-alignment-left text-transform-none label">Class</label>
+        <nb-select class="Select13 select13 size-xl-medium" placeholder="select" uiValueUpdate="Select13" status="primary" [ngModel]="value">
+          <nb-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space7221214 space7221214" >
+        <label class="Text122 text122 text-undefined text-alignment-left text-transform-none label">Teacher</label>
+        <nb-select class="Select12 select12 size-xl-medium" placeholder="select" uiValueUpdate="Select12" status="primary" [ngModel]="value1">
+          <nb-option *ngFor="let option of options1" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space72212112 space72212112" >
+        <label class="Text123 text123 text-undefined text-alignment-left text-transform-none label">Month</label>
+        <nb-select class="Select10 select10 size-xl-medium" placeholder="select" uiValueUpdate="Select10" status="primary" [ngModel]="value2">
+          <nb-option *ngFor="let option of options2" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space72212123 space72212123" >
+        <label class="Text124 text124 text-undefined text-alignment-left text-transform-none label">Year</label>
+        <nb-select class="Select11 select11 size-xl-medium" placeholder="select" uiValueUpdate="Select11" status="primary" [ngModel]="value3">
+          <nb-option *ngFor="let option of options3" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space722121212 space722121212" >
+        <button nbButton class="Button8 button8 size-xl-medium" appearance="filled" status="primary">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>Search</span>
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
