@@ -1,0 +1,40 @@
+---
+title: "intervConfMedi"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+slim = c(3,4,5,5,5,4,3,5,5,2,5,5,5,4,4,4,5,5,5,3,4,4,4,5)
+sAre = c(4,3,5,5,5,3,3,5,3,4,2,2,2,1,4,5,5,5,5,5,2,1,2,5)
+```
+
+## Ejercicio 03 - Lima
+
+Determinar el intervalo de confianza para el grado de satisfaccion por el servicio prestado a un *99%* de confianza.
+
+
+
+```{r slim}
+
+slim
+summary(slim)
+t.test(x=slim, conf.level=0.99)
+```
+el grado de satisfaccion para la ciudad de lima con un 90% de confianza se encuentre entre 3.8 y 4.8 en promedio aproximadamente (se encuentra entre ni satisfecho, ni insatisfecho hasta satisfecho)
+
+
+
+
+## Ejercicio 03 - Arequipa
+
+Determinar el intervalo de confianza para el grado de satisfaccion por el servicio prestado a un *99%* de confianza.
+
+
+
+```{r sAre}
+sAre
+summary(sAre)
+t.test(x=sAre, conf.level=0.99)
+```
+el grado de satisfaccion para la ciudad de arequipa con un 90% de confianza se encuentre entre 2.8 y 4.4 en promedio aproximadamente

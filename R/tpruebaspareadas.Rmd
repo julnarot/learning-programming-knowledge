@@ -1,0 +1,45 @@
+---
+title: "prueb-hip-2muest"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+pre <- c(60,71,88,74,76,62,85,84,70,83)
+pos <- c(68,80,90,72,80,69,88,86,69,87)
+```
+
+## Ejemplo 2
+
+El área de capacitación de Recursos Humanos, está realizando una
+capacitación por competencias para mejorar el rendimiento del trabajador se
+seleccionaron aleatoriamente a 10 trabajadores a los cuales se les brindó la
+capacitación. A continuación se presentan los puntajes en rendimiento antes y
+después de brindarles la capacitación por competencias
+
+### paso 01, Planteamiento de hipotesis
+
+- H0 = ud  = 0 (Hipotesis nula)
+- Ha = ud <> 0 (Hipotesis alternativa)
+
+### paso 02, seleccion de  nivel de significancia
+Nivel de significancia ``` 0.05```
+Nivel de confianza ```0.95```
+
+### paso 03, Determinar valor de estadistico
+``` {r pre, pos}
+estadistico <- t.test(x=pre,y=pos, paired=TRUE)
+estadistico
+```
+
+### paso 04, Constrastar prueba de normalidad
+``` {r pre, pos}
+pre
+pos
+test <- ks.test(x=pre, y=pos)
+test
+```
+la diferencia de medias  0.001195 < 0.05 es mayor entonces se anula la hipotesis
+### paso 05, Decision
+
+con un nivel de significancia del 95% se puede rechazar la hipotesis nula el cual indica que la capacitación por competencias tuvo efectos positivos en el rendimiento del trabajador.

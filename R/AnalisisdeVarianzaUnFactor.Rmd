@@ -1,0 +1,83 @@
+---
+title: "Analisis de varianza de un factor"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Caso: En una consultora de desarrollo de Software se hace un estudio en donde se compara la aceptación que tienen  4 lenguajes de programación web (java, Php, ASP.net, Python). Las puntuaciones se dan en cada sistema desarrollado, en un total de 5 sistemas puestas en evaluación.
+
+
+
+
+```{r}
+len_program <- as.factor(c(rep(c("java", "php", "asp", "python"), each =5)))
+puntaciones <- c(78,87,81,89,85,94,91,87,90,88,73,78,69,83,76,79,83,78,69,81)
+#datos <- data.frame(posicion = posicion, bateo = bateo)
+datos <- data.frame(puntaciones = puntaciones, len_program = len_program)
+
+#tabla <-table(datos)
+#tabla <- table(datos$len_program, datos$puntaciones, dnn = c("java", "php", "asp", "python"))
+#fligner.test(puntaciones ~ len_program,datos)
+
+#fm = aov( puntaciones ~ len_program )
+#fm
+#summary(fm)
+
+#intervals = TukeyHSD(fm)
+#intervals
+
+
+```
+
+### paso 01, Planteamiento de hipotesis
+
+H0: Las puntaciones de evaluación son iguales para los lenguajes de programación.
+Ha: Las puntaciones de evaluación son diferentes para los lenguajes de programación.
+
+### paso 02, Nivel de significancia
+
+Para este caso no se especifica un el nivel de significancia por tanto se asume:
+Nivel de significancia = ``` 0.05```
+Nivel de confianza = ```0.95```
+
+
+### paso 03, Determinar estadistico de prueba
+
+```{r }
+fm = aov( puntaciones ~ len_program )
+fm
+summary(fm)
+intervals = TukeyHSD(fm)
+intervals
+```
+
+### paso 04, Regla de decición
+
+```{r}
+#tabla <-table(datos)
+
+#k <- ks.test(x=datos$len_program, y=datos$puntaciones)
+#k$p.value
+fligner.test(puntaciones ~ len_program,datos)
+bartlett.test(puntaciones ~ len_program,datos)
+```
+elaborando la prueba de homocedastidad de Bartlett's y Fligner podemos identificar que no existe diferencia significativa
+Dado que p-value es superior a 0.05 
+
+
+Diferencia de media de los puntajes por lenguajes de programación
+
+```{r intervals, echo=FALSE}
+plot(intervals)
+```
+
+### paso 05, Conclusión
+
+con un nivel de confianza del 95% se puede concluir que:  Las puntaciones de evaluacion son iguales para los lenguajes de programación.
+por tanto se rechaza la hipotesis alternativa
+
+
+

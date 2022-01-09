@@ -1,0 +1,32 @@
+---
+title: "intervConfMedi"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+cLim <- c(125,220,156,178,250,103,101,224,201,189,174,241,152,156,147,185,165,225,236,254,268,243,124,152)
+cAre <- c(181,217,274,260,195,211,251,235,292,132,134,212,281,171,154,268,173,207,177,183,196,254,223,140)
+conf <- 99/100
+
+diferencia<- cLim - cAre
+
+```
+
+## Ejercicio 03 Cantidad de requermientos Lima - arequipa
+
+Determinar el intervalo de confianza para la cantidad de requerimientos para lima y arequipa a un *99%* de confianza.
+
+
+
+```{r cLim, cAre}
+
+cLim
+cAre
+
+summary(cLim)
+summary(cAre)
+
+t.test(x=cLim, y=cAre, paired=TRUE, conf.level=conf)$conf.int
+```
+la cantidad de requerimientos de lima respecto a arequipa son similiares a un 99% intervalo de confianza
