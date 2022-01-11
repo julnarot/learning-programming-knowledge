@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<context:component-scan base-package="upeu.edu.pe" />
+
+	<tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${database.driver}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.user}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+        
+
+        <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+        <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />        
+
+
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/acreditacion/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>upeu.edu.pe.modelo.SauAcceso</value>
+                                <value>upeu.edu.pe.modelo.SauAreas</value>
+                                <value>upeu.edu.pe.modelo.SauMenu</value>
+                                <value>upeu.edu.pe.modelo.SauCategoriaUsuario</value>                                
+                                <value>upeu.edu.pe.modelo.SauCriterio</value>
+                                <value>upeu.edu.pe.modelo.SauDimension</value>
+                                <value>upeu.edu.pe.modelo.SauEap</value>
+                                <value>upeu.edu.pe.modelo.SauEapRepresentante</value>
+                                <value>upeu.edu.pe.modelo.SauEstandar</value>
+                                <value>upeu.edu.pe.modelo.SauEstandarEvaluacion</value>
+                                <value>upeu.edu.pe.modelo.SauEstandarEvidencia</value>
+                                <value>upeu.edu.pe.modelo.SauEstandarFuenteEvidencia</value>                                
+                                <value>upeu.edu.pe.modelo.SauEvaluacionEstandar</value>
+                                <value>upeu.edu.pe.modelo.SauFactor</value>
+                                <value>upeu.edu.pe.modelo.SauFacultad</value>
+                                <value>upeu.edu.pe.modelo.SauFilial</value>
+                                <value>upeu.edu.pe.modelo.SauFuenteVerificacion</value>
+                                <value>upeu.edu.pe.modelo.SauGrupoareas</value>
+                                <value>upeu.edu.pe.modelo.SauInstitucion</value>
+                                <value>upeu.edu.pe.modelo.SauPeriodo</value>
+                                <value>upeu.edu.pe.modelo.SauPersona</value>                                
+                                <value>upeu.edu.pe.modelo.SauPrivilegios</value>
+                                <value>upeu.edu.pe.modelo.SauResponsables</value>
+                                <value>upeu.edu.pe.modelo.SauUsuario</value>										
+                                <value>upeu.edu.pe.modelo.ViewEstandar</value>										
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>				
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>				
+			</props>
+		</property>
+	</bean>
+	<bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>                             
+</beans>

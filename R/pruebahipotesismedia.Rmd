@@ -1,0 +1,62 @@
+---
+title: "Prueba de hipotesis para la muestra"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+tiempos <- c(15, 30, 50, 60, 25, 65, 45, 90, 75, 50, 15, 50, 20, 35, 55, 70, 75, 45, 65, 56, 45, 32, 75, 52, 85, 78, 20, 45, 52, 17, 80)
+vsig <- 5 
+tam<- length(tiempos)
+media <- sum(tiempos)/tam
+de <- sd(tiempos)
+alpha <- vsig*0.01
+mu <- 60
+
+estadistico <- t.test(tiempos, alternative='less',
+       conf.level=0.95, mu=60)
+```
+
+## Ejercicio 02
+
+El gerente de personal de una empresa querría determinar la cantidad
+de tiempo que necesitan los empleados para llegar a su trabajo. Se
+selecciona una m.a. de 31 empleados y se registra el tiempo en
+minutos para llegar al trabajo, con los siguientes resultados:
+
+### paso 01, Planteamiento de hipotesis
+
+- H0 > 60 (Hipotesis nula)
+- Ha <= 60 (Hipotesis alternativa)
+
+### paso 02, seleccion de  nivel de significancia
+Nivel de significancia ``` 0.05```
+Nivel de confianza ```0.95```
+
+### paso 03, Determinar valor de prueba
+hallar zcalculada 
+``` {r}
+#estadistico <- (media - mu) / (de/sqrt(tam))
+estadistico
+```
+Nivel de confianza ```0.95```
+
+
+### paso 04, Distribucion Z tabulada
+z tabulada 
+95%  = ``` 1.645```
+
+### paso 05, Decision
+
+con un nivel de significancia del 95% se puede confirmar la hipotesis alternativa lo cual indica que existen tiempos promedios de viaje menores que 60 minutos
+
+
+pvalues es mayor segun
+
+
+hipotesis para saber si los datos son o no son normales
+
+
+si ses menos al % no son normales
+
+si es mayor los datos son normales # =(D23-C22)/RAIZ((C22*(1-C22))/C21)

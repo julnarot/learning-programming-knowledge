@@ -1,0 +1,54 @@
+---
+title: "ptstudentmuesinde"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Planta.a <- c(78,88,77,80,79,84,73,87,88,83,82,80,81,79,75)
+#Planta.b <- c(68,72,73,74,78,62,69,70,74,72,77,69)
+
+Planta.a <- c(163,161,160,169,163,162,164,170,165,162,159,160)
+Planta.b <- c(159,158,162,161,159,160,161,159,159,157)
+
+
+```
+
+## Ejemplo 2
+
+Se seleccionaron aleatoriamente a 12 trabajadores de la Planta No 1 y 10 trabajadores de la Planta
+No 2 de una empresa, con la finalidad de estudiar sus índices de eficiencia. El objetivo es determinar
+si existe diferencia entre los índices de eficiencia de los trabajadores de las dos plantas seleccionadas,
+a un nivel de significancia de 0.05.
+
+### paso 01, Planteamiento de hipotesis
+
+- H0 = El índice de eficiencia de la planta A es igual a la de B 
+- Ha = El índice de eficiencia de la planta A es diferente a la de B 
+
+### paso 02, seleccion de  nivel de significancia
+Nivel de significancia ``` 0.05```
+Nivel de confianza ```0.95```
+
+### paso 03, Determinar valor de estadistico
+``` {r Planta}
+estadistico <- t.test(Planta.a, Planta.b)
+estadistico
+```
+
+### paso 04, Formular regla de desicion
+``` {r Planta}
+x <- Planta.a
+y <- Planta.b
+test <- ks.test(x=x, y=y)
+test
+
+
+lev <- fligner.test(x,y)
+lev <- leve(Planta)
+```
+la diferencia de medias  0.06021 > 0.05 es mayor entonces se anula la hipotesis nula
+### paso 05, Decision
+
+con un nivel de significancia del 95% se puede rechazar la hipotesis nula el cual indica que  existe diferencia entre el el índice de eficiencia de la planta A y B 

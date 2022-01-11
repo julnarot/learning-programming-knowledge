@@ -1,0 +1,19 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package upeu.edu.pe.dao;
+
+import java.util.List;
+import upeu.edu.pe.modelo.SauPeriodo;
+
+/**
+ *
+ * @author Alumno
+ */
+public interface PeriodoDao {
+     public List<SauPeriodo> listaPeriodo();  
+     public void insertarPeriodo(SauPeriodo periodo );
+     public void eliminarPeriodo(String idPeriodo);
+     
+}

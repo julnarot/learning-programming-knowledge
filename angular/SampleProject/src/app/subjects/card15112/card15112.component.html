@@ -1,0 +1,36 @@
+<nb-card class="Card15112 card15112">
+  <nb-card-header>
+    <div class="space Space54112 space54112" >
+      <h6 class="Heading18 heading18 text-undefined text-alignment-left text-transform-none">Add New Subject</h6>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="space Space64112 space64112" >
+      <div class="space Space72213 space72213" >
+        <label class="Text109 text109 text-undefined text-alignment-left text-transform-none label">Subject Name</label>
+        <input nbInput class="Input19 input19 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input19" status="basic" [ngModel]="value">
+        <label class="Text110 text110 text-undefined text-alignment-left text-transform-none label">Subject Type</label>
+        <input nbInput class="Input20 input20 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input20" status="basic" [ngModel]="value1">
+        <label class="Text111 text111 text-undefined text-alignment-left text-transform-none label">Subject Code</label>
+        <nb-select class="Select8 select8 size-xl-medium" placeholder="select" uiValueUpdate="Select8" status="primary" [ngModel]="value2">
+          <nb-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text112 text112 text-undefined text-alignment-left text-transform-none label">Teacher</label>
+        <nb-select class="Select9 select9 size-xl-medium" placeholder="select" uiValueUpdate="Select9" status="primary" [ngModel]="value3">
+          <nb-option *ngFor="let option of options1" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space722111 space722111" >
+        <button nbButton class="Button6 button6 size-xl-medium" appearance="filled" status="success">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>add</span>
+        </button>
+        <button nbButton class="Button7 button7 size-xl-medium" appearance="filled" status="info">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>reset</span>
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

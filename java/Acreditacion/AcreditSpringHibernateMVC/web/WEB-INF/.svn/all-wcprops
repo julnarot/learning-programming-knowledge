@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/15/trunk/AcreditSpringHibernateMVC/web/WEB-INF
+END
+dispatcher-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/5/trunk/AcreditSpringHibernateMVC/web/WEB-INF/dispatcher-servlet.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/3/trunk/AcreditSpringHibernateMVC/web/WEB-INF/applicationContext.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/6/trunk/AcreditSpringHibernateMVC/web/WEB-INF/web.xml
+END

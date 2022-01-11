@@ -1,0 +1,44 @@
+<nb-card class="Card15111111 card15111111">
+  <nb-card-header>
+    <div class="space Space54111111 space54111111" >
+      <h6 class="Heading43 heading43 text-undefined text-alignment-left text-transform-none">Class information</h6>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="space Space64111111 space64111111" >
+      <div class="space Space72212211 space72212211" >
+        <label class="Text401 text401 text-undefined text-alignment-left text-transform-none label">Subject</label>
+        <nb-select class="Select14 select14 size-xl-medium" placeholder="select" uiValueUpdate="Select14" status="primary" [ngModel]="value">
+          <nb-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text402 text402 text-undefined text-alignment-left text-transform-none label">Class</label>
+        <nb-select class="Select15 select15 size-xl-medium" placeholder="select" uiValueUpdate="Select15" status="primary" [ngModel]="value1">
+          <nb-option *ngFor="let option of options1" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text403 text403 text-undefined text-alignment-left text-transform-none label">Teacher </label>
+        <nb-select class="Select16 select16 size-xl-medium" placeholder="select" uiValueUpdate="Select16" status="primary" [ngModel]="value2">
+          <nb-option *ngFor="let option of options2" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space7221211111 space7221211111" >
+        <label class="Text404 text404 text-undefined text-alignment-left text-transform-none label">Day</label>
+        <nb-select class="Select17 select17 size-xl-medium" placeholder="select" uiValueUpdate="Select17" status="primary" [ngModel]="value3">
+          <nb-option *ngFor="let option of options3" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text405 text405 text-undefined text-alignment-left text-transform-none label">Time</label>
+        <input nbInput class="Input36 input36 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input36" status="basic" [ngModel]="value4">
+      </div>
+      <div class="space Space72212121121 space72212121121" >
+        <button nbButton class="Button21 button21 size-xl-medium" appearance="filled" status="success">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>save</span>
+        </button>
+        <button nbButton class="Button22 button22 size-xl-medium" appearance="filled" status="primary">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>reset</span>
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

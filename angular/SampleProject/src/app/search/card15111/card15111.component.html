@@ -1,0 +1,38 @@
+<nb-card class="Card15111 card15111">
+  <nb-card-header>
+    <div class="space Space54111 space54111" >
+      <h6 class="Heading15 heading15 text-undefined text-alignment-left text-transform-none">Search Student Promotion</h6>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="space Space64111 space64111" >
+      <div class="space Space72212 space72212" >
+        <label class="Text92 text92 text-undefined text-alignment-left text-transform-none label">Current Section</label>
+        <input nbInput class="Input8 input8 size-xl-medium" placeholder="2017-2018" type="text" shape="rectangle" uiValueUpdate="Input8" status="basic" [ngModel]="value">
+      </div>
+      <div class="space Space722121 space722121" >
+        <label class="Text93 text93 text-undefined text-alignment-left text-transform-none label">Promote To Section</label>
+        <input nbInput class="Input9 input9 size-xl-medium" placeholder="2017-2018" type="text" shape="rectangle" uiValueUpdate="Input9" status="basic" [ngModel]="value1">
+      </div>
+      <div class="space Space7221211 space7221211" >
+        <label class="Text94 text94 text-undefined text-alignment-left text-transform-none label">Promotion from Class</label>
+        <nb-select class="Select2 select2 size-xl-medium" placeholder="select" uiValueUpdate="Select2" status="primary" [ngModel]="value2">
+          <nb-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space7221212 space7221212" >
+        <label class="Text95 text95 text-undefined text-alignment-left text-transform-none label">Promotion To Class</label>
+        <nb-select class="Select3 select3 size-xl-medium" placeholder="select" uiValueUpdate="Select3" status="primary" [ngModel]="value3">
+          <nb-option *ngFor="let option of options1" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space72212121 space72212121" >
+        <button nbButton class="Button3 button3 size-xl-medium" appearance="filled" status="primary">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>Search</span>
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

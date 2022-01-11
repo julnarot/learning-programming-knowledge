@@ -1,0 +1,69 @@
+body{
+    background: blue url(../img/bg-checker.png);
+
+}
+
+#logo{
+    
+    position: absolute;
+    left: 210px;
+}
+
+.upeu {
+    position: absolute;
+    top: 40px;
+    left: 310px;
+    width: 35%;
+    height: 10%;
+    border-radius: 50px;
+}
+
+.upeu h1 {
+    color: azure;
+    font-family: arial;
+    margin: 10px 10px 10px 25px;
+    text-decoration: none;
+}
+
+#formLogin{
+    position: absolute;
+    float: right;
+    top: 35px;
+    left: 800px;
+    border: #222222;
+}
+
+hr{
+    position: absolute;
+    margin: 120px 100px 100px 225px;
+}
+
+
+body, input, textarea {
+    color: #ffffff;
+    text-shadow: 0 0px 0 black;
+    font-size: 11px;
+    font-family: "Arial", "lucida grande", arial, sans-serif;
+    font-weight: 100;
+    font-size: 90%;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff
+}
+
+.tabla {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+text-align: right;
+width: 600px;
+
+}
+
+

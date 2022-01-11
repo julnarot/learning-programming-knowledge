@@ -1,0 +1,71 @@
+body{
+	font: 1em "Trebuchet MS", Verdana, Helvetica, sans-serif; text-align: center;
+	color: #666;
+	color: #2F414C;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(../imagenes/Sky_Splash.jpg);
+	/* background-attachment: fixed;*/
+        /*background-color: tomato;*/
+        
+}
+
+
+.botonBlue{
+        font-size:10px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        width:80px;
+        height:19px;
+       }
+ .botonPurple{
+        font-size:10px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#753db9;
+        border:0px;
+        width:80px;
+        height:19px;
+       } 
+ .botonRed{
+        font-size:10px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#E62727;
+        border:0px;
+        width:80px;
+        height:19px;
+       } 
+  .botonGreen{
+        font-size:10px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#7DCC7D ;
+        border:0px;
+        width:80px;
+        height:19px;
+       }      
+       
+
+.divubic{    
+     background-image: url("../imagenes/green-box.gif");
+    background-repeat: no-repeat;
+    border-bottom-color: #007a31;
+    padding:inherit;
+    width: 250px;
+    height: 124px;
+    padding: 20px 20px 20px 20px;
+    margin: 22% 40%;
+}
+
+    
+ 
+ 
+ 
+ 

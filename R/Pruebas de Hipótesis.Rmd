@@ -1,0 +1,298 @@
+---
+title: "Test de Hipótesis"
+author: "M. Sc. Sergio Rifo Rivera"
+date: "Octubre de 2018"
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
+header-includes:
+- \usepackage{multirow}
+- \usepackage{multicol}
+- \usepackage{amsmath}
+- \usepackage{amssymb}
+- \usepackage{amsthm}
+- \usepackage{graphicx}
+---
+
+## Preparación de los datos
+
+La base de datos de ejemplo se llama `wages` y ella contiene la información de 3294 trabajadores de EE.UU. condensada en 5 variables: 
+
+  - `id` que es la identificación del individuo, 
+  - `exper` que representa la experiencia en años, 
+  - `sex` es la variable dummy de sexo (1=hombre, 0=mujer), 
+  - `school` que representa la escolaridad en años y 
+  - `wage` que corresponde al salario por hora (en dólares).
+  
+La base de datos está en formato .csv y por ende procedemos a cargarla usando la función `read.csv` del paquete `readr` o bien puede importarse desde la barra de herramientas.
+
+```{r message=FALSE, warning=FALSE}
+# La ruta del archivo .csv depende de cada uno
+
+library(readr)
+wages = read.csv("/Volumes/Macintosh HD/Users/sergiorifo/Dropbox/R and Stata/Wages1.csv")
+
+head(wages)
+
+```
+
+Para poder usar libremente las variables contenidas en la base de datos usamos la opción `attach()`:
+
+```{r message=FALSE, warning=FALSE}
+attach(wages)
+```
+
+
+## Análisis exploratorio de los datos
+
+Uno de los elementos claves a la hora de trabajar y de investigar con una base de datos es el análisis exploratorio de la información contenida en dicha base. El análisis exploratorio básico nos permite tener una idea mas clara sobre cómo se comportan nuestras variables, lo que a su vez nos permite formular conjeturas para posteriormente verificarlas haciendo uso de las pruebas de hipótesis adecuadas.
+
+En nuestra base de ejemplo, la variable dummy `sex` representa en realidad la característica relativa al sexo de los encuestados. Por esta razón, nos sería útil que esta variable tenga las etiquetas adecuadas. El siguiente código asigna etiquetas (labels) mucho mas claras, si bien este paso no es completamente necesario.
+
+```{r}
+
+wages$sex = factor(wages$sex, levels = c(0,1), labels = c("Mujer", "Hombre"))
+head(wages)
+```
+
+
+Una vez hecho el ajuste en nuestra variable de factor, procedemos a realizar un análisis exploratorio en base a gráficos box plot.
+
+### Análisis exploratorio gráfico
+
+Los gráficos Box plot (diagramas de caja y bigote) nos brindan una idea bastante precisa sobre cómo se distribuyen los datos. Un gráfico box plot está construido de la siguiente forma, la línea intermedia es la mediana de los datos (percentil 50), los límites inferior y superior de la caja corresponden al primer y tercer cuartil (percentiles 25 y 75) respectivamente. Por defecto, los bigotes se extenderán hasta 1.5 veces el rango intercuartílico (Q3-Q1) desde la parte superior (inferior) de la caja hasta el dato más lejano dentro de esa distancia. Si hay algún dato mas allá de dicha distancia, serán representados mediante puntos individuales (*outliers*).
+
+A continuación se presentan los gráficos box plot para las variables experiencia, escolaridad y salario según sexo.
+
+```{r}
+boxplot(exper~sex, xlab="Sexo", ylab="Experiencia (años)", names=c("Mujer", "Hombre"), main="Experiencia según el sexo")
+```
+
+
+```{r}
+boxplot(school~sex, xlab="Sexo", ylab="Escolaridad (años)", names=c("Mujer", "Hombre"), main="Escolaridad según el sexo")
+```
+
+
+```{r}
+boxplot(wage~sex, xlab="Sexo", ylab="Salario (USD por hora)", names=c("Mujer", "Hombre"), main="Salario según el sexo")
+```
+
+Los gráficos anteriores nos hacen pensar que tanto la experiencia como el salario son mayores para los hombres, mientras que la escolaridad parece ser mayor en las mujeres. Sin embargo, esta idea solo es aplicable a los datos muestrales.
+
+
+R provee múltiples opciones para realizar análisis exploratorios desde el punto de vista gráfico. Un buen ejemplo de aquello es el paquete `PASWR2` a través de la función `eda`. Esta función se aplica a una variable (idealmente continua) y entrega un sumario estadístico y cuatro gráficos que nos ayudan a entender la distribución de los datos. Los gráficos construidos son un histograma, un gráfico de densidad, un box plot (horizontal) y un gráfico Q-Q (cuantil-cualtil).
+
+A modo de ejemplo, analicemos la variable de salario:
+
+```{r}
+library(PASWR2)
+
+eda(wage)
+```
+
+
+Los dos primeros gráficos generados nos sirven para verificar que la distribución de los datos se ajusta o no a una campana de Gauss, el box plot nos ayuda a identificar datos extremos y, finalmente, el gráfico Q-Q compara los cuantiles de los datos con los cuantiles hipotéticos de una distribución normal. Entre mas alineados se encuentren los puntos del gráfico con la línea de color rojo, mas opciones tienen los datos de seguir una distribución normal.
+
+Los resultados obtenidos para la variable de salario sugieren que ésta no sigue una distribución normal, lo cual será verificado mas adelante con la prueba estadística de Shapiro-Wilk.
+
+La función `eda` también puede aplicarse a grupos específicos. Analicemos el salario pero ahora por sexos:
+
+```{r}
+# Primero las mujeres
+eda(wage[sex==0])
+```
+
+```{r}
+# Luego los hombres
+eda(wage[sex==1])
+```
+
+
+
+### Análisis exploratorio descriptivo
+
+El paquete `dplyr` nos puede ayudar a calcular las medias (y otras medidas) de las variables experiencia, escolaridad y salario según el sexo. El siguiente código realiza lo antes mencionado y un poco mas.
+
+```{r}
+library(dplyr)
+
+wages %>% group_by(sex) %>% summarise(mean(exper), mean(school), mean(wage),median(exper), median(school), median(wage), sd(exper), sd(school), sd(wage))
+```
+
+
+Con todo lo anterior, es posible levantar las siguientes conjeturas:
+
+  - Los hombre poseen mas experiencia que las mujeres,
+  - Las mujeres tienen una mayor escolaridad que los hombres,
+  - Y los hombres tienen un salario (por hora) mayor que las mujeres.
+  
+No obstante, para poder sacar conclusiones sobre estas conjeturas, es necesario recurrir a la técnica de pruebas de hipótesis. Pero primero, es necesario verificar un supuesto esencial: el supuesto de normalidad de los datos.
+
+## Supuesto de normalidad de los datos
+
+Ya que las pruebas de hipótesis paramétricas dependen de las distribuciones muestrales de los estadísticos utilizados, el supuesto de normalidad debe satisfacerse en las variables analizadas o en los grupos respectivos.
+
+La prueba de **Shapiro-Wilk** es un test paramétrico que sirve para verificar el supuesto de normalidad. La hipótesis nula de esta prueba plantea que los datos provienen de una distribución normal, mientras que la hipótesis alternativa indica lo contrario.
+
+El estadístico de prueba del test de shapiro-wilk se define mediante la expresión:
+
+\[W=\frac{\left(\sum\limits_{i=1}^{n}a_ix_i\right)^2}{\sum\limits_{i=1}^{n}(x_i-\overline{x})}\]
+
+El valor de $W$ fluctúa entre cero y 1.
+
+De este modo, ya que las variables experiencia, escolaridad y salario son analizadas por la variable de factor que agrupa por sexos, la prueba de shapiro-wilk debe también implementarse por sexo. Para ello recurrimos a la función `lapply` para dividir (split) a las variables de interés según el sexo y luego aplicamos la prueba de shapiro-wilk a cada grupo.
+
+A continuación se implementan las pruebas de normalidad para las variables de interés.
+
+```{r}
+lapply(split(wages$exper,wages$sex),shapiro.test)
+```
+
+```{r}
+lapply(split(wages$school,wages$sex),shapiro.test)
+```
+
+```{r}
+lapply(split(wages$wage,wages$sex),shapiro.test)
+```
+
+Ya que los valores $p$ calculados en todas las pruebas anteriores son considerablemente pequeños (menores que los niveles de significancia usuales), se rechaza el supuesto de normalidad para todas las variables analizadas.
+
+Lo anterior es sinónimo de que las pruebas paramétricas (ej: basadas en las medias) no son adecuadas y por ende se debe recurrir a técnicas no paramétricas. Esto último será abordado en una siguiente sección.
+
+## Pruebas paramétricas para la media
+
+Las pruebas paramétricas para la media de una variable o para la diferencia de medias entre dos variables o grupos dependen del supuesto de normalidad y de la igualdad (o desigualdad) de las varianzas poblacionales.
+
+Si bien hemos verificado anteriormente que el supuesto de normalidad no se satisface para ninguna de las variables de nuestra base de datos de ejemplo, de igual manera procederemos a aplicar los test paramétricos con el objetivo de ilustrar su implementación e interpretación. Posteriormente llevaremos a cabo las pruebas no paramétricas adecuadas.
+
+
+### Pruebas para la media de una variable
+
+Si realizamos una descripción estadística de la base wages,
+
+```{r message=FALSE, warning=FALSE}
+library(psych)
+describe(wages)
+```
+
+Podemos levantar la hipótesis de que el salario medio es de 5.76 dólares por hora. Para verificar esta hipótesis, realizamos la prueba $t$ de Student para una sola variable (o muestra):
+
+```{r}
+# prueba de dos colas
+t.test(wage, mu=5.76)
+```
+
+La salida de R nos dice que el estadístico de prueba calculado es $t=-0.0423$ con 3293 grados de libertad, el valor $p$ calculado es 0.9662, la prueba de hipótesis realizada es de dos colas e incluso nos brinda un intervalo de confianza del 95% para la verdadera media poblacional. Ahora bien, ya que el valor $p$ es mayor que los niveles de significancia usuales, concluimos que no existe evidencia para rechazar la hipótesis nula; es decir, podemos suponer que el salario medio poblacional es de 5.76 dólares hora. 
+
+Si por ejemplo modificamos el valor de `mu`, digamos `mu=7`, concluimos que existe suficiente evidencia (valor $p$ es menor que las significancias usuales) para rechazar la hipótesis nula, y por ende, el salario medio real difiere de 7 dólares por hora.
+```{r}
+t.test(wage, mu=7)
+```
+
+En este caso tiene sentido realizad pruebas unilaterales:
+
+```{r}
+# prueba de cola derecha
+t.test(wage, mu=7, alternative = "greater")
+```
+
+```{r}
+#prueba de cola izquierda
+t.test(wage, mu=7, alternative = "less")
+```
+De las pruebas anteriores se concluye que el verdadero valor del salario medio es inferior a 7 dólares por hora, lo cual es congruente con la prueba de hipótesis planteada al principio.
+
+### Pruebas para la media de una variable por grupo
+
+Ahora bien, si nos interesamos solo por la media poblacional del sexo femenino, colocamos a continuación de la variable `wage` la opción `[sex==0]` para que la prueba de hipótesis se lleva a cabo solo en el grupo de las mujeres.
+
+A continuación se implementa la prueba donde la hipótesis nula es que el salario medio de las mujeres es igual a 6 versus la hipótesis alternativa de que el salario medio es diferente de 6.
+
+```{r}
+# Prueba de dos colas
+t.test(wage[sex==0], mu=6)
+```
+
+Puesto que el valor $p$ es considerablemente pequeño, existe evidencia suficiente para rechazar la hipótesis nula y aceptamos la hipótesis alternativa de que el salario medio de las mujeres es diferente de 6. Pero, ¿el salario medio medio de las mujeres es mayor o menor a 6?
+
+Para responder a la pregunta anterior implementamos las pruebas unilaterales:
+
+```{r}
+# Prueba de dos colas
+t.test(wage[sex==0], mu=6, alternative = "greater")
+```
+
+```{r}
+# Prueba de dos colas
+t.test(wage[sex==0], mu=6, alternative = "less")
+```
+Concluimos que el salario medio de las mujeres es inferior a 6 dólares por hora. Lo cual va de la mano con nuestra estimación puntual (5.15 USD/h).
+
+### Pruebas para la diferencia de medias
+
+Este caso es especialmente útil cuando queremos comparar las medias de dos variables o de una variable separada por una variable de agrupación. A modo de ejemplo, en esta sección determinaremos si la diferencia salarial existente entre hombre y mujeres se debe exclusivamente al azar o en realidad es una característica intrínseca de las poblaciones.
+
+Primero realizamos la prueba de hipótesis para la igualdad de varianzas, en la cual se plantea la hipótesis nula de que las varianzas poblacionales son iguales versus la hipótesis alternativa de que son diferentes: 
+
+```{r}
+# Es una prueba de dos colas (siempre)
+var.test(wage~sex)
+```
+El valor $p$ calculado nos hace concluir que no es posible suponer la igualdad de varianzas. Con esta información procedemos a realizar la prueba de diferencia de medias respectiva:
+
+```{r}
+# Prueba de dos colas, varianzas distintas
+t.test(wage~sex, var.equal=FALSE)
+```
+Al elegir la opción de varianzas desiguales, R calcula los grados de libertad según la aproximación de Welch. El valor $p$ resultante nos indica que debemos rechazar la hipótesis nula y aceptar la hipótesis alternativa; por ende, los salarios entre hombres y mujeres difieren significativamente.
+
+Ahora bien, la prueba anterior nos brinda toda la información necesario para concluir qué sexo tiene mayor salario por hora; sin embargo, aplicaremos las pruebas de hipótesis unilaterales para confirmar:
+
+```{r}
+# Prueba de dos colas, varianzas distintas
+t.test(wage~sex, var.equal=FALSE, alternative="greater")
+```
+
+```{r}
+# Prueba de dos colas, varianzas distintas
+t.test(wage~sex, var.equal=FALSE, alternative="less")
+```
+
+
+Esta última prueba nos dice que la diferencia de medias poblacionales es menor que 0 (media mujeres - media hombres), razón por la cual, podemos concluir que en promedio, el salario por hora de los hombres es superior al salario por hora de las mujeres.
+
+**Observación:** debido a que el supuesto de normalidad no se cumple, el enfoque paramétrico no es el ideal. En cambio, se sugiere el uso del enfoque no paramétrico.
+
+## Enfoque no paramétrico
+
+Ante la imposibilidad de asumir la normalidad de los datos, la Prueba U de Mann–Whitney, también conocida como Wilcoxon rank-sum test, nos brinda una excelente alternativa que no depende de los parámtros poblacionales.
+
+Los supuestos de la prueba U de Mann–Whitney son los siguientes:
+
+  - Las observaciones de ambos grupos son independientes.
+  - La hipótesis nula $H_0$ plantea que las distribuciones de ambas poblaciones son iguales.
+  - La hipótesis alternativa $H_1$ es que las distribuciones no son iguales.
+
+
+La implementación de la prueba U de Mann–Whitney se realiza con la función `wilcox.test`, tal como se muestra a continuación:
+
+```{r}
+wilcox.test(wage~sex)
+```
+
+El resultado de la prueba no paramétrica nos dice que existe suficiente evidencia para rechazar la hipótesis nula, por ende debemos aceptar la hipótesis alternativa; es decir, debemos suponer que las distribuciones del salario entre hombres y mujeres son diferentes. Para saber qué distribución se ubica mas a la derecha, realizamos las pruebas unilaterales:
+
+```{r}
+wilcox.test(wage~sex, alternative="greater")
+```
+
+
+```{r}
+wilcox.test(wage~sex, alternative="less")
+```
+
+Finalmente, concluimos que la distribución de salarios de los hombres está más a la derecha de la de las mujeres, lo cual es sinónimo de que los hombres perciben salarios por hora mayores a lo de las mujeres.

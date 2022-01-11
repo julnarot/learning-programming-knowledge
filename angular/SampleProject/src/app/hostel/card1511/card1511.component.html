@@ -1,0 +1,38 @@
+<nb-card class="Card1511 card1511">
+  <nb-card-header>
+    <div class="space Space5411 space5411" >
+      <h6 class="Heading13 heading13 text-undefined text-alignment-left text-transform-none">Add New Room</h6>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="space Space6411 space6411" >
+      <div class="space Space7221 space7221" >
+        <label class="Text67 text67 text-undefined text-alignment-left text-transform-none label">Hotel Name</label>
+        <input nbInput class="Input4 input4 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input4" status="basic" [ngModel]="value">
+        <label class="Text68 text68 text-undefined text-alignment-left text-transform-none label">Room Number</label>
+        <input nbInput class="Input5 input5 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input5" status="basic" [ngModel]="value1">
+        <label class="Text69 text69 text-undefined text-alignment-left text-transform-none label">Room Type</label>
+        <nb-select class="Select select size-xl-medium" placeholder="select" uiValueUpdate="Select" status="primary" [ngModel]="value2">
+          <nb-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text70 text70 text-undefined text-alignment-left text-transform-none label">Number of Beds</label>
+        <nb-select class="Select1 select1 size-xl-medium" placeholder="select" uiValueUpdate="Select1" status="primary" [ngModel]="value3">
+          <nb-option *ngFor="let option of options1" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text71 text71 text-undefined text-alignment-left text-transform-none label">Cost per Bed</label>
+        <input nbInput class="Input6 input6 size-xl-medium" placeholder="$300" type="text" shape="rectangle" uiValueUpdate="Input6" status="basic" [ngModel]="value4">
+      </div>
+      <div class="space Space72211 space72211" >
+        <button nbButton class="Button1 button1 size-xl-medium" appearance="filled" status="success">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>add</span>
+        </button>
+        <button nbButton class="Button2 button2 size-xl-medium" appearance="filled" status="info">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>reset</span>
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

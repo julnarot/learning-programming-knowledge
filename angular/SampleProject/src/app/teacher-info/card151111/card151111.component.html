@@ -1,0 +1,70 @@
+<nb-card class="Card151111 card151111">
+  <nb-card-header>
+    <div class="space Space541111 space541111" >
+      <h6 class="Heading16 heading16 text-undefined text-alignment-left text-transform-none">Teacher information</h6>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="space Space641111 space641111" >
+      <div class="space Space722122 space722122" >
+        <label class="Text96 text96 text-undefined text-alignment-left text-transform-none label">First Name</label>
+        <input nbInput class="Input10 input10 size-xl-medium" placeholder="2017-2018" type="text" shape="rectangle" uiValueUpdate="Input10" status="basic" [ngModel]="value">
+        <label class="Text102 text102 text-undefined text-alignment-left text-transform-none label">Last Name</label>
+        <input nbInput class="Input13 input13 size-xl-medium" placeholder="2017-2018" type="text" shape="rectangle" uiValueUpdate="Input13" status="basic" [ngModel]="value1">
+        <label class="Text98 text98 text-undefined text-alignment-left text-transform-none label">Gender</label>
+        <nb-select class="Select5 select5 size-xl-medium" placeholder="select" uiValueUpdate="Select5" status="primary" [ngModel]="value2">
+          <nb-option *ngFor="let option of options" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space7221213 space7221213" >
+        <label class="Text107 text107 text-undefined text-alignment-left text-transform-none label">Registration Number</label>
+        <input nbInput class="Input16 input16 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input16" status="basic" [ngModel]="value3">
+        <label class="Text108 text108 text-undefined text-alignment-left text-transform-none label">Date of Birth</label>
+        
+          <input [nbDatepicker]="datepicker1" nbInput class="Datepicker datepicker size-xl-medium" placeholder="Enter Date" shape="rectangle" uiValueUpdate="Datepicker" status="basic" [ngModel]="value4 | toDate">
+          <nb-datepicker #datepicker1>
+          </nb-datepicker>
+        
+        <label class="Text103 text103 text-undefined text-alignment-left text-transform-none label">Religion</label>
+        <input nbInput class="Input17 input17 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input17" status="basic" [ngModel]="value5">
+      </div>
+      <div class="space Space72212111 space72212111" >
+        <label class="Text99 text99 text-undefined text-alignment-left text-transform-none label">Phone</label>
+        <input nbInput class="Input11 input11 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input11" status="basic" [ngModel]="value6">
+        <label class="Text104 text104 text-undefined text-alignment-left text-transform-none label">Email</label>
+        <input nbInput class="Input14 input14 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input14" status="basic" [ngModel]="value7">
+        <label class="Text105 text105 text-undefined text-alignment-left text-transform-none label">Address</label>
+        <input nbInput class="Input15 input15 size-xl-medium" placeholder="" type="text" shape="rectangle" uiValueUpdate="Input15" status="basic" [ngModel]="value8">
+      </div>
+      <div class="space Space72212122 space72212122" >
+        <label class="Text106 text106 text-undefined text-alignment-left text-transform-none label">Class</label>
+        <nb-select class="Select7 select7 size-xl-medium" placeholder="select" uiValueUpdate="Select7" status="primary" [ngModel]="value9">
+          <nb-option *ngFor="let option of options1" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text97 text97 text-undefined text-alignment-left text-transform-none label">Section</label>
+        <nb-select class="Select4 select4 size-xl-medium" placeholder="select" uiValueUpdate="Select4" status="primary" [ngModel]="value10">
+          <nb-option *ngFor="let option of options2" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+        <label class="Text100 text100 text-undefined text-alignment-left text-transform-none label">Subject</label>
+        <nb-select class="Select6 select6 size-xl-medium" placeholder="select" uiValueUpdate="Select6" status="primary" [ngModel]="value11">
+          <nb-option *ngFor="let option of options3" [value]="option.value">{{ option.label }}</nb-option>
+        </nb-select>
+      </div>
+      <div class="space Space7221212111 space7221212111" >
+        <p class="Text101 text101 text-undefined text-alignment-left text-transform-none paragraph">Upload Teacher Photo (150 X 150)</p>
+        <input nbInput class="Input12 input12 size-xl-medium" placeholder="Enter Value" type="file" shape="rectangle" uiValueUpdate="Input12" status="basic" [ngModel]="value12">
+      </div>
+      <div class="space Space722121211 space722121211" >
+        <button nbButton class="Button4 button4 size-xl-medium" appearance="filled" status="success">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>save</span>
+        </button>
+        <button nbButton class="Button5 button5 size-xl-medium" appearance="filled" status="primary">
+          <nb-icon class="icon btn-icon" icon="star"></nb-icon>
+          <span>reset</span>
+        </button>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,34 @@
+---
+title: "intervConfMedi"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+cAre <- c(15.385, 18.445,23.290,22.100,16.575,17.935,21.335,19.975,24.820,11.220,11.390,18.020,23.885,14.535,13.090,22.780,14.705,17.595,15.045,15.555,16.660,21.590,18.955,11.900)
+
+cLim <- c(10.625,18.7,13.26,15.13,21.25,8.755,8.585,19.04,17.085,16.065,14.790,20.485,12.920,13.260,12.495,15.725,14.025,19.125,20.060,21.590,22.780,20.655,10.540,12.920)
+iConf <- 95/100
+
+diferencia<- cAre - cLim
+
+```
+
+## Ejercicio 02 Costo de requerimiento Lima - arequipa
+
+Demostrar a traves del intervalo de confianza a un *95%* que el costo de requerimiento en Arequipa es superior que el de lima e interprete los resultados
+
+
+
+```{r cLim, cAre}
+
+cLim
+cAre
+
+summary(cLim)
+summary(cAre)
+
+t.test(x=cAre, y=cLim, paired=TRUE, conf.level=iConf)$conf.int
+```
+con un 95% de confianza los costos de los requerimientos de arequipa respecto a lima  indica que los costos de requerimientos de arequipa no son superiores a los de lima 

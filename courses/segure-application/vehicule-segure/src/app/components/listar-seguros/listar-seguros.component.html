@@ -1,0 +1,37 @@
+<div class="ui cards">
+  <ng-container *ngIf="seguros$ | async as seguros; else loading">
+    <ng-container *ngIf="seguros.length>0; else notFound">
+
+    </ng-container>
+  </ng-container>
+  <div class="card" *ngFor="let s of seguros$ | async">
+    <div class="content">
+      <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+      <div class="header">
+        {{s.marcaCarro}}
+      </div>
+      <div class="meta">
+        {{s.sobrenomePropietario}}
+      </div>
+      <div class="description">
+        modelo: {{s.modeloCarro}}<br>
+        placa de carro: {{s.modeloCarro}}<br>
+        propietario: {{s.nomePropietario}}<br>
+      </div>
+    </div>
+    <!--div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui basic green button">Approve</div>
+        <div class="ui basic red button">Decline</div>
+      </div>
+    </div-->
+  </div>
+
+</div>
+
+<ng-template #loading>
+  <h1>Cargandoo</h1>
+</ng-template>
+<ng-template #notFound>
+  <h1>there arent secures registered!! :(</h1>
+</ng-template>

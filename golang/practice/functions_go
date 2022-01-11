@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main(){
+	privatefunction := retunmessage()
+	fmt.Println(privatefunction)
+
+	publicfunction := RetunMessage()
+	fmt.Println(publicfunction)
+
+	callspecialfunction()
+
+}
+
+func retunmessage () string {
+	return "this function return a message from private function"
+}
+
+
+func RetunMessage () string {
+	return "this function return a message from Public function"
+}
+
+func callspecialfunction() {
+	var final string = "this message should print at final, WHY?"
+	defer fmt.Println(final)
+	fmt.Println("this is a simple messages")
+}
+
