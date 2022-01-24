@@ -4,10 +4,22 @@ const http = require('http');
 const server = http.createServer(app);
 const port = 3000;
 
+const {Server} = require("socket.io");
+const io = new Server(server);
+
+
+
 app.get('/', (req, res) => {
-    // res.send('<h1>Hello World!</h1>');
     res.sendFile(__dirname+'/index.html');
-})
-app.listen(port, () => {
+});
+
+io.on('connection', (socket) => {
+    socket.on('chat message', (msg) => {
+        io.emit('chat message', msg)
+      console.log('message: ' + msg);
+    });
+  });
+
+server.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);
-})
+});
