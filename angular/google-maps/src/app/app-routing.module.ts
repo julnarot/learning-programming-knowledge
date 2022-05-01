@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'circles',
     loadChildren: () => import('./modules/circle/circle.module')
       .then(m => m.CircleModule)
+  }, {
+    path: 'marker-clusterer',
+    loadChildren: () => import('./modules/marker-clusterer/marker-clusterer.module')
+      .then(m => m.MarkerClustererModule)
   }
 ];
 
