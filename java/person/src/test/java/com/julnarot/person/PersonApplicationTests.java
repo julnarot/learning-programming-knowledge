@@ -1,10 +1,10 @@
-package com.julnarot.server;
+package com.julnarot.person;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = ServerApplicationTests.class)
-class ServerApplicationTests {
+@SpringBootTest
+class PersonApplicationTests {
 
     @Test
     void contextLoads() {
