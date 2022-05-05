@@ -5,17 +5,23 @@ import {WindowInfoRoutingModule} from './window-info-routing.module';
 import {WindowInfoComponent} from './window-info.component';
 import {GoogleMapsModule} from "@angular/google-maps";
 import {FormsModule} from "@angular/forms";
+import { DynamicHostDirective } from '../map-base/dynamic-host.directive';
+import { TestComponent } from './test.component';
+import {MapBaseModule} from "../map-base/map-base.module";
 
 
 @NgModule({
   declarations: [
-    WindowInfoComponent
+    WindowInfoComponent,
+    //DynamicHostDirective,
+    TestComponent
   ],
   imports: [
     CommonModule,
     WindowInfoRoutingModule,
-    GoogleMapsModule,
-    FormsModule
+
+    FormsModule,
+    MapBaseModule
   ]
 })
 export class WindowInfoModule {
