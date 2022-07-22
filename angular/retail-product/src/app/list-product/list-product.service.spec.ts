@@ -26,7 +26,7 @@ describe('ListProductService', () => {
   it('should be select product', () => {
     let service: ListProductService;
     service = TestBed.get(ListProductService);
-    let products: Product[];
+
     const product: Product = new Product()
     product.setValue({ id: 1, name: 'test' });
     service.setProduct(product);
