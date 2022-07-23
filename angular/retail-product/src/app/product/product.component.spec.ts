@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Product } from '../product';
 
 import { ProductComponent } from './product.component';
 
@@ -20,4 +21,11 @@ describe('ProductComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should be property name', ()=> {
+    const nproduct: Product = new Product();
+    nproduct.id = 1;
+    nproduct.name = 'yeah!';
+    component.product = nproduct;
+    expect(component.product).toBe(nproduct);
+  })
 });
