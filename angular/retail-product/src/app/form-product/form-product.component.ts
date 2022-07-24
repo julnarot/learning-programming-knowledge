@@ -7,7 +7,7 @@ import { Product } from '../product';
 @Component({
   selector: 'app-form-product',
   template: `
-  <form [formGroup]="formGroup" (ngSubmit)="onSave()">
+  <form [formGroup]="formGroup" id="form" (ngSubmit)="onSave()">
     <div>
       <label>Name</label><br>
       <input type="text" formControlName="name">

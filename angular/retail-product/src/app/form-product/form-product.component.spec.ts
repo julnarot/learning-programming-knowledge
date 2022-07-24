@@ -25,4 +25,19 @@ describe('FormProductComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('exist input name', ()=> {
+    const form = fixture.debugElement.nativeElement.querySelector('#form');
+    const inputElements = form.querySelectorall('input')
+    expect(inputElements.length).toEqual(1)
+  })
+
+  it('chcking initial values', ()=>{
+    const formGroup = component.formGroup;
+    const formValues = {
+      id: '',
+      name: ''
+    }
+    expect(formGroup.value).toEqual(formValues)
+  })
 });
