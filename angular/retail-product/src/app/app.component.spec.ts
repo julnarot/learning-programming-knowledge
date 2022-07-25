@@ -32,7 +32,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('retail-product app is running!');
+    // expect(compiled.querySelector('.content span')?.textContent).toContain('retail-product app is running!');
+    expect(compiled.querySelector('h5')?.textContent).toContain('Products managment');
   });
 
   it('shoud be no contact if list is empty', () => {
@@ -45,8 +46,10 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    const firstProduct: Product = new Product({ id: 1, name: 'orange', description: 'desc..' });
-    const secondProduct: Product = new Product({ id: 2, name: 'banana', description: '...' });
+    const firstProduct: Product = new Product();
+    firstProduct.setValue({ id: 1, name: 'orange', description: 'desc..' });
+    const secondProduct: Product = new Product();
+    secondProduct.setValue({ id: 2, name: 'banana', description: '...' });
 
     app.products.push(firstProduct);
     app.products.push(secondProduct);
