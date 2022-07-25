@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ListProductService } from '../list-product/list-product.service';
 import { Product } from '../product';
@@ -7,10 +7,10 @@ import { Product } from '../product';
 @Component({
   selector: 'app-form-product',
   template: `
-  <form [formGroup]="formGroup" id="form" (ngSubmit)="onSave()">
+  <form [formGroup]="formGroup" id="form" (ngSubmit)="onSubmit()">
     <div>
       <label>Name</label><br>
-      <input type="text" formControlName="name">
+      <input type="text" formControlName="name" #name>
     </div>
     <div>
       <label>Description</label><br>
@@ -27,6 +27,8 @@ import { Product } from '../product';
 export class FormProductComponent implements OnInit, OnDestroy {
   formGroup: FormGroup;
   productSubcription?: Subscription;
+
+  @ViewChild('name') fieldName?: ElementRef;
   constructor(
     private formBuilder: FormBuilder,
     private listProductService: ListProductService
@@ -45,25 +47,34 @@ export class FormProductComponent implements OnInit, OnDestroy {
       });
   }
 
-  onSave() {
+
+  onSubmit() {
     const fValue = this.formGroup.value;
 
-    if(fValue.id) {
-      this.listProductService.editFormProduct(this.formGroup.value);
+    if (fValue.id) {
+      this.updating(fValue);
     } else {
-      this.listProductService.addFormProduct(this.formGroup.value);
+      this.adding(fValue);
     }
-
     this.formReset();
+  }
+
+  adding(value: any) {
+    this.listProductService.addFormProduct(value);
+  }
+
+  updating(value: any) {
+    this.listProductService.editFormProduct(value);
   }
 
   formReset() {
     this.formGroup.reset();
     this.formGroup.get('name')?.setValidators(Validators.required);
+    this.fieldName?.nativeElement.focus();
   }
 
   ngOnDestroy(): void {
-      if(this.productSubcription) this.productSubcription.unsubscribe()
+    if (this.productSubcription) this.productSubcription.unsubscribe()
   }
 
 
