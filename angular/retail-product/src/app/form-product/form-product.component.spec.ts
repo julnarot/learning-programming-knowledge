@@ -69,4 +69,20 @@ describe('FormProductComponent', () => {
 
   })
 
+  it('should recover valid form from  product selected', () => {
+    let service: ListProductService;
+    service = TestBed.get(ListProductService);
+
+    const product: Product = new Product();
+    product.setValue({ id: 1, name: 'testing' });
+    service.setProduct(product);
+
+    service.getProduct$().subscribe((p: Product) => {
+      component.formGroup.setValue(p);
+      expect(component.formGroup.valid).toBeTruthy();
+      const fgv: any = component.formGroup.value;
+      expect(product.name).toBe(fgv.name);
+    })
+  })
+
 });
