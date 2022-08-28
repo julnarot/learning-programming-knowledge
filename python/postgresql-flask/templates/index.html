@@ -1,0 +1,18 @@
+<!doctype html>
+<title>Hello</title>
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+    <ul>
+        {% for connection in connections %}
+            <li><a href="/db/{{ connection.id }}">{{ connection.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+        {% include 'footer.html' %}        
+    </footer>
+
+</body>

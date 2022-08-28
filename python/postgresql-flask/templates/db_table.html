@@ -1,0 +1,8 @@
+ID: {{ table.id }}
+NAME: {{ table.table_name }}
+
+<ul>
+    {% for column in table.columns %}
+        <li><a href="/db/{{ column.id }}/table/{{column.id}}">{{ column.column_name }}</a></li>
+    {% endfor %}
+</ul>
