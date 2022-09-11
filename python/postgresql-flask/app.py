@@ -1,5 +1,6 @@
+from crypt import methods
 from flask import Flask, render_template, request, redirect, url_for
-
+import  pandas as pd
 app = Flask(__name__)
 
 isLogged = True
@@ -75,6 +76,29 @@ def database_tables(db_id=None, table_id=None):
     database = getConnectionById(db_id)
     table = [d for d in database.tables if d.id==table_id].pop()
     return render_template('db_table.html', table=table)
+
+@app.route('/db/<db_id>/form-generate')
+def form_generate(db_id=None):
+    database = getConnectionById(db_id)
+    return render_template('form_generate.html', database=database)
+
+@app.route('/db/2/data', methods=['GET', 'POST'])
+def data():
+    data = []
+    if request.method == "POST":
+        try:
+            file = request.files['fileselected']
+            if file.mimetype == "text/csv":
+                data = pd.read_csv(file)
+            else:
+                data = pd.read_excel(file)
+        except Exception as e:
+            print("FILE ERROR::::: ")
+            print(e)
+        print(data.columns.ravel()) # will bee depreated
+        print(list(data.keys()))
+        print(data.sheet_names)
+    return render_template('table_generate.html', data=data)
 
 class DataBase():
     def __init__(self):

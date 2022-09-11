@@ -1,6 +1,8 @@
 ID: {{ database.id }}
 NAME: {{ database.name }}
 
+<a href="/db/{{ database.id }}/form-generate">generate table</a>
+
 <ul>
     {% for table in database.tables %}
         <li><a href="/db/{{ database.id }}/table/{{table.id}}">{{ table.table_name }}</a></li>
