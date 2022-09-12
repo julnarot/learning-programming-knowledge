@@ -1,0 +1,19 @@
+<header>
+    {% include 'header.html' %}
+</header>
+
+
+<h3>{{resp.title}}</h3>
+<p>{{resp.content}}</p>
+
+<b>Comments:</b>
+<ul>
+    {% for comment in resp.comments %}
+            <li>
+                <h3>{{ comment.text }}</h3>
+            </li>
+        {% endfor %}
+</ul>
+<footer>
+    {% include 'footer.html' %}        
+</footer>
