@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Hello</title>
+<body>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileselected" value=""  accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+        <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        {% for connection in data %}
+            <li>{{ connection }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
