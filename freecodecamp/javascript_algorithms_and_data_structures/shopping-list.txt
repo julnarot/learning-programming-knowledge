@@ -1,0 +1,5 @@
+const myList = [["Lon", 4]];
+myList.unshift(["plop", 3]);
+myList.unshift(["Hi!", 54]);
+myList.push(["How R Y",67]);
+myList.push(["here we go!", 67]);

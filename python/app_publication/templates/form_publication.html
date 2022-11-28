@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Hello</title>
+<body>
+<header>
+  {% include 'header.html' %}
+</header>
+
+<form action="form-publication" method="post">
+  <h5>Add publication</h5>
+  <input type="text" name="title" value="" placeholder="Title" autofocus><br>
+  <input type="text" name="content" value="" placeholder="Content"><br>
+  <input type="submit" value="Add publication">
+</form>
+{% if error %}
+    <h5 style="color: red">{{error}}</h5>
+    {% else %}
+    <h5></h5>
+    {% endif %}
+
+<footer>
+  {% include 'footer.html' %}        
+</footer>
+</body>

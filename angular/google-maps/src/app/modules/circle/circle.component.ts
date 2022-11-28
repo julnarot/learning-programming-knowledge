@@ -23,6 +23,7 @@ export class CircleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+	  console.log("hola testing");
   }
 
 }

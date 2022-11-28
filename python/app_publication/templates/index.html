@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Hello</title>
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+
+    <br>
+    <a href="/form-publication">
+        <button>add publication</button>
+    </a>
+    <br>
+    <ul>
+        {% for publication in publications %}
+            <li>
+                <a href="/publication/{{ publication.id }}"><h3>{{ publication.title }}</h3></a>
+                <p>{{publication.content}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+        {% include 'footer.html' %}        
+    </footer>
+
+</body>
