@@ -1,0 +1,3 @@
+let myString = "freeCodeCamp";
+let fccRegex = /freecodeCAMP/i; // Change this line
+let result = fccRegex.test(myString);
