@@ -1,0 +1,12 @@
+function mutation(arr) {
+  arr = arr.map(m=>m.toUpperCase());
+  let conter = 0;
+  arr[1].split("").forEach(f=>{
+    if(arr[0].includes(f)){
+      conter++;
+    }
+  });
+  return arr[1].length === conter;
+}
+
+mutation(["hello", "hey"]);
