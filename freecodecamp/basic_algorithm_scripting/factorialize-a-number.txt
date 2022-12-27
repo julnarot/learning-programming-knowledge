@@ -1,0 +1,5 @@
+function factorialize(num) {
+  return num === 0  ? 1 : [...Array(num).keys()].map(m=>m+1).reduce((a,b)=>a*b);
+}
+
+factorialize(5);

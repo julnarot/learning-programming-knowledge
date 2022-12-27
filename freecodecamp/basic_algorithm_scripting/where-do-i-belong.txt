@@ -1,0 +1,12 @@
+function getIndexToIns(arr, num) {
+  const narr = [...new Set(arr)].sort();
+  let posix = 0;
+  for(let i = 0; i < narr.length; i++) {
+    if(narr[i] < num) {
+      posix = i+1;
+    } 
+  }
+  return posix;
+}
+
+getIndexToIns([40, 60], 50);
