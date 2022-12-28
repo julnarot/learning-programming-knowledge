@@ -1,0 +1,14 @@
+{
+  "name": "christmas-presents-api",
+  "version": "1.0.0",
+  "description": "christmas present api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@julnarot",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
