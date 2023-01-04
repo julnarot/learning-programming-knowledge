@@ -1,0 +1,14 @@
+Array.prototype.myMap = function(callback) {
+  const newArray = [];
+  const currentArr = this;
+  
+  // Only change code below this line
+  // console.log(callback(this[0], 0, this))
+  for(let i = 0; i < this.length; i++) {
+    newArray.push(callback(currentArr[i], i, currentArr))
+  }
+  // Only change code above this line
+  return newArray;
+};
+
+[1].myMap(g=>g)
