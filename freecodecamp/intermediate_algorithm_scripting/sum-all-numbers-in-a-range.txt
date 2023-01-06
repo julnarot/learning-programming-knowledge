@@ -1,0 +1,10 @@
+function sumAll(arr) {
+  let [first , end] = (arr[0] < arr[1]) ? arr:  [arr[1], arr[0]];
+  let acum = 0;
+  for(let i = first; i <= end; i++) {
+    acum = acum + i;
+  } 
+  return acum;
+}
+
+console.log(sumAll([1, 4]));
