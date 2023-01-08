@@ -1,0 +1,16 @@
+function diffArray(arr1, arr2) {
+  const newArr = [];
+  const obj = {};
+  const longArr = arr1.length > arr2.length ? arr1 : arr2;
+  [...arr1, ...arr2].forEach(fe=>{
+    obj[fe] = 1
+  });
+  Object.keys(obj).forEach(fe => {
+    if(!longArr.includes(fe)) {
+      newArr.push(fe)
+    }
+  })
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
