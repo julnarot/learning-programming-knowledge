@@ -1,0 +1,15 @@
+function whatIsInAName(collection, source) {
+  return collection.filter(f=>finded(f, source))
+}
+function finded(targ, dest) {
+  let counter = 0;
+  const props  = Object.keys(dest);
+  props.forEach(fe=>{
+    if(targ.hasOwnProperty(fe) && dest[fe] === targ[fe]) {
+      counter = counter + 1;
+    }
+  })
+  return props.length > 0  && counter === props.length ;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
