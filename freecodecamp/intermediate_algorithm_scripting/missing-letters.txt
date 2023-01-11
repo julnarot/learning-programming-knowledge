@@ -1,0 +1,22 @@
+function fearNotLetter(str) {
+  let nLetter = undefined;
+  const alphab = "abcdefghijklmnopqrstuvwxyz";
+  const map = {};
+  let toggle = false;
+  const arr = []
+  alphab.split('').forEach(fe=>{
+    map[fe] = [...str.split('')].includes(fe);
+    if(map[fe]) {
+      toggle = true;
+    } else if (!map[fe] && toggle) {
+      arr.push(fe)
+      toggle = false;
+    }
+  })
+  if(arr.length > 0) {
+    nLetter = arr[0]
+  }
+  return nLetter;
+}
+
+fearNotLetter("abce");
