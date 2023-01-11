@@ -1,0 +1,11 @@
+function pairElement(str) {
+  const blok = {
+      'A': 'T',
+      'C': 'G',
+      'T': 'A',
+      'G': 'C'
+  }
+  return str.split('').map(f=>[f, blok[f]]);
+}
+
+pairElement("GCG");
