@@ -1,0 +1,22 @@
+function sumFibs(num) {
+  const arr = [0,1];
+  for (var i = 2; i < num; i++) {
+    //if(isPrime(arr[i - 2] + arr[i - 1])) {
+    arr[i] = arr[i - 2] + arr[i - 1];
+    console.log(arr[i])
+    // }
+  }
+  const sum = arr.filter(n=> isPrime(n) && n <= num).reduce((a,b) => a + b,0);
+  // console.log(sum)
+  return sum
+}
+function isPrime(num) {
+  for (let start = 2; num > start; start++) {
+    if (num % start == 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+
+sumFibs(10);

@@ -1,0 +1,13 @@
+function destroyer(arr) {
+  const nArr = [];
+    const elemtRem = [...arguments].slice(1, arguments.length)
+    arr.forEach(fe=> {
+        if(!elemtRem.includes(fe)) {
+            nArr.push(fe)
+        }
+    })
+    // console.log(arr, [...arguments].slice(1, arguments.length))
+    return nArr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

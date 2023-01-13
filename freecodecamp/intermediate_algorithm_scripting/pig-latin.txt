@@ -1,0 +1,9 @@
+function translatePigLatin(str) {
+  const vocReg = /^[a|e|i|o|u]/;
+  const strInitialVocal = vocReg.test(str);
+  const txtr = str.split(/^[^a|^e|^i|^o|^u]+/).pop()
+  const tempConst = str.slice(0, str.length - txtr.length)
+  return strInitialVocal ? `${str}way`: `${txtr}${tempConst}ay`;
+}
+
+translatePigLatin("consonant");

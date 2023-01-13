@@ -1,0 +1,18 @@
+function spinalCase(str) {
+  let text = str;
+  const spaceReg = /\s/g;
+  const underScoreReg = /_/g;
+  const camCaseReg = /(?=[A-Z])/g
+  if(spaceReg.test(str)) {
+    text = text.replace(/(?=[A-Z])/g, "-").replace(/\-/g, " ").replace(/  +/g, ' ').trim().replace(/\s/g, "-")
+  }
+  else if(underScoreReg.test(str)) {
+    text = text.replace(underScoreReg, "-")
+  }
+  else if(!/[ _\-]/.test(text)) {
+    text = text.replace(camCaseReg, "-")
+  }
+  return text.toLowerCase();
+}
+
+spinalCase('AllThe-small Things');

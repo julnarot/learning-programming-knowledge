@@ -1,0 +1,11 @@
+function myReplace(str, before, after) {
+  const beforeFChar = before.slice(0,1);
+  let afterFChar = after.slice(0,1);
+  afterFChar = beforeFChar === beforeFChar.toUpperCase() ? afterFChar.toUpperCase(): afterFChar.toLowerCase();
+    const nAfter = `${afterFChar}${after.slice(1)}`;
+  // console.log(nAfter);
+  const resp = str.replace(before, after);
+  return resp.replace(after, nAfter);
+}
+
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
