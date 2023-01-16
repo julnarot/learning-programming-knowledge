@@ -1,0 +1,15 @@
+function addTogether(x) {
+  const args = Object.values(arguments)
+  if(args.length>1) {
+    const canSum = args.every(s=>typeof s == 'number');
+    return canSum ? args.reduce((a, b) => a + Number(b),  0) : undefined
+  } else if(typeof x == 'string' ) {
+    return undefined
+  } else {
+    return function (y) {
+      return Array.isArray(y) ? undefined :  x + y
+    }
+  }
+}
+
+addTogether(2,3);
