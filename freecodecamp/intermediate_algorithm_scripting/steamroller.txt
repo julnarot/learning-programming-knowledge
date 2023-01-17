@@ -1,0 +1,27 @@
+function steamrollArray(arr) {
+    const narr = [];
+    for(let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i]) && arr[i].length>0) {
+          const elements = expand(arr[i]);  
+            narr.push(...elements);
+        } else {
+            narr.push(arr[i]);
+        }
+    }
+    return narr;
+}
+
+function expand(arr, acum) {
+    console.log(arr)
+    arr.forEach(fe => {  
+      if(Array.isArray(fe)) {
+          expand(arr,acum);
+      } else {
+          acum.push(fe)
+      }
+      
+    });  
+   return acum;
+}
+
+steamrollArray([1, {}, [3, [[4]]]]);
