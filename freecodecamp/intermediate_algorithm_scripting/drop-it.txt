@@ -1,0 +1,8 @@
+function dropElements(arr, func) {
+  // const canCut = false;
+  // arr.
+  const ind=arr.findIndex(func);
+  return ind >= 0 ? arr.slice(ind) : [];
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });
