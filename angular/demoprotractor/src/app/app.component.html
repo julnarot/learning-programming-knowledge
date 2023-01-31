@@ -7,8 +7,8 @@
   </span>
 
   <form (ngSubmit)="onSave()">
-    <input type="text" [(ngModel)]="itemName" placeholder="Insert name" [ngModelOptions]="{standalone: true}"/>
-    <button type="submit" [disabled]="!itemName">Save</button>
+    <input type="text" [(ngModel)]="itemName" placeholder="Insert name" [ngModelOptions]="{standalone: true}" id="itemName"/>
+    <button type="submit" [disabled]="!itemName" class="on-save">Save</button>
   </form>
 
   <ul class="items">
