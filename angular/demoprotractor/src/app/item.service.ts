@@ -25,4 +25,7 @@ export class ItemService {
   getByIndex(index) {
     return this.items[index];
   }
+  getByValue(value) {
+    return this.items.find(f => f === value);
+  }
 }

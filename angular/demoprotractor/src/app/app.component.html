@@ -11,7 +11,8 @@
     <button type="submit" [disabled]="!itemName">Save</button>
   </form>
 
-  <ul>
-    <li *ngFor="let item of items; let i = index"><b (click)="onSelectEdit(i)">{{item}}</b><button (click)="onDelete(i)">X</button></li>
+  <ul class="items">
+    <!-- <li>new item</li> -->
+    <li *ngFor="let item of items; let i = index">{{item}}<button (click)="onDelete(i)">X</button></li>
   </ul>
 </div>
