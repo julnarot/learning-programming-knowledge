@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development auth keycloak server
 
-Navigate to source  `keycloak-20.0.3/bin`  and Run ` ./kc.sh start-dev` for a dev server. Navigate to `http://localhost:8080/admin`. The app will automatically reload if you change any of the source files.
+Navigate to source  `keycloak-20.0.3/bin`  and Run ` ./kc.sh start-dev` for a dev server. Navigate to console  `http://localhost:8080/admin`. 
 
 ## Development server
 
