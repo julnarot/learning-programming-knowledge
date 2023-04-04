@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// import * as Keycloak from 'keycloak-js';
 import { AuthService } from './auth.service';
 
 function initializedKeycloak(keycloak: AuthService) {
@@ -13,10 +14,9 @@ function initializedKeycloak(keycloak: AuthService) {
     return new Promise(async (resolve, reject) => {
       try {
         await keycloak.init();
-
-        setTimeout(() => { // !!! sleeping time
-          resolve(true);
-        }, 5000);
+        // await conf.initEnvironmentConfig();
+        // await conf.initAliasConfig();
+        resolve(true); // !!! forced
       } catch (error) {
         reject(error);
       }
@@ -44,7 +44,7 @@ function initializedKeycloak(keycloak: AuthService) {
     // KeycloakAngularModule
   ],
   providers: [
-    // AuthService,
+    AuthService,
     {
       provide: APP_INITIALIZER,
       useFactory: initializedKeycloak,
