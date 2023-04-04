@@ -1,7 +1,7 @@
 const crypto = require('crypto');
  
 const algorithm = 'aes-256-cbc'; 
-const password = "@Julnarot";
+const password = "@Julnarot"; // <- text to encrypt/desencrypt
 const key = "12345678123456781234567812345678";
 const iv = "1234567812345678";
 const encoding = "hex";
@@ -22,4 +22,7 @@ function decrypt(text) {
     return decrypted.toString();
 }
 const passwordEncrypted = encrypt(password) 
-console.log(decrypt(passwordEncrypted));
+console.log(`Text to Encrypt: ${password}`);
+console.log(`Encrypted: ${passwordEncrypted.toUpperCase()}`);
+// console.log((passwordEncrypted.toUpperCase()).replace(/(.)/g, '$1 '));
+console.log(`decrypted: ${decrypt(passwordEncrypted)}`);
