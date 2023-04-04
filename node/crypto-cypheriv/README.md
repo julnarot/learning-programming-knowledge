@@ -9,9 +9,14 @@ const password = "@Julnarot"; // <- text to encrypt/desencrypt
 keep and execute  the command `npm start`
 
 ```console
+❯ npm start
+
+> crypto-cypheriv@1.0.0 start /home/julnarot/develop/learning-programming-knowledge/node/crypto-cypheriv
 > node index.js
-27EF89A5ECF24A0136351CB3A602DA86
-@Julnarot
+
+Text to Encrypt: @Julnarot
+Encrypted: 27EF89A5ECF24A0136351CB3A602DA86
+decrypted: @Julnarot
 ```
 
 ### AES encryption / decryption tool
