@@ -1,3 +1,42 @@
+## revert commit
+```bash 
+$ user(development) ❯ git log
+
+commit 97fca459b03fa8fb37175bb3f4fc3c74644ff669 (origin/development)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Tue Apr 11 12:44:53 2023 -0500
+
+    new file 05
+```
+Revert to id commit
+```bash
+$ user(development) ❯ git revert 97fca459b03fa8fb37175bb3f4fc3c74644ff669
+```
+## revert merge
+```bash
+commit e35cdcfec3dbf80691374781d10380e010623ae8
+Merge: f2e6ae2 efd09cb  <----
+Author: Raul Jonatan <rauljhonatan.tola@gmail.com>
+Date:   Tue Apr 11 12:39:49 2023 -0500
+
+    Merge pull request #1 from julnarot/new-file
+    
+    New file
+```
+Revert to id from merge
+```bash
+$ user(development) ❯ git revert f2e6ae2 efd09cb
+Removing file02.txt
+[development 094fb26] Revert "file 02"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 file02.txt
+Removing file04.txt
+[development 36471a8] Revert "new file"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 file04.txt
+```
+
+
 ## Restore specific commit in local and remote repository
 
 Execute git reset with commit id in development branch
