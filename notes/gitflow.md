@@ -1,3 +1,22 @@
+## check releases
+
+``` bash
+git tag
+```
+
+example:
+``` bash
+❯ git tag
+0.1.0 <-- last tag
+0.1.1
+login-validate
+sign-up
+v0.0.1
+v0.0.2
+v0.0.3
+```
+
+
 ## Release
 
 creating release
