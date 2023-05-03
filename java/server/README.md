@@ -1,3 +1,6 @@
+# Server api application
+
+Example developlent spring bpot application withmysql db on docker container
 ### Config
 
 ### create file: ``production.env`` in root project with next params:
