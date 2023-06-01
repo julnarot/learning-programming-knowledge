@@ -1,57 +1,36 @@
-import { HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// import * as Keycloak from 'keycloak-js';
-import { AuthService } from './auth.service';
-
-function initializedKeycloak(keycloak: AuthService) {
-  return (): Promise<any> => {
-    return new Promise(async (resolve, reject) => {
-      try {
-        await keycloak.init();
-        // await conf.initEnvironmentConfig();
-        // await conf.initAliasConfig();
-        resolve(true); // !!! forced
-      } catch (error) {
-        reject(error);
-      }
+function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'http://localhost:8080/',
+        realm: 'master',
+        clientId: 'angularv2',
+      },
+      initOptions: {
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri:
+          window.location.origin + '/assets/silent-check-sso.html',
+      },
     });
-  };
 }
 
-
-
-
-
-
-
-
-
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    // KeycloakAngularModule
-  ],
+  declarations: [AppComponent],
+  imports: [AppRoutingModule, BrowserModule, KeycloakAngularModule],
   providers: [
-    AuthService,
     {
       provide: APP_INITIALIZER,
-      useFactory: initializedKeycloak,
+      useFactory: initializeKeycloak,
       multi: true,
-      deps: [AuthService]
-    }
+      deps: [KeycloakService],
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
