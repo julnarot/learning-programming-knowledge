@@ -38,4 +38,5 @@ export class AppModule {}
 
 // set Valid redirect URIs value with simple [ * ]
 // http://localhost:8080/admin/master/console/#/master/realm-settings/security-defenses
-// [Content-Security-Policy] = frame-src 'self'; frame-ancestors 'self'; object-src 'none';
+// DEFAULT [Content-Security-Policy] = frame-src 'self'; frame-ancestors 'self'; object-src 'none';
+// -> replace for like: frame-src 'self'; frame-ancestors 'self' http://localhost:4200/ http://localhost:4200 http://127.0.0.1 http://192.168.1.140 http://localhost *.home-life.hub http://trex-macbook.home-life.hub localhost; object-src 'none';
