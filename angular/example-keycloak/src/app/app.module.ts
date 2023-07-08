@@ -16,7 +16,7 @@ function initializedKeycloak(keycloak: AuthService) {
 
         setTimeout(() => { // !!! sleeping time
           resolve(true);
-        }, 5000);
+        }, 50);
       } catch (error) {
         reject(error);
       }
