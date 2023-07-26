@@ -53,3 +53,9 @@ and finally navigate to `http://172.20.30.251:8983/` looks like:
   "response":{"numFound":0,"start":0,"numFoundExact":true,"docs":[]
   }}
 ```
+
+### Solr Cloud 
+```
+~ ./solr -e cloud
+```
+
