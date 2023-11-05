@@ -162,6 +162,160 @@ f021b5c Make small wording change; ignore editor backups
 dfcba42 Add a heading to index.html
 2ac02b8 Create an empty index.html file
 
+# Error Fixing
+
+ vim index.html
+❯ git commit --amend --no-edit
+[main 7d16ce2] Add a simple stylesheet
+ Date: Sat Nov 4 21:36:02 2023 -0500
+ 2 files changed, 3 insertions(+)
+ create mode 100644 CSS/site.css
+❯ git log
+commit 7d16ce295d2fb62578c96ae06e35d24e59f6d9a1 (HEAD -> main)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:36:02 2023 -0500
+
+    Add a simple stylesheet
+
+...........
+❯ git commit --amend
+[main 6d27115] Add a simple stylesheet; change title
+ Date: Sat Nov 4 21:36:02 2023 -0500
+ 2 files changed, 3 insertions(+)
+ create mode 100644 CSS/site.css
+❯ git log
+commit 6d271157a1295bc16130242002ec0da5cc87fdf5 (HEAD -> main)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:36:02 2023 -0500
+
+    Add a simple stylesheet; change title
+
+commit f021b5c9c890ad3d0532b4245773eaa22a3c2a1a
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:28:56 2023 -0500
+
+    Make small wording change; ignore editor backups
+
+........
+❯ git log --oneline
+6d27115 (HEAD -> main) Add a simple stylesheet; change title
+f021b5c Make small wording change; ignore editor backups
+7da2244 Add HTML boilerplate to index.html
+dfcba42 Add a heading to index.html
+2ac02b8 Create an empty index.html file
+❯ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+❯ git add .
+❯ git commit --amend --no-edit
+[main d85fd94] Add a simple stylesheet; change title
+ Date: Sat Nov 4 21:36:02 2023 -0500
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+ create mode 100644 CSS/site.css
+❯ git status+
+git: 'status+' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+❯ git status
+On branch main
+nothing to commit, working tree clean
+❯ git lof
+git: 'lof' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+❯ git log
+commit d85fd946744daca6b53cf03c942fa77845be85c8 (HEAD -> main)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:36:02 2023 -0500
+
+    Add a simple stylesheet; change title
+
+commit f021b5c9c890ad3d0532b4245773eaa22a3c2a1a
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:28:56 2023 -0500
+
+    Make small wording change; ignore editor backups
+
+.....
+❯ ls
+ CSS   index.html
+❯ git status
+On branch main
+nothing to commit, working tree clean
+❯ rm index.html
+❯ git checkout -- index.html
+❯ git status
+On branch main
+nothing to commit, working tree clean
+❯ ls -la
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:46:54 2023  .
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:13:43 2023  ..
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:46:56 2023  .git
+.rw-r--r-- julnarot julnarot   9 B  Sat Nov  4 21:27:19 2023  .gitignore
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:33:22 2023  CSS
+.rw-r--r-- julnarot julnarot 286 B  Sat Nov  4 21:46:54 2023  index.html
+❯ git rm index.html
+rm 'index.html'
+❯ ls -la
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:47:53 2023  .
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:13:43 2023  ..
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:47:53 2023  .git
+.rw-r--r-- julnarot julnarot   9 B  Sat Nov  4 21:27:19 2023  .gitignore
+drwxr-xr-x julnarot julnarot 4.0 KB Sat Nov  4 21:33:22 2023  CSS
+~/m/Cats main +1 ❯
+❯ ls
+ CSS
+~/m/Cats main +1 ❯
+❯ git checkout -- index.html
+error: pathspec 'index.html' did not match any file(s) known to git
+❯ git reset HEAD index.html
+Unstaged changes after reset:
+D       index.html
+❯ git checkout  -- index.html
+❯ git status
+On branch main
+nothing to commit, working tree clean
+❯ dir
+CSS  index.html
+❯ vim index.html
+❯ git add .
+❯ git commit -m "add top container"
+[main 862502d] add top container
+ 1 file changed, 1 insertion(+)
+❯ git log --oneline
+862502d (HEAD -> main) add top container
+d85fd94 Add a simple stylesheet; change title
+f021b5c Make small wording change; ignore editor backups
+7da2244 Add HTML boilerplate to index.html
+dfcba42 Add a heading to index.html
+2ac02b8 Create an empty index.html file
+❯ git status
+On branch main
+nothing to commit, working tree clean
+❯ git reset --hard HEAD^
+HEAD is now at d85fd94 Add a simple stylesheet; change title
+❯ git status
+On branch main
+nothing to commit, working tree clean
+❯ ls
+ CSS   index.html
+
+❯ git log --oneline
+d85fd94 (HEAD -> main) Add a simple stylesheet; change title
+f021b5c Make small wording change; ignore editor backups
+7da2244 Add HTML boilerplate to index.html
+dfcba42 Add a heading to index.html
+2ac02b8 Create an empty index.html file
+
+
+
 
 
 ## revert commit
