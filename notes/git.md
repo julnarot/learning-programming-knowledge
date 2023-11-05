@@ -314,7 +314,105 @@ f021b5c Make small wording change; ignore editor backups
 dfcba42 Add a heading to index.html
 2ac02b8 Create an empty index.html file
 
+## PRactice on azure
 
+user-julnarot [ ~ ]$ ls
+Cats  clouddrive
+user-julnarot [ ~ ]$ gitch^C
+user-julnarot [ ~ ]$ cd Cats/
+user-julnarot [ ~/Cats ]$ git checkout -- index.html
+error: pathspec 'index.html' did not match any file(s) known to git
+user-julnarot [ ~/Cats ]$ git checkout -- index.h^C
+user-julnarot [ ~/Cats ]$ echo "<h1>hola</h1>" > index.html
+user-julnarot [ ~/Cats ]$ mkdir CSS
+user-julnarot [ ~/Cats ]$ echo "*{color: red}" > CSS/style.css
+user-julnarot [ ~/Cats ]$ git commit -m "^C
+user-julnarot [ ~/Cats ]$ git add .
+user-julnarot [ ~/Cats ]$ git commit -m "add new index and css file"
+Author identity unknown
+
+user-julnarot [ ~/Cats ]$ rm  index.html 
+user-julnarot [ ~/Cats ]$ ls
+CSS
+user-julnarot [ ~/Cats ]$ git checkout -- index.html
+user-julnarot [ ~/Cats ]$ ls
+CSS  index.html
+user-julnarot [ ~/Cats ]$ git rm index.html 
+error: the following file has changes staged in the index:
+    index.html
+(use --cached to keep the file, or -f to force removal)
+user-julnarot [ ~/Cats ]$ git rm index.html 
+error: the following file has changes staged in the index:
+    index.html
+(use --cached to keep the file, or -f to force removal)
+user-julnarot [ ~/Cats ]$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   CSS/style.css
+        new file:   index.html
+
+user-julnarot [ ~/Cats ]$ git add .
+user-julnarot [ ~/Cats ]$ git status
+On branch main
+nothing to commit, working tree clean
+user-julnarot [ ~/Cats ]$ rm index.html
+user-julnarot [ ~/Cats ]$ git checkout -- index.html
+user-julnarot [ ~/Cats ]$ ls
+CSS  index.html
+user-julnarot [ ~/Cats ]$ git status
+On branch main
+nothing to commit, working tree clean
+user-julnarot [ ~/Cats ]$ git rm index.html 
+rm 'index.html'
+user-julnarot [ ~/Cats ]$ ls
+CSS
+user-julnarot [ ~/Cats ]$ git  checkout  index.html
+error: pathspec 'index.html' did not match any file(s) known to git
+user-julnarot [ ~/Cats ]$ git reset HEAD index.html
+Unstaged changes after reset:
+D       index.html
+user-julnarot [ ~/Cats ]$ git checkout -- index.html
+user-julnarot [ ~/Cats ]$ vim index.html 
+user-julnarot [ ~/Cats ]$ vim index.html 
+user-julnarot [ ~/Cats ]$ git commit -m "purposely overwrite the content of index.html"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user-julnarot [ ~/Cats ]$ git commit -m "purposely overwrite the content of index.html" index.html 
+[main d5e7f79] purposely overwrite the content of index.html
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+user-julnarot [ ~/Cats ]$ git log -n1
+commit d5e7f79c6cdc073a076fbc86efa639831a5b5793 (HEAD -> main)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sun Nov 5 03:41:34 2023 +0000
+
+    purposely overwrite the content of index.html
+user-julnarot [ ~/Cats ]$ git checkout -- index.html
+user-julnarot [ ~/Cats ]$ cat index.html 
+<div>container erro</div>
+user-julnarot [ ~/Cats ]$ git revert --no-edit HEAD
+[main 1c29701] Revert "purposely overwrite the content of index.html"
+ Date: Sun Nov 5 03:43:07 2023 +0000
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+user-julnarot [ ~/Cats ]$ cat index.html 
+<h1>hola</h1>
+user-julnarot [ ~/Cats ]$ git log -n1
+commit 1c297018def888b8fcfddc8b0d20416a84981f77 (HEAD -> main)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sun Nov 5 03:43:07 2023 +0000
+
+    Revert "purposely overwrite the content of index.html"
+    
+    This reverts commit d5e7f79c6cdc073a076fbc86efa639831a5b5793.
+user-julnarot [ ~/Cats ]$
 
 
 
