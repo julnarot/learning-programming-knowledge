@@ -414,6 +414,86 @@ Date:   Sun Nov 5 03:43:07 2023 +0000
     This reverts commit d5e7f79c6cdc073a076fbc86efa639831a5b5793.
 user-julnarot [ ~/Cats ]$
 
+## practice 02
+
+Requesting a Cloud Shell.Succeeded. 
+Connecting terminal...
+
+Welcome to Azure Cloud Shell
+
+Type "az" to use Azure CLI
+Type "help" to learn about Cloud Shell
+
+user_julnarot [ ~ ]$ mkdir Cats
+user_julnarot [ ~ ]$ cd $
+bash: cd: $: No such file or directory
+user_julnarot [ ~ ]$ cd Cats/
+user_julnarot [ ~/Cats ]$ git init --inital-branch=main
+error: unknown option `inital-branch=main'
+usage: git init [-q | --quiet] [--bare] [--template=<template-directory>] [--shared[=<permissions>]] [<directory>]
+
+    --template <template-directory>
+                          directory from which templates will be used
+    --bare                create a bare repository
+    --shared[=<permissions>]
+                          specify that the git repository is to be shared amongst several users
+    -q, --quiet           be quiet
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -b, --initial-branch <name>
+                          override the name of the initial branch
+    --object-format <hash>
+                          specify the hash algorithm to use
+
+user_julnarot [ ~/Cats ]$ git init --initial-branch=main
+Initialized empty Git repository in /home/user_julnarot/Cats/.git/
+user_julnarot [ ~/Cats ]$ git init -b main
+warning: re-init: ignored --initial-branch=main
+Reinitialized existing Git repository in /home/user_julnarot/Cats/.git/
+user_julnarot [ ~/Cats ]$ git config user.email "rauljhonatan.tola@gmail.com"
+user_julnarot [ ~/Cats ]$ git config user.user "@Julnarot"
+user_julnarot [ ~/Cats ]$ touch index.html
+user_julnarot [ ~/Cats ]$ mkdir CSS
+user_julnarot [ ~/Cats ]$ touch CSS/site.css
+user_julnarot [ ~/Cats ]$ git add .
+user_julnarot [ ~/Cats ]$ git commit -m "Create empty index.html, site.css files"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <rauljhonatan.tola@gmail.com>) not allowed
+user_julnarot [ ~/Cats ]$ touch CSS/site.css^C
+user_julnarot [ ~/Cats ]$ git config --global user.email "rauljhonatan.tola@gmail.com"
+user_julnarot [ ~/Cats ]$ git config --global user.ser "@Julnarot"
+user_julnarot [ ~/Cats ]$ git config --global user.name "@Julnarot"
+user_julnarot [ ~/Cats ]$ git config --global user.email "rauljhonatan.tola@gmail.com"
+user_julnarot [ ~/Cats ]$ vim index.html 
+user_julnarot [ ~/Cats ]$ vim CSS/site.css 
+user_julnarot [ ~/Cats ]$ git add .
+user_julnarot [ ~/Cats ]$ git commit -m "Add simple HTML and stylesheet"
+[main (root-commit) f1d1b66] Add simple HTML and stylesheet
+ 2 files changed, 15 insertions(+)
+ create mode 100644 CSS/site.css
+ create mode 100644 index.html
+user_julnarot [ ~/Cats ]$ git log --oneline
+f1d1b66 (HEAD -> main) Add simple HTML and stylesheet
+user_julnarot [ ~/Cats ]$ cd
+user_julnarot [ ~ ]$ mkdir Alice
+user_julnarot [ ~ ]$ cd Alice
+user_julnarot [ ~/Alice ]$ git clone ../Cats/
+Cloning into 'Cats'...
+done.
+user_julnarot [ ~/Alice ]
+
+
 
 
 ## revert commit
