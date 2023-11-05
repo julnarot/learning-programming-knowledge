@@ -1,3 +1,41 @@
+❯ mkdir Cats
+❯ cd Cats
+❯ git init --initial-branch=main
+Initialized empty Git repository in /home/julnarot.../Cats/.git/
+❯ git status
+On branch main
+nothing to commit, working tree clean
+
+❯ touch index.html
+❯ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+❯ git commit -m "Create an empty index.html file"
+[main (root-commit) 2ac02b8] Create an empty index.html file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+❯ git log
+commit 2ac02b83ee4ca5bb5a2ab22cb3db35c34e54865e (HEAD -> main)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:20:02 2023 -0500
+
+    Create an empty index.html file
+
+adding `<h1>Our Feline Friends</h1>` to index.html and save
+
+❯ git commit -a -m "Add a heading to index.html"
+[main dfcba42] Add a heading to index.html
+ 1 file changed, 1 insertion(+)
+
+
+
+
 ## revert commit
 ```bash 
 $ user(development) ❯ git log
