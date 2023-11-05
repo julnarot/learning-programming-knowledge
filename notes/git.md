@@ -1046,6 +1046,518 @@ Fast-forward
 user_julnarot [ ~/Alice ]$
 
 
+## conflic resolver
+
+user_julnarot [ ~/Alice ]$ cd
+user_julnarot [ ~ ]$ cd Bob/
+user_julnarot [ ~/Bob ]$ ls
+Assets  index.html
+user_julnarot [ ~/Bob ]$ git checkout -b add-cat
+Switched to a new branch 'add-cat'
+user_julnarot [ ~/Bob ]$ wget https://github.com/MicrosoftDocs/mslearn-branch-merge-git/raw/main/git-resources.zip
+--2023-11-05 05:04:28--  https://github.com/MicrosoftDocs/mslearn-branch-merge-git/raw/main/git-resources.zip
+Resolving github.com... 192.30.255.113
+Connecting to github.com|192.30.255.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/MicrosoftDocs/mslearn-branch-merge-git/main/git-resources.zip [following]
+--2023-11-05 05:04:28--  https://raw.githubusercontent.com/MicrosoftDocs/mslearn-branch-merge-git/main/git-resources.zip
+Resolving raw.githubusercontent.com... 185.199.108.133, 185.199.109.133, 185.199.111.133, ...
+Connecting to raw.githubusercontent.com|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 73597 (72K) [application/zip]
+Saving to: ‘git-resources.zip’
+
+git-resources.zip    100%[====================>]  71.87K  --.-KB/s    in 0.001s  
+
+2023-11-05 05:04:28 (56.8 MB/s) - ‘git-resources.zip’ saved [73597/73597]
+
+user_julnarot [ ~/Bob ]$ unzip git-resources.zip
+Archive:  git-resources.zip
+  inflating: bobcat2-317x240.jpg     
+  inflating: bombay-cat-180x240.jpg  
+user_julnarot [ ~/Bob ]$ mv bobcat2-317x240.jpg Assets/bobcat2-317x240.jpg
+user_julnarot [ ~/Bob ]$ rm git-resources.zip
+user_julnarot [ ~/Bob ]$ rm bombay-cat-180x240.jpg
+user_julnarot [ ~/Bob ]$ vim index.html 
+user_julnarot [ ~/Bob ]$ git status
+On branch add-cat
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Assets/bobcat2-317x240.jpg
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user_julnarot [ ~/Bob ]$ git add .
+user_julnarot [ ~/Bob ]$ git commit -a -m "Add picture of Bob's cat"
+[add-cat b5a1af2] Add picture of Bob's cat
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 Assets/bobcat2-317x240.jpg
+user_julnarot [ ~/Bob ]$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+user_julnarot [ ~/Bob ]$ git pull
+Already up to date.
+user_julnarot [ ~/Bob ]$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+user_julnarot [ ~/Bob ]$ git pull
+Already up to date.
+user_julnarot [ ~/Bob ]$ git merge add-cat --no-edit
+Updating 8d7bfc9..b5a1af2
+Fast-forward
+ Assets/bobcat2-317x240.jpg | Bin 0 -> 31501 bytes
+ index.html                 |   2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 Assets/bobcat2-317x240.jpg
+user_julnarot [ ~/Bob ]$ git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 3 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 31.07 KiB | 15.53 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+To /home/user_julnarot/Bob/../Shared.git
+   8d7bfc9..b5a1af2  main -> main
+user_julnarot [ ~/Bob ]$ ls
+Assets  index.html
+user_julnarot [ ~/Bob ]$ cd ../Alice/
+user_julnarot [ ~/Alice ]$ git pull
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 31.05 KiB | 15.52 MiB/s, done.
+From /home/user_julnarot/Alice/../Shared
+   8d7bfc9..b5a1af2  main       -> origin/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+user_julnarot [ ~/Alice ]$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+user_julnarot [ ~/Alice ]$ git pull --force
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+user_julnarot [ ~/Alice ]$ git branch
+  add-style
+* main
+user_julnarot [ ~/Alice ]$ git checkout -b add-cat
+Switched to a new branch 'add-cat'
+user_julnarot [ ~/Alice ]$ cd ../Bob/
+user_julnarot [ ~/Bob ]$ git^C
+user_julnarot [ ~/Bob ]$ git checkout -b style-cat
+Switched to a new branch 'style-cat'
+user_julnarot [ ~/Bob ]$ cd ../Alice/
+user_julnarot [ ~/Alice ]$ wget https://github.com/MicrosoftDocs/mslearn-branch-merge-git/raw/main/git-resources.zip
+unzip git-resources.zip
+--2023-11-05 05:12:22--  https://github.com/MicrosoftDocs/mslearn-branch-merge-git/raw/main/git-resources.zip
+Resolving github.com... 192.30.255.112
+Connecting to github.com|192.30.255.112|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://raw.githubusercontent.com/MicrosoftDocs/mslearn-branch-merge-git/main/git-resources.zip [following]
+--2023-11-05 05:12:22--  https://raw.githubusercontent.com/MicrosoftDocs/mslearn-branch-merge-git/main/git-resources.zip
+Resolving raw.githubusercontent.com... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+Connecting to raw.githubusercontent.com|185.199.108.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 73597 (72K) [application/zip]
+Saving to: ‘git-resources.zip’
+
+git-resources.zip    100%[====================>]  71.87K  --.-KB/s    in 0.002s  
+
+2023-11-05 05:12:22 (40.3 MB/s) - ‘git-resources.zip’ saved [73597/73597]
+
+Archive:  git-resources.zip
+  inflating: bobcat2-317x240.jpg     
+  inflating: bombay-cat-180x240.jpg  
+user_julnarot [ ~/Alice ]$ mv bombay-cat-180x240.jpg Assets/bombay-cat-180x240.jpg
+rm git-resources.zip
+rm bobcat2-317x240.jpg
+user_julnarot [ ~/Alice ]$ vim index.html 
+user_julnarot [ ~/Alice ]$ git add Assets
+git commit -a -m "Add picture of Alice's cat"
+git checkout main
+git pull
+git merge --ff-only add-cat
+git push
+[add-cat 43a273c] Add picture of Alice's cat
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 Assets/bombay-cat-180x240.jpg
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+Updating ad4dd49..43a273c
+Fast-forward
+ Assets/bombay-cat-180x240.jpg | Bin 0 -> 45424 bytes
+ index.html                    |   2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 Assets/bombay-cat-180x240.jpg
+To /home/user_julnarot/Alice/../Shared.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to '/home/user_julnarot/Alice/../Shared.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+user_julnarot [ ~/Alice ]$ git pull
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+user_julnarot [ ~/Alice ]$ git pull --ff-only
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git config --global pull.ff only
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git config pull.ff only
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git config pull.rebase fals
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Invalid value for pull.rebase: fals
+user_julnarot [ ~/Alice ]$ git config pull.rebase false
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git config pull.rebase true
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git config pull.ff only
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git pull origin main --rebase
+From /home/user_julnarot/Alice/../Shared
+ * branch            main       -> FETCH_HEAD
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+error: could not apply 43a273c... Add picture of Alice's cat
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 43a273c... Add picture of Alice's cat
+user_julnarot [ ~/Alice ]$ 
+user_julnarot [ ~/Alice ]$ git status
+interactive rebase in progress; onto b5a1af2
+Last commands done (2 commands done):
+   pick ad4dd49 Add style for cat pictures
+   pick 43a273c Add picture of Alice's cat
+No commands remaining.
+You are currently rebasing branch 'main' on 'b5a1af2'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Assets/bombay-cat-180x240.jpg
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+user_julnarot [ ~/Alice ]$ vim index.html 
+user_julnarot [ ~/Alice ]$ git add Assets
+git commit -a -m "Add picture of Alice's cat"
+git checkout main
+git pull
+git merge --ff-only add-cat
+git push
+[detached HEAD acbe8a7] Add picture of Alice's cat
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 Assets/bombay-cat-180x240.jpg
+Warning: you are leaving 2 commits behind, not connected to
+any of your branches:
+
+  acbe8a7 Add picture of Alice's cat
+  d923baf Add style for cat pictures
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> acbe8a7
+
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+fatal: Not possible to fast-forward, aborting.
+Already up to date.
+To /home/user_julnarot/Alice/../Shared.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to '/home/user_julnarot/Alice/../Shared.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git merge --ff-only add-cat^C
+user_julnarot [ ~/Alice ]$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Last commands done (2 commands done):
+   pick ad4dd49 Add style for cat pictures
+   pick 43a273c Add picture of Alice's cat
+No commands remaining.
+You are currently editing a commit while rebasing branch 'main' on 'b5a1af2'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working tree clean
+user_julnarot [ ~/Alice ]$ git rebase --continue
+Successfully rebased and updated refs/heads/main.
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git push
+To /home/user_julnarot/Alice/../Shared.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to '/home/user_julnarot/Alice/../Shared.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+user_julnarot [ ~/Alice ]$ git branch
+  add-cat
+  add-style
+* main
+user_julnarot [ ~/Alice ]$ git push
+To /home/user_julnarot/Alice/../Shared.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to '/home/user_julnarot/Alice/../Shared.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git rebase --continue
+fatal: No rebase in progress?
+user_julnarot [ ~/Alice ]$ gits tat^C
+user_julnarot [ ~/Alice ]$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git push
+To /home/user_julnarot/Alice/../Shared.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to '/home/user_julnarot/Alice/../Shared.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+user_julnarot [ ~/Alice ]$ git status --all
+error: unknown option `all'
+usage: git status [<options>] [--] <pathspec>...
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+    --no-renames          do not detect renames
+    -M, --find-renames[=<n>]
+                          detect renames, optionally set similarity index
+
+user_julnarot [ ~/Alice ]$ git pull origin main
+From /home/user_julnarot/Alice/../Shared
+ * branch            main       -> FETCH_HEAD
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git fetch
+user_julnarot [ ~/Alice ]$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+user_julnarot [ ~/Alice ]$ git log
+commit 43a273c79fda5451b0764baafdf16cbe806c742e (HEAD -> main, add-cat)
+Author: Alice <alice@contoso.com>
+Date:   Sun Nov 5 05:13:35 2023 +0000
+
+    Add picture of Alice's cat
+
+commit ad4dd49334b0ae529b1e4914f044214762c54c7f (add-style)
+Author: Alice <alice@contoso.com>
+Date:   Sun Nov 5 04:59:55 2023 +0000
+
+    Add style for cat pictures
+
+commit 8d7bfc99d01377a1bce9fb7b8f152a53b753f9f0
+Author: Bob <bob@contoso.com>
+Date:   Sun Nov 5 04:57:10 2023 +0000
+
+    Add siomple HTML and stylesheet
+
+commit 9e60ec42b02a824999eb128a11d99d8640f04719
+Author: Bob <bob@contoso.com>
+Date:   Sun Nov 5 04:55:36 2023 +0000
+
+    Create empty index.html and site.css files
+user_julnarot [ ~/Alice ]$ git checkout main
+Already on 'main'
+Your branch and 'origin/main' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+user_julnarot [ ~/Alice ]$ git pull
+fatal: Not possible to fast-forward, aborting.
+user_julnarot [ ~/Alice ]$ git pull --rebase origin main
+From /home/user_julnarot/Alice/../Shared
+ * branch            main       -> FETCH_HEAD
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+error: could not apply 43a273c... Add picture of Alice's cat
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 43a273c... Add picture of Alice's cat
+user_julnarot [ ~/Alice ]$ vim index.html 
+user_julnarot [ ~/Alice ]$ git add index.html 
+user_julnarot [ ~/Alice ]$ git rebase --continue
+[detached HEAD 516a7a0] Add picture of Alice's cat
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 Assets/bombay-cat-180x240.jpg
+Successfully rebased and updated refs/heads/main.
+user_julnarot [ ~/Alice ]$ git rebase --skip
+fatal: No rebase in progress?
+user_julnarot [ ~/Alice ]$ git push -f origin main
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 3 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 41.80 KiB | 10.45 MiB/s, done.
+Total 9 (delta 3), reused 0 (delta 0), pack-reused 0
+To /home/user_julnarot/Alice/../Shared.git
+   b5a1af2..516a7a0  main -> main
+user_julnarot [ ~/Alice ]$ cd ../Bob/
+user_julnarot [ ~/Bob ]$ vim index.html 
+user_julnarot [ ~/Bob ]$ git commit -a -m "Style Bob's cat"
+git checkout main
+git pull
+git merge style-cat
+[style-cat 0a85645] Style Bob's cat
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 9 (delta 3), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (9/9), 41.78 KiB | 10.45 MiB/s, done.
+From /home/user_julnarot/Bob/../Shared
+   b5a1af2..516a7a0  main       -> origin/main
+Updating b5a1af2..516a7a0
+Fast-forward
+ Assets/bombay-cat-180x240.jpg | Bin 0 -> 45424 bytes
+ Assets/site.css               |   1 +
+ index.html                    |   2 +-
+ 3 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 Assets/bombay-cat-180x240.jpg
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+user_julnarot [ ~/Bob ]$ vim index.html 
+user_julnarot [ ~/Bob ]$ code index.html 
+user_julnarot [ ~/Bob ]$ vim index.html 
+user_julnarot [ ~/Bob ]$ git add index.html
+git commit -a -m "Style Bob's cat"
+[main 77904ff] Style Bob's cat
+user_julnarot [ ~/Bob ]$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 3 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 625 bytes | 625.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+To /home/user_julnarot/Bob/../Shared.git
+   516a7a0..77904ff  main -> main
+user_julnarot [ ~/Bob ]$ cd ../Alice
+git pull
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 605 bytes | 302.00 KiB/s, done.
+From /home/user_julnarot/Alice/../Shared
+   516a7a0..77904ff  main       -> origin/main
+Updating 516a7a0..77904ff
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+user_julnarot [ ~/Alice ]$
 
 ## revert commit
 ```bash 
