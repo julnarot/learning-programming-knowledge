@@ -493,6 +493,161 @@ Cloning into 'Cats'...
 done.
 user_julnarot [ ~/Alice ]
 
+## creating merge request at local remote julnarot -> aliice repository
+
+Requesting a Cloud Shell.Succeeded. 
+Connecting terminal...
+
+Welcome to Azure Cloud Shell
+
+Type "az" to use Azure CLI
+Type "help" to learn about Cloud Shell
+
+user_julnarot [ ~ ]$ mkdir Cats
+user_julnarot [ ~ ]$ cd $
+bash: cd: $: No such file or directory
+user_julnarot [ ~ ]$ cd Cats/
+user_julnarot [ ~/Cats ]$ git init --inital-branch=main
+error: unknown option `inital-branch=main'
+usage: git init [-q | --quiet] [--bare] [--template=<template-directory>] [--shared[=<permissions>]] [<directory>]
+
+    --template <template-directory>
+                          directory from which templates will be used
+    --bare                create a bare repository
+    --shared[=<permissions>]
+                          specify that the git repository is to be shared amongst several users
+    -q, --quiet           be quiet
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -b, --initial-branch <name>
+                          override the name of the initial branch
+    --object-format <hash>
+                          specify the hash algorithm to use
+
+user_julnarot [ ~/Cats ]$ git init --initial-branch=main
+Initialized empty Git repository in /home/user_julnarot/Cats/.git/
+user_julnarot [ ~/Cats ]$ git init -b main
+warning: re-init: ignored --initial-branch=main
+Reinitialized existing Git repository in /home/user_julnarot/Cats/.git/
+user_julnarot [ ~/Cats ]$ git config user.email "rauljhonatan.tola@gmail.com"
+user_julnarot [ ~/Cats ]$ git config user.user "@Julnarot"
+user_julnarot [ ~/Cats ]$ touch index.html
+user_julnarot [ ~/Cats ]$ mkdir CSS
+user_julnarot [ ~/Cats ]$ touch CSS/site.css
+user_julnarot [ ~/Cats ]$ git add .
+user_julnarot [ ~/Cats ]$ git commit -m "Create empty index.html, site.css files"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <rauljhonatan.tola@gmail.com>) not allowed
+user_julnarot [ ~/Cats ]$ touch CSS/site.css^C
+user_julnarot [ ~/Cats ]$ git config --global user.email "rauljhonatan.tola@gmail.com"
+user_julnarot [ ~/Cats ]$ git config --global user.ser "@Julnarot"
+user_julnarot [ ~/Cats ]$ git config --global user.name "@Julnarot"
+user_julnarot [ ~/Cats ]$ git config --global user.email "rauljhonatan.tola@gmail.com"
+user_julnarot [ ~/Cats ]$ vim index.html 
+user_julnarot [ ~/Cats ]$ vim CSS/site.css 
+user_julnarot [ ~/Cats ]$ git add .
+user_julnarot [ ~/Cats ]$ git commit -m "Add simple HTML and stylesheet"
+[main (root-commit) f1d1b66] Add simple HTML and stylesheet
+ 2 files changed, 15 insertions(+)
+ create mode 100644 CSS/site.css
+ create mode 100644 index.html
+user_julnarot [ ~/Cats ]$ git log --oneline
+f1d1b66 (HEAD -> main) Add simple HTML and stylesheet
+user_julnarot [ ~/Cats ]$ cd
+user_julnarot [ ~ ]$ mkdir Alice
+user_julnarot [ ~ ]$ cd Alice
+user_julnarot [ ~/Alice ]$ git clone ../Cats/
+Cloning into 'Cats'...
+done.
+user_julnarot [ ~/Alice ]$ pwd
+/home/user_julnarot/Alice
+user_julnarot [ ~/Alice ]$ git pulkl
+git: 'pulkl' is not a git command. See 'git --help'.
+
+The most similar command is
+        pull
+user_julnarot [ ~/Alice ]$ git pull
+fatal: not a git repository (or any parent up to mount point /home)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+user_julnarot [ ~/Alice ]$ ls
+Cats
+user_julnarot [ ~/Alice ]$ cd Cats/
+user_julnarot [ ~/Alice/Cats ]$ git pull
+Already up to date.
+user_julnarot [ ~/Alice/Cats ]$ git config user.name "Alice"
+user_julnarot [ ~/Alice/Cats ]$ git config user.email "alice@contoso.co"
+user_julnarot [ ~/Alice/Cats ]$ vim CSS/site.css 
+user_julnarot [ ~/Alice/Cats ]$ git commit -m "Change background color to light blue"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   CSS/site.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user_julnarot [ ~/Alice/Cats ]$ git commit -a -m "Change background color to light blue"
+[main 9fa0c70] Change background color to light blue
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+user_julnarot [ ~/Alice/Cats ]$ git request-pull -p origin/main .
+warn: refs/heads/main found at . but points to a different object
+warn: Are you sure you pushed 'HEAD' there?
+The following changes since commit f1d1b663d4cce1feedb5ce83b522391f203706f1:
+
+  Add simple HTML and stylesheet (2023-11-05 04:06:41 +0000)
+
+are available in the Git repository at:
+
+  . 
+
+for you to fetch changes up to 9fa0c7023d9b387a42bec0cf55301d6cec8aece4:
+
+  Change background color to light blue (2023-11-05 04:12:00 +0000)
+
+----------------------------------------------------------------
+Alice (1):
+      Change background color to light blue
+
+ CSS/site.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CSS/site.css b/CSS/site.css
+index 33323b5..20f4f19 100644
+--- a/CSS/site.css
++++ b/CSS/site.css
+@@ -1,2 +1,2 @@
+ h1, h2, h3, h4, h5, h6 { font-family: sans-serif; }
+-body { font-family: serif; }
++body { font-family: serif; background-color: #F0FFF8;}
+user_julnarot [ ~/Alice/Cats ]$ cd
+user_julnarot [ ~ ]$ cd Cats/
+user_julnarot [ ~/Cats ]$ git remote add remote-alice ../Alice/Cats/
+user_julnarot [ ~/Cats ]$ git pull remote-alice main
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), 365 bytes | 365.00 KiB/s, done.
+From ../Alice/Cats
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> remote-alice/main
+Updating f1d1b66..9fa0c70
+Fast-forward
+ CSS/site.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 
 
 
