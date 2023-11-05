@@ -948,7 +948,102 @@ user_julnarot [ ~ ]$ zip -r Cats.zip Cats/
   adding: Cats/CSS/site.css (deflated 30%)
 user_julnarot [ ~ ]$ download Cats.zip 
 
+## Creating branch like alice
 
+Requesting a Cloud Shell.Succeeded. 
+Connecting terminal...
+
+Welcome to Azure Cloud Shell
+
+Type "az" to use Azure CLI
+Type "help" to learn about Cloud Shell
+
+user_julnarot [ ~ ]$ mkdir Shared.git
+user_julnarot [ ~ ]$ cd Shared.git/
+user_julnarot [ ~/Shared.git ]$ git init --bare
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/user_julnarot/Shared.git/
+user_julnarot [ ~/Shared.git ]$ git symbolic-ref HEAD refs/heads/main
+user_julnarot [ ~/Shared.git ]$ cd
+user_julnarot [ ~ ]$ mkdir Bob
+user_julnarot [ ~ ]$ cd Bob/
+user_julnarot [ ~/Bob ]$ git clone ../Shared.git .
+Cloning into '.'...
+warning: You appear to have cloned an empty repository.
+done.
+user_julnarot [ ~/Bob ]$ git config user.name Bob
+user_julnarot [ ~/Bob ]$ git config user.email bob@contoso.com
+user_julnarot [ ~/Bob ]$ git symbolic-ref HEAD refs/heads/main
+user_julnarot [ ~/Bob ]$ touch index.html
+user_julnarot [ ~/Bob ]$ mkdir Assets
+user_julnarot [ ~/Bob ]$ touch Assets/site.css
+user_julnarot [ ~/Bob ]$ git add .
+user_julnarot [ ~/Bob ]$ git commit -m "Create empty index.html and site.css files"
+[main (root-commit) 9e60ec4] Create empty index.html and site.css files
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Assets/site.css
+ create mode 100644 index.html
+user_julnarot [ ~/Bob ]$ vim index.html 
+user_julnarot [ ~/Bob ]$ cd Assets/
+user_julnarot [ ~/Bob/Assets ]$ vim site.css 
+user_julnarot [ ~/Bob/Assets ]$ cd ..
+user_julnarot [ ~/Bob ]$ git add .
+user_julnarot [ ~/Bob ]$ git commit -m "Add siomple HTML and stylesheet"
+[main 8d7bfc9] Add siomple HTML and stylesheet
+ 2 files changed, 17 insertions(+)
+user_julnarot [ ~/Bob ]$ git push --set-upstream origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 3 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 956 bytes | 956.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+To /home/user_julnarot/Bob/../Shared.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+user_julnarot [ ~/Bob ]$ cd
+user_julnarot [ ~ ]$ mkdir Alice
+user_julnarot [ ~ ]$ cd Alice/
+user_julnarot [ ~/Alice ]$ ^[[200~git clone ../Shared.git .~^C
+user_julnarot [ ~/Alice ]$ git clone ../Shared.git .
+Cloning into '.'...
+done.
+user_julnarot [ ~/Alice ]$ git config user.name Alice
+user_julnarot [ ~/Alice ]$ git config user.email alice@contoso.com
+user_julnarot [ ~/Alice ]$ ls
+Assets  index.html
+user_julnarot [ ~/Alice ]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+user_julnarot [ ~/Alice ]$ git branch add-style
+user_julnarot [ ~/Alice ]$ git checkout add-style
+Switched to branch 'add-style'
+user_julnarot [ ~/Alice ]$ vim Assets/site.css 
+user_julnarot [ ~/Alice ]$ git commit -a -m "Add style for cat pictures"
+[add-style ad4dd49] Add style for cat pictures
+ 1 file changed, 1 insertion(+)
+user_julnarot [ ~/Alice ]$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+user_julnarot [ ~/Alice ]$ git pull
+Already up to date.
+user_julnarot [ ~/Alice ]$ git merge --ff-only add-style
+Updating 8d7bfc9..ad4dd49
+Fast-forward
+ Assets/site.css | 1 +
+ 1 file changed, 1 insertion(+)
+user_julnarot [ ~/Alice ]$
 
 
 
