@@ -33,6 +33,134 @@ adding `<h1>Our Feline Friends</h1>` to index.html and save
 [main dfcba42] Add a heading to index.html
  1 file changed, 1 insertion(+)
 
+change and save index.html content by
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Our Feline Friends</title>
+  </head>
+  <body>
+    <h1>Our Feline Friends</h1>
+    <p>Eventually we will put cat pictures here.</p>
+    <hr>
+  </body>
+</html>
+```
+
+❯ git diff
+diff --git a/index.html b/index.html
+index f758a7e..9946d07 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,12 @@
+-<h1>Out feline Friends</h1>
++<!DOCTYPE html>
++<html>
++  <head>
++    <meta charset='UTF-8'>
++    <title>Our Feline Friends</title>
++  </head>
++  <body>
++    <h1>Our Feline Friends</h1>
++    <p>Eventually we will put cat pictures here.</p>
++    <hr>
++  </body>
++</html>
+❯ git commit -m "Add HTML boilerplate to index.html" index.html
+[main 7da2244] Add HTML boilerplate to index.html
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+❯ git diff
+
+and check dont return anithing
+
+❯ vim .gitignore
+~/m/Cats main ?1 ❯                                                  59s
+❯ git add -A
+❯ git diff
+❯ git commit -m "Make small wording change; ignore editor backups"
+[main f021b5c] Make small wording change; ignore editor backups
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+❯ git diff HEAD^
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..6dd1b30
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,2 @@
++*.bak
++*~
+
+
+❯ mkdir CSS
+❯ git status
+On branch main
+nothing to commit, working tree clean
+❯ touch CSS/.git-keep
+❯ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        CSS/
+
+nothing added to commit but untracked files present (use "git add" to track)
+❯ git add CSS
+❯ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CSS/.git-keep
+
+❯ rm CSS/.git-keep
+❯ cd CSS
+❯ vim site.css
+❯ cd ..
+❯ vim index.html
+❯ git add .
+❯ git commit -m "Add a simple stylesheet"
+[main 3e8408c] Add a simple stylesheet
+ 2 files changed, 3 insertions(+)
+ create mode 100644 CSS/site.css
+❯ git log
+commit 3e8408cf17eb2a559bbafd79a5553f98218e8479 (HEAD -> main)
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:36:02 2023 -0500
+
+    Add a simple stylesheet
+
+commit f021b5c9c890ad3d0532b4245773eaa22a3c2a1a
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:28:56 2023 -0500
+
+    Make small wording change; ignore editor backups
+
+commit 7da2244bb35e712aa660118d6577c81af64c659d
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:25:38 2023 -0500
+
+    Add HTML boilerplate to index.html
+
+commit dfcba42e97e12ee53275d8dd78ce994e53597c9e
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:21:47 2023 -0500
+
+    Add a heading to index.html
+
+commit 2ac02b83ee4ca5bb5a2ab22cb3db35c34e54865e
+Author: @Julnarot <rauljhonatan.tola@gmail.com>
+Date:   Sat Nov 4 21:20:02 2023 -0500
+
+    Create an empty index.html file
+❯ git log --inline
+fatal: unrecognized argument: --inline
+❯ git log --oneline
+3e8408c (HEAD -> main) Add a simple stylesheet
+f021b5c Make small wording change; ignore editor backups
+7da2244 Add HTML boilerplate to index.html
+dfcba42 Add a heading to index.html
+2ac02b8 Create an empty index.html file
 
 
 
