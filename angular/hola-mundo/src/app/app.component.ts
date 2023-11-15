@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { PersonaComponent } from './persona/persona.component';
 
+const COMPONENTS = [PersonaComponent];
+const ANGULAR_MODULES = [CommonModule, RouterOutlet];
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,PersonaComponent],
+  imports: [...ANGULAR_MODULES, ...COMPONENTS],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'hola-mundo';
+  title = 'Person manager';
+  currentYear = new Date().getFullYear();
 }
