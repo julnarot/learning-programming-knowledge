@@ -61,10 +61,12 @@
       >
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+            <img
+              src="https://media.licdn.com/dms/image/D4E03AQEveo0wHQME5Q/profile-displayphoto-shrink_200_200/0/1665783579729?e=1705536000&v=beta&t=hpKBkA96uCJEFEkoxgDUVk6mKXWE0DWEplWN-WH_I-c"
+            />
           </q-avatar>
-          <div class="text-weight-bold">Razvan Stoenescu</div>
-          <div>@rstoenescu</div>
+          <div class="text-weight-bold">Raul Jonatan</div>
+          <div>@Julnarot</div>
         </div>
       </q-img>
     </q-drawer>
