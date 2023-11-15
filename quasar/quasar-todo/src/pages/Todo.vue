@@ -50,7 +50,16 @@ export default defineComponent({
   },
   methods: {
     onDelete(index: number) {
-      this.tasks.splice(index, 1);
+      this.$q
+        .dialog({
+          title: "Delete",
+          message: "Are you sure you want to delete this task?",
+          cancel: true,
+          persistent: true,
+        })
+        .onOk(() => {
+          this.tasks.splice(index, 1);
+        });
     },
   },
 });
