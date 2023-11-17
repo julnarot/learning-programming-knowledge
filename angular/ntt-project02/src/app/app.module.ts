@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { PersonComponent } from './person/person.component';
 import { FormsModule } from '@angular/forms';
 import { ToastService } from './services/toast.service';
+import { PersonService } from './services/person.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { ToastService } from './services/toast.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [ToastService],
+  providers: [ToastService, PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
