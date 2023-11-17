@@ -3,7 +3,7 @@
 </h3>
 <div class="input-section">
   <label for="names">Names</label>
-  <input type="text" (change)="nameChanged($event)" [ngModel]="names" />
+  <input type="text" [(ngModel)]="names" (keyup.enter)="onAddPerson()" />
 </div>
 <button (click)="onAddPerson()">addPerson</button>
 <h5>List person</h5>
