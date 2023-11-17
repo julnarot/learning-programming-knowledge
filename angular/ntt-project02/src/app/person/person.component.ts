@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./person.component.css'],
 })
 export class PersonComponent {
+  user: string;
   names: string;
-  lastNames: string;
+  surnames: string;
   dni: number;
   constructor() {
+    this.user = '@Julnarot';
     this.names = 'Raul Jonatan';
-    this.lastNames = 'Tola Choque';
+    this.surnames = 'Tola Choque';
     this.dni = 3433445;
   }
 }
