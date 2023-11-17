@@ -1,5 +1,10 @@
 <h3>
   {{ title }}
 </h3>
-<button [disabled]="enabled">Create</button>
+
+<div>
+  <label for="name">{{names}}</label>
+  <input type="text" (change)="nameChanged($event)">
+</div>
+<button (click)="onList()">List</button>
 <app-person></app-person>
