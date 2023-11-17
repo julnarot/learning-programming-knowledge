@@ -1,10 +1,11 @@
 <h3>
   {{ title }}
 </h3>
-
-<div>
-  <label for="name">{{names}}</label>
-  <input type="text" (change)="nameChanged($event)">
+<div class="input-section">
+  <label for="names">Names</label>
+  <input type="text" (change)="nameChanged($event)" [ngModel]="names" />
 </div>
-<button (click)="onList()">List</button>
-<app-person></app-person>
+<button (click)="onAddPerson()">addPerson</button>
+<h5>List person</h5>
+
+<app-person *ngFor="let person of personList" [person]="person"></app-person>

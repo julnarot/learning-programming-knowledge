@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PersonModel } from '../model/person-model';
 
 @Component({
   selector: 'app-person',
@@ -10,6 +11,7 @@ export class PersonComponent {
   names: string;
   surnames: string;
   dni: number;
+  @Input() person?:PersonModel;
   constructor() {
     this.user = '@Julnarot';
     this.names = 'Raul Jonatan';

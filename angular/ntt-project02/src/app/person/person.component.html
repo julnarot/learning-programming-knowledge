@@ -4,11 +4,11 @@
       user
     }}
   </head>
-  <p>Names: {{ names }}</p>
-  <p>Surnames: {{ surnames }}</p>
-  <p>Dni: {{ dni }}</p>
+  <p>Names: {{ person?.names }}</p>
+  <p>Surnames: {{ person?.surnames }}</p>
+  <p>Dni: {{ person?.dni }}</p>
 
   <footer>
-    <a href="http://">@julnarot</a>
+    <a href="http://" *ngFor="let link of person?.links">{{ link }}</a>
   </footer>
 </div>
