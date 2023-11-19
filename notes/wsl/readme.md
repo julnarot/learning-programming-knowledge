@@ -8,3 +8,4 @@ So, for example, you can start ssh with sudo service ssh start, and it will run 
 Even some non-default packages such as MySql/MariaDB will install both the Systemd unit files and the old init.d scripts, so you can still use the service command for them as well.
 
 To autostart services (a la systemctl enable) at startup, see this answer on Super User for how to do this with /etc/wsl.conf.
+[link](https://askubuntu.com/questions/1379425/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate)
