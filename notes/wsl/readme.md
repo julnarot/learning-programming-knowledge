@@ -9,3 +9,6 @@ Even some non-default packages such as MySql/MariaDB will install both the Syste
 
 To autostart services (a la systemctl enable) at startup, see this answer on Super User for how to do this with /etc/wsl.conf.
 [link](https://askubuntu.com/questions/1379425/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate)
+* https://stackoverflow.com/questions/55154393/there-is-any-podman-compose
+* https://learnubuntu.com/install-podman/
+* https://github.com/containers/podman/blob/main/rootless.md
