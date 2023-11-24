@@ -1,1 +1,25 @@
-<p>person-list works!</p>
+<div class="row">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let person of personList; let i = index">
+        <th scope="row">{{ person?.names }}</th>
+        <td>{{ person?.surNames }}</td>
+        <td>{{ person?.dni }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deletePerson(i)">
+            Delete
+          </button>
+          <button class="btn btn-warning" (click)="editPerson(i)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
