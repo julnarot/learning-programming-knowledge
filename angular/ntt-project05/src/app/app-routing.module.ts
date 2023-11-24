@@ -31,7 +31,7 @@ const routes: Routes = [
         component: PersonAddComponent,
       },
       {
-        path: ':id',
+        path: ':idx',
         component: PersonEditComponent,
       },
     ],

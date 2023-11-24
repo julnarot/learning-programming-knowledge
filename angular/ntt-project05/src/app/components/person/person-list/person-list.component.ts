@@ -13,4 +13,9 @@ export class PersonListComponent {
   constructor(private personService: PersonService) {
     this.persons = this.personService.getAll();
   }
+
+  onDelete(_t5: number) {
+    this.personService.deleteByIndex(_t5);
+    this.persons = this.personService.getAll();
+  }
 }

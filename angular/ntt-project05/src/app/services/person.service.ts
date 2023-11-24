@@ -11,8 +11,21 @@ export class PersonService {
   getAll(): PersonEntity[] {
     return [...this._persons];
   }
+
   add(person: PersonEntity): void {
-    person.id = this._persons.length + 1;
     this._persons.push(person);
+  }
+
+  update(indexPersonSelected: number, newPerson: PersonEntity) {
+    if (newPerson.isValid()) {
+      this._persons[indexPersonSelected] = newPerson;
+    }
+  }
+
+  getByIndex(index: number): PersonEntity  {
+    return Object.assign({}, this._persons[index]);
+  }
+  deleteByIndex(index: number): void {
+    this._persons.splice(index, 1);
   }
 }
