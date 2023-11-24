@@ -20,11 +20,12 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-  },
-  {
-    path: 'persons',
-    component: PersonListComponent,
     children: [
+      {
+        path: '',
+        component: PersonListComponent,
+
+      },
       {
         path: 'add',
         component: PersonAddComponent,
@@ -35,6 +36,7 @@ const routes: Routes = [
       },
     ],
   },
+
 
   {
     path: '**',
