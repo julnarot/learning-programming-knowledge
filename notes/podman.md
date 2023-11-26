@@ -57,3 +57,10 @@ sudo podman run -d -p 80:80 hello-world
 
 go to [localhost](http://localhost)
 
+## Run moutaning src folder application
+before execute next command update src/index.php content file and check if application was updated
+```bash
+sudo podman run -p 80:80 -v ./src:/var/www/html hello-world 
+```
+
+
