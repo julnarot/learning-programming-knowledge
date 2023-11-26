@@ -63,4 +63,9 @@ before execute next command update src/index.php content file and check if appli
 sudo podman run -p 80:80 -v ./src:/var/www/html hello-world 
 ```
 
+## checking logs
 
+first you need get id from container running with `sudo podman ps` and copy ID of initial part of identificator
+```bash
+sudo podman logs -f 454af
+```
