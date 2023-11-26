@@ -1,0 +1,18 @@
+<header>
+  <h1>Login</h1>
+</header>
+<section>
+  <form>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" formControlName="username" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" />
+    </div>
+  </form>
+</section>
+<footer>
+  <button type="button" (click)="onLogin()">Login</button>
+</footer>

@@ -1,0 +1,14 @@
+<div>
+  <head>
+    {{
+      user
+    }}
+  </head>
+  <p>Names: {{ person?.names }}</p>
+  <p>Surnames: {{ person?.surnames }}</p>
+  <p>Dni: {{ person?.dni }}</p>
+
+  <footer>
+    <a href="http://" *ngFor="let link of person?.links">{{ link }}</a>
+  </footer>
+</div>
