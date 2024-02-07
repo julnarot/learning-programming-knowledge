@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: aquamarine;
+        position: relative;
+        width: 400px;
+        height: 100px;
+      }
+      div span {
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: solid;
+        border-radius: 6px;
+        background-color: red;
+        z-index: 1;
+      }
+      div i {
+        position: absolute;
+        right: 32px;
+        top: 0;
+        border: solid;
+        border-radius: 6px;
+        background-color: rgb(255, 238, 0);
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>
+        first message!!
+      </span>
+      <i>
+        second message!!
+      </i>
+    </div>
+  </body>
+</html>
