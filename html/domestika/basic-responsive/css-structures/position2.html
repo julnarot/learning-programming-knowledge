@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: solid;
+        width: 200px;
+      }
+      div.static {
+        position: static;
+      }
+      div.relative {
+        position: relative;
+        left: 30px;
+      }
+      div.fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+      div.absolute {
+        position: absolute;
+        bottom: 1px;
+        left: 1px;
+      }
+      div.sticky {
+        position: sticky;
+        top: 0;
+        background-color: aquamarine;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="static">this is a static position example</div>
+    <br />
+    <div class="relative">
+      this is a relative with 30 px from left position example
+    </div>
+    <br />
+    <div class="fixed">this is a fixed position example</div>
+    <br />
+    <div class="relative" style="width: 500px; height: 90px">
+      this is a relative with 30 px from left position example
+      <div class="absolute">this is a absoluite position example</div>
+    </div>
+    <br />
+    <section style="height: 200px; border: solid; overflow: auto">
+      <h3>title</h3>
+      <div class="sticky">this is a sticky on top position example</div>
+      <p>
+        some text for example some text for example some text for example some
+        text for example some text for example some text for example some text
+        for example some text for example some text for example some text for
+        example some text for example
+      </p>
+      <p>
+        some text for example some text for example some text for example some
+        text for example some text for example some text for example some text
+        for example some text for example some text for example some text for
+        example some text for example
+      </p>
+      <p>
+        some text for example some text for example some text for example some
+        text for example some text for example some text for example some text
+        for example some text for example some text for example some text for
+        example some text for example
+      </p>
+      <p>
+        some text for example some text for example some text for example some
+        text for example some text for example some text for example some text
+        for example some text for example some text for example some text for
+        example some text for example
+      </p>
+    </section>
+  </body>
+</html>
