@@ -8,6 +8,7 @@
   <style>
     :root {
       --color: aquamarine;
+      --fontsize: xx-large;
     }
 
     h1 {
@@ -16,6 +17,12 @@
     p {
       --color: red;
       color: var(--color);
+      font-size: var(--fontsize);
+    }
+    @media (min-width: 300px) {
+      :root {
+        --fontsize: small;
+      }
     }
   </style>
   <body>
