@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --color: red;
+      }
+      section {
+        display: flex;
+        justify-content: center;
+      }
+      article {
+        max-width: 20em;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+      }
+      img {
+        max-height: 20em;
+        object-fit: cover;
+        opacity: 0.7;
+        filter: grayscale(100%);
+      }
+      .content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .header h3 {
+        color: var(--color);
+      }
+      .footer {
+        background-color: var(--color);
+        color: white;
+        text-align: center;
+      }
+      .content p {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Jos%C3%A9_Carlos_Mari%C3%A1tegui_in_1929.jpg/543px-Jos%C3%A9_Carlos_Mari%C3%A1tegui_in_1929.jpg"
+          alt=""
+        />
+        <div class="content">
+          <div class="header">
+            <h3>Jose Carlos</h3>
+            <span>1870-1880</span>
+          </div>
+          <p>
+            José Carlos Mariátegui La Chira was a Peruvian writer, journalist,
+            politician and Marxist philosopher. A prolific author despite his
+            early death, El Amauta is considered one of the greatest scholars of
+            Latin America
+          </p>
+          <div class="footer">Novelista</div>
+        </div>
+      </article>
+      <article>
+        <img
+          src="https://encuentratupoema.pe/wp-content/uploads/2015/01/Jos%C3%A9-Mar%C3%ADa-Eguren-Archivo-Caretas.jpg"
+          alt=""
+        />
+        <div class="content">
+          <div class="header">
+            <h3>José-María-Eguren</h3>
+            <span>1870-1880</span>
+          </div>
+          <p>
+            Toda su vida se desarrolló entre la capital y algunas haciendas
+            aledañas. A partir de 1897 estableció su hogar en el balneario de
+            Barranco; entre 1931 y 1940 trabajó en la biblioteca del Ministerio
+            de Educación Pública. Eguren gustaba de caminar a campo traviesa,
+            observando los insectos y las aves, trazando apuntes para sus óleos
+            y acuarelas, o echando mano a una cámara de su invención que tomaba
+            fotos ovaladas de tamaño diminuto
+          </p>
+          <div class="footer">Dramaturgo</div>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
