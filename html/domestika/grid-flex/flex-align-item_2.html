@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-  
       section {
         display: flex;
         padding: 20px;
@@ -17,14 +16,22 @@
         border-radius: 5px;
         margin: 5px;
         padding: 20px;
+        text-align: center;
       }
 
       div:last-child {
         margin-left: auto;
       }
 
-     
-   
+      @media (max-width: 435px) {
+        section {
+          height: 90vh;
+          flex-direction: column;
+        }
+        div:last-child {
+          margin-top: auto;
+        }
+      }
     </style>
   </head>
   <body>
