@@ -7,9 +7,14 @@
     <style>
       section {
         display: grid;
-        grid-template: repeat(6, 1fr) /repeat(4, 1fr);
+        grid-template: repeat(5, 1fr) / repeat(4, 1fr);
         grid-gap: 4px;
-        grid-template-areas: "header header header header";
+        grid-template-areas:
+          'header header header header'
+          'content content content sidebar'
+          'content content content sidebar'
+          'content content content sidebar'
+          'footer footer footer footer';
       }
       div {
         display: flex;
@@ -17,15 +22,26 @@
         border: solid;
         background-color: antiquewhite;
       }
-      
+      div:nth-child(1) {
+        grid-area: header;
+      }
+      div:nth-child(2) {
+        grid-area: content;
+      }
+      div:nth-child(3) {
+        grid-area: sidebar;
+      }
+      div:nth-child(4) {
+        grid-area: footer;
+      }
     </style>
   </head>
   <body>
     <section>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
+      <div>header</div>
+      <div>content</div>
+      <div>sidebar</div>
+      <div>footer</div>
     </section>
   </body>
 </html>
