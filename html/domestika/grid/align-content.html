@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        margin-bottom: 40px;
+        border: solid;
+        padding: 1px;
+        display: grid;
+        height: 300px;
+        grid-template: repeat(2, 100px) / repeat(4, 100px);
+        grid-gap: 9px;
+        justify-content: space-evenly;
+        justify-items: center;
+      }
+      div {
+        background-color: antiquewhite;
+        border: solid;
+      }
+      .center {
+        align-content: center;
+      }
+      .start {
+        align-content: start;
+      }
+      .end {
+        align-content: end;
+      }
+      .space-between {
+        align-content: space-between;
+      }
+      .space-around {
+        align-content: space-around;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </section>
+    <section class="center">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </section>
+    <section class="start">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </section>
+    <section class="end">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </section>
+    <section class="space-between">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </section>
+    <section class="space-around">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </section>
+  </body>
+</html>
