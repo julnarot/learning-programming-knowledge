@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    section {
+        margin-bottom: 15px;
+    }
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-gap: 20px;
+    }
+    .section-flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .section-flex div {
+      flex-basis: calc(25% - 15px);
+    }
+    div {
+      background-color: antiquewhite;
+      border: solid;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <section class="section-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </section>
+    <section class="section-flex">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </section>
+  </body>
+</html>
