@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 2rem 3rem auto 3rem 2rem;
+        grid-template-rows: 100vh 1fr auto;
+      }
+      header {
+        grid-column: 1 / -1;
+      }
+      article {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 2rem 3rem auto 3rem 2rem;
+      }
+      article > * {
+        grid-column: 3/-3;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <article></article>
+    <footer></footer>
+  </body>
+</html>
