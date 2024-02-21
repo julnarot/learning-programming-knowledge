@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       body {
         display: grid;
         grid-template-columns: 2rem 3rem auto 3rem 2rem;
@@ -13,6 +18,12 @@
       }
       header {
         grid-column: 1 / -1;
+      }
+      header img {
+        /* /* grid-column: 1/-1; */
+        height: 100%;
+        object-fit: cover;
+        background-size: cover;
       }
       article {
         grid-column: 1 / -1;
@@ -30,11 +41,6 @@
       }
       article p:first-child {
         grid-column: 2 / -2;
-      }
-
-      img {
-        grid-column: 1/-1;
-        height: 100%;
       }
 
       article > img {
@@ -68,7 +74,7 @@
         del desenlace. Afuera, con unas temperaturas en torno a -40 ºC, una
         terrible ventisca que parece no tener fin les retiene inmovilizados. En
         el interior la situación no es mucho mejor, se encuentran completamente
-        extenuados después de casi 5 meses de expedición. En condiciones
+        extenuados después de   casi 5 meses de expedición. En condiciones
         normales se encontrarían a menos de dos jornadas de marcha para alcanzar
         el que habían denominado "Depósito de la Gran Tonelada", situado a menos
         de 20 km. Alcanzar este depósito, localizado a los 79º 29' S, es
@@ -107,10 +113,10 @@
         nieve y el hielo en la boca precisa unas calorías de las que ya carecen,
         y que, paradójicamente, incrementa la deshidratación.
       </p>
-        <img
-          src="https://detrujillo.com/wp-content/uploads/2020/10/santiago-de-chuco-celebra-creacion-politica.jpg"
-          alt="El Fram y los perros"
-        />
+      <img
+        src="https://detrujillo.com/wp-content/uploads/2020/10/santiago-de-chuco-celebra-creacion-politica.jpg"
+        alt="El Fram y los perros"
+      />
       <p>
         Scott no para de preguntarse qué ha funcionado mal. Como jefe de la
         expedición ha tenido que tomar duras decisiones. Era consciente de que
@@ -190,9 +196,10 @@
         fundamental, como hiciera Shackelton, fueron los caballos y sus propios
         hombres; lo que fue uno de sus primeros errores.
       </p>
-      <div class="imagen">
-        <img src="images/articulo2.jpg" alt="El Fram y los perros" />
-      </div>
+      <img
+        src="https://www.tunesaexpres.com/wp-content/uploads/2018/11/santiago-1.jpg"
+        alt="El Fram y los perros"
+      />
       <p>
         El mismo año tiene lugar la expedición de Amundsen. Si bien este
         explorador plantea inicialmente su expedición como dirigida al Polo
