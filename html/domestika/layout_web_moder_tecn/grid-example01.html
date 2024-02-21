@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      *{
+      * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -50,6 +50,11 @@
       footer {
         grid-column: 1/-1;
       }
+      @media (min-width: 70rem) {
+        body {
+          grid-template-columns: 1rm 5rem minmax(0, 50rem) 5rem 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -74,7 +79,7 @@
         del desenlace. Afuera, con unas temperaturas en torno a -40 ºC, una
         terrible ventisca que parece no tener fin les retiene inmovilizados. En
         el interior la situación no es mucho mejor, se encuentran completamente
-        extenuados después de   casi 5 meses de expedición. En condiciones
+        extenuados después de casi 5 meses de expedición. En condiciones
         normales se encontrarían a menos de dos jornadas de marcha para alcanzar
         el que habían denominado "Depósito de la Gran Tonelada", situado a menos
         de 20 km. Alcanzar este depósito, localizado a los 79º 29' S, es
