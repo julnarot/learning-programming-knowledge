@@ -100,6 +100,7 @@
       }
       .blueviolet-background-color {
         background-color: blueviolet;
+        color:white
       }
     </style>
   </head>
@@ -395,12 +396,11 @@
         var headerHeight = header.clientHeight;
         var [main] = document.querySelectorAll('main');
         function checkPosition() {
-          console.log('scroll', main)
           var positionY = main.getBoundingClientRect().bottom;
           if (positionY - headerHeight < 0) {
             header.classList.add('blueviolet-background-color');
           } else {
-            header.classList.add('blueviolet-background-color');
+            header.classList.remove('blueviolet-background-color');
           }
         }
 
