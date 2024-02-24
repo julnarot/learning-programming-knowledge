@@ -389,11 +389,13 @@
     </article>
     <footer></footer>
     <script>
-      function navitagtioScroll() {
-        var header = document.getElementsByClassName('header');
+      function navigationScroll() {
+        
+        var [header] = document.querySelectorAll('header');
         var headerHeight = header.clientHeight;
-        var main = document.getElementsByClassName('main');
+        var [main] = document.querySelectorAll('main');
         function checkPosition() {
+          console.log('scroll', main)
           var positionY = main.getBoundingClientRect().bottom;
           if (positionY - headerHeight < 0) {
             header.classList.add('blueviolet-background-color');
@@ -404,6 +406,7 @@
 
         window.addEventListener('scroll', checkPosition);
       }
+      navigationScroll();
     </script>
   </body>
 </html>
