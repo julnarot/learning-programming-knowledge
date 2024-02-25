@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      :root {
+        --opacidad-header: 0;
+        --imagen1: 0;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -52,10 +57,18 @@
       article p:first-child {
         grid-column: 2 / -2;
       }
-
-      article > img {
+      figure {
+        height: 300px;
+        overflow: hidden;
         grid-column: 1/-1;
+      }
+
+      figure > img {
+        display: block;
         width: 100%;
+        max-width: 100%;
+
+        transform: translateY(var(--imagen1));
       }
       footer {
         grid-column: 1/-1;
@@ -74,10 +87,6 @@
         body {
           grid-template-columns: 1rm 5rem minmax(0, 50rem) 5rem 1fr;
         }
-      }
-
-      :root {
-        --opacidad-header: 0;
       }
 
       header {
@@ -173,10 +182,12 @@
         nieve y el hielo en la boca precisa unas calorías de las que ya carecen,
         y que, paradójicamente, incrementa la deshidratación.
       </p>
-      <img
-        src="https://detrujillo.com/wp-content/uploads/2020/10/santiago-de-chuco-celebra-creacion-politica.jpg"
-        alt="El Fram y los perros"
-      />
+      <figure>
+        <img
+          src="https://detrujillo.com/wp-content/uploads/2020/10/santiago-de-chuco-celebra-creacion-politica.jpg"
+          alt="El Fram y los perros"
+        />
+      </figure>
       <p>
         Scott no para de preguntarse qué ha funcionado mal. Como jefe de la
         expedición ha tenido que tomar duras decisiones. Era consciente de que
@@ -406,6 +417,20 @@
       });
 
       header.start();
+
+      const figure = basicScroll.create({
+        elem: [...document.querySelectorAll('figure')].pop(),
+        from: 'top-top',
+        to: 'bottom-top',
+        props: {
+          '--imagen1': {
+            from: '0',
+            to: '-50%',
+          },
+        },
+      });
+
+      figure.start();
     </script>
   </body>
 </html>
