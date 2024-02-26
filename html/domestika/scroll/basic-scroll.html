@@ -7,7 +7,7 @@
     <style>
       :root {
         --opacidad-header: 0;
-        --imagen1: 0;
+        --figure-percentage: 0;
       }
 
       * {
@@ -68,7 +68,7 @@
         width: 100%;
         max-width: 100%;
 
-        transform: translateY(var(--imagen1));
+        transform: translateY(var(--figure-percentage));
       }
       footer {
         grid-column: 1/-1;
@@ -426,7 +426,7 @@
         from: 'top-top',
         to: 'bottom-top',
         props: {
-          '--imagen1': {
+          '--figure-percentage': {
             from: '0',
             to: '-50%',
           },
