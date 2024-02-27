@@ -113,6 +113,13 @@
       header ul > li:hover {
         background-color: aqua;
       }
+
+      @media (prefers-reduced-motion: reduce) {
+        :root {
+          --opacidad-header: 1 !important;
+          --figure-percentage: 30% !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -268,7 +275,6 @@
         hombres; lo que fue uno de sus primeros errores.
       </p>
       <figure>
-
         <img
           src="https://www.tunesaexpres.com/wp-content/uploads/2018/11/santiago-1.jpg"
           alt="El Fram y los perros"
