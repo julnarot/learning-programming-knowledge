@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: aquamarine;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    section {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      width: 70%;
+      grid-gap: 30px;
+    }
+    div {
+      height: 100px;
+      width: 100px;
+      padding: 40px;
+      border: solid;
+      border-radius: 8px;
+      /* margin: auto; */
+    }
+    h1 {
+      /* font-weight: 100; */
+      font-size: xx-large;
+    }
+    span {
+      text-align: center;
+    }
+    div:hover {
+      color: aliceblue;
+      border: solid aliceblue;
+    }
+
+    div:nth-child(2) {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    div:nth-child(3) {
+      font-family: Verdana, Geneva, Tahoma, sans-serif
+    }
+    div:nth-child(4) {
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+    div:nth-child(5) {
+      font-family: 'Courier New', Courier, monospace
+    }
+    div:nth-child(6) {
+      font-family: fantasy
+    }
+    div:nth-child(7) {
+      font-family:  monospace
+    }
+    div:nth-child(8) {
+      font-family: cursive
+    }
+  </style>
+  <body>
+    <section>
+      <div>
+        <h1>F f</h1>
+        <span>(Default)</span>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Lucida Sans</span>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Verdana</span>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Cambria</span>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Courier New</span>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>fantasy</span>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Monospace</span>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Cursive</span>
+      </div>
+    </section>
+  </body>
+</html>
