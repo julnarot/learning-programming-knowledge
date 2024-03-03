@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        position: relative;
+        margin: 0;
+      }
+
+      div {
+        height: 100vh;
+        width: 50%;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      h1 {
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: antiquewhite;
+        background-color: aqua;
+        opacity: 0.6;
+      }
+
+      @media (max-width: 37.5em) {
+        body {
+          flex-direction: column;
+        }
+        div {
+          width: 100%;
+          height: 50vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img
+        src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/5a0236b7-2858-46df-842d-0f6e04a8b016/width=1200/5a0236b7-2858-46df-842d-0f6e04a8b016.jpeg"
+        alt=""
+      />
+    </div>
+    <div>
+      <img
+        src="https://live.staticflickr.com/4857/46694468992_c14c3e2a77_b.jpg"
+        alt=""
+      />
+    </div>
+    <h1>Watter pokemons</h1>
+  </body>
+</html>

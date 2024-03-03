@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      article {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: solid;
+        padding: 30px;
+        max-width: 350px;
+      }
+      article > header {
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 2px gray;
+        letter-spacing: 2px;
+        word-spacing: 3px;
+      }
+
+      p {
+        text-align: justify;
+        text-indent: 25px;
+        line-height: 1.4;
+        text-shadow: 2px 2px 2px rgb(185, 181, 181);
+      }
+
+      span:nth-child(1) {
+        text-decoration: overline;
+      }
+
+      span:nth-child(2) {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      span:nth-child(3) {
+        text-decoration: line-through;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>Text formated</header>
+      <p>
+        <span>Lorem</span>
+        ipsum dolor sit <span>amet</span>, consectetur adipisicing elit.
+        Expedita deserunt possimus, aliquam ad in dignissimos officia eos sit
+        ullam asperiores voluptas ipsa pariatur facere adipisci vitae corrupti
+        <span>magnam illum dolorem</span>.
+      </p>
+    </article>
+  </body>
+</html>

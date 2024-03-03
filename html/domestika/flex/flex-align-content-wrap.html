@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: flex;
+        padding: 20px;
+        border: solid;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        /* align-content: center; */
+        height: 300px;
+      }
+      div {
+        background-color: bisque;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+      }
+      section.center {
+        align-content: center;
+      }
+      section.space-between {
+        align-content: space-between;
+      }
+      section.space-evenly {
+        align-content: space-evenly;
+      }
+      section.flex-end {
+        align-content: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>Mario Vargas Llosa</div>
+      <div>César Vallejo</div>
+      <div>Julio Ramón Ribeyro</div>
+      <div>Ricardo Palma</div>
+      <div>José Carlos Mariátegui</div>
+      <div>Abraham Valdelomar</div>
+      <div>José María Arguedas</div>
+      <div>Ciro Alegría</div>
+      <div>Oswaldo Reynoso</div>
+    </section>
+    <br />
+    <section class="center">
+      <div>Mario Vargas Llosa</div>
+      <div>César Vallejo</div>
+      <div>Julio Ramón Ribeyro</div>
+      <div>Ricardo Palma</div>
+      <div>José Carlos Mariátegui</div>
+      <div>Abraham Valdelomar</div>
+      <div>José María Arguedas</div>
+      <div>Ciro Alegría</div>
+      <div>Oswaldo Reynoso</div>
+    </section>
+    <br />
+    <section class="space-between">
+      <div>Mario Vargas Llosa</div>
+      <div>César Vallejo</div>
+      <div>Julio Ramón Ribeyro</div>
+      <div>Ricardo Palma</div>
+      <div>José Carlos Mariátegui</div>
+      <div>Abraham Valdelomar</div>
+      <div>José María Arguedas</div>
+      <div>Ciro Alegría</div>
+      <div>Oswaldo Reynoso</div>
+    </section>
+    <br />
+    <section class="space-evenly">
+      <div>Mario Vargas Llosa</div>
+      <div>César Vallejo</div>
+      <div>Julio Ramón Ribeyro</div>
+      <div>Ricardo Palma</div>
+      <div>José Carlos Mariátegui</div>
+      <div>Abraham Valdelomar</div>
+      <div>José María Arguedas</div>
+      <div>Ciro Alegría</div>
+      <div>Oswaldo Reynoso</div>
+    </section>
+    <br />
+    <section class="flex-end">
+      <div>Mario Vargas Llosa</div>
+      <div>César Vallejo</div>
+      <div>Julio Ramón Ribeyro</div>
+      <div>Ricardo Palma</div>
+      <div>José Carlos Mariátegui</div>
+      <div>Abraham Valdelomar</div>
+      <div>José María Arguedas</div>
+      <div>Ciro Alegría</div>
+      <div>Oswaldo Reynoso</div>
+    </section>
+  </body>
+</html>

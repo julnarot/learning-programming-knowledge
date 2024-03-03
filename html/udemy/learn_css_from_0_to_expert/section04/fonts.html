@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: aquamarine;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    section {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      width: 70%;
+      grid-gap: 30px;
+    }
+    div {
+      height: 100px;
+      width: 100px;
+      padding: 40px;
+      border: solid;
+      border-radius: 8px;
+    }
+    div:hover footer {
+      display: block;
+    }
+    h1 {
+      font-size: xx-large;
+      margin-top: 0.3em;
+    }
+    span {
+      text-align: center;
+    }
+    div:hover {
+      color: aliceblue;
+      border: solid aliceblue;
+    }
+    footer {
+      margin: 5px;
+      display: flex;
+      gap: 7px;
+      justify-content: center;
+      display: none;
+    }
+
+    div:nth-child(2) {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    div:nth-child(3) {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    div:nth-child(4) {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    div:nth-child(5) {
+      font-family: 'Courier New', Courier, monospace;
+    }
+    div:nth-child(6) {
+      font-family: fantasy;
+    }
+    div:nth-child(7) {
+      font-family: monospace;
+    }
+    div:nth-child(8) {
+      font-family: cursive;
+    }
+    .fs-oblique {
+      font-style: oblique;
+    }
+    .fs-italic {
+      font-style: italic;
+    }
+  </style>
+  <body>
+    <section>
+      <div>
+        <h1>F f</h1>
+        <span>(Default)</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Lucida Sans</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Verdana</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Cambria</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Courier New</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>fantasy</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Monospace</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Cursive</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+    </section>
+  </body>
+  <script>
+    FONT_STYLE_MAP = {
+      o: 'fs-oblique',
+      i: 'fs-italic',
+    };
+    function selectButton(fontStyle, actionButton) {
+      const [titleElement, subTitleElement] =
+        actionButton.parentElement.parentElement.children;
+      [titleElement, subTitleElement].forEach((element) => {
+        element.classList.toggle(FONT_STYLE_MAP[fontStyle]);
+      });
+    }
+  </script>
+</html>

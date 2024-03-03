@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: flex;
+        padding: 20px;
+        border: solid;
+      }
+      div {
+        background-color: bisque;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      div:first-child {
+        flex-shrink: 1; /*fast sizing*/
+      }
+      div:last-child {
+        flex-shrink: 0; /*no  sizing*/
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>Mario Vargas Llosa</div>
+      <div>César Vallejo</div>
+      <div>Ricardo Palma</div>
+      <div>Julio Ramón Ribeyro</div>
+    </section>
+  </body>
+</html>

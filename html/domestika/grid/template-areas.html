@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: grid;
+        grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+        grid-gap: 4px;
+        grid-template-areas:
+          'header header header header'
+          'content content content sidebar'
+          'content content content sidebar'
+          'content content content sidebar'
+          'footer footer footer footer';
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        border: solid;
+        background-color: antiquewhite;
+      }
+      div:nth-child(1) {
+        grid-area: header;
+      }
+      div:nth-child(2) {
+        grid-area: content;
+      }
+      div:nth-child(3) {
+        grid-area: sidebar;
+      }
+      div:nth-child(4) {
+        grid-area: footer;
+      }
+
+      @media (max-width: 300px) {
+        section {
+          grid-template: 4fr / 1fr;
+          grid-template-areas:
+            'header'
+            'content'
+            'sidebar'
+            'footer';
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>header</div>
+      <div>content</div>
+      <div>sidebar</div>
+      <div>footer</div>
+    </section>
+  </body>
+</html>

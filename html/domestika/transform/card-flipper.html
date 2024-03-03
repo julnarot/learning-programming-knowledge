@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: flex;
+        padding: 4em 2em;
+        justify-content: center;
+        perspective: 1000px;
+        gap: 50px;
+      }
+      article {
+        position: relative;
+        transition: transform 0.5s;
+        cursor: pointer;
+        width: 500px;
+        height: 500px;
+        transform-style: preserve-3d;
+      }
+      .flip {
+        transform: rotateY(180deg);
+      }
+
+      article > img {
+        object-fit: cover;
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        backface-visibility: hidden;
+      }
+      article > div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        border: solid;
+        border-radius: 4px;
+        padding: 20px;
+      }
+      article > div > footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <img
+          src="https://poets.org/sites/default/files/images/biographies/CesarVallejo_NewBioImage.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Cesar Vallejo</h3>
+          <p>
+            César Abraham Vallejo Mendoza was a Peruvian poet, writer,
+            playwright, and journalist. Although he published only two books of
+            poetry during his lifetime
+          </p>
+          <footer>Poet</footer>
+        </div>
+      </article>
+      <article>
+        <img
+          src="https://www.biografiasyvidas.com/biografia/p/fotos/palma_ricardo.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Ricardo Palma</h3>
+          <p>
+            Manuel Ricardo Palma Soriano was a Peruvian author, scholar,
+            librarian and politician. His magnum opus is the Tradiciones
+            peruanas.
+          </p>
+          <footer>Librarian</footer>
+        </div>
+      </article>
+    </section>
+  </body>
+  <script>
+    document.querySelectorAll('article').forEach(function (element) {
+      element.addEventListener('click', function () {
+        this.classList.toggle('flip');
+      });
+    });
+  </script>
+</html>

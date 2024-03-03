@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    :root {
+      --color: aquamarine;
+      --fontsize: xx-large;
+    }
+
+    h1 {
+      color: var(--color);
+    }
+    p {
+      --color: red;
+      color: var(--color);
+      font-size: var(--fontsize);
+    }
+    @media (min-width: 300px) {
+      :root {
+        --fontsize: small;
+      }
+    }
+  </style>
+  <body>
+    <h1>This color was defined from vars</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas culpa
+      eveniet, quis accusamus soluta nesciunt similique aliquam id quod possimus
+      magni temporibus libero? Iusto quidem ad a commodi optio! Ducimus!
+    </p>
+  </body>
+</html>

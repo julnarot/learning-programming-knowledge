@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: flex;
+        padding: 4em 2em;
+        justify-content: center;
+        perspective: 200px;
+      }
+      article {
+        position: relative;
+        transition: transform 0.5s;
+        width: 500px;
+        height: 500px;
+        margin: 1em;
+        cursor: pointer;
+        transform: translateZ(20px);
+      }
+
+      section > article {
+        width: 500px;
+        height: 500px;
+      }
+      article > img {
+        object-fit: cover;
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <img
+          src="https://poets.org/sites/default/files/images/biographies/CesarVallejo_NewBioImage.jpg"
+          alt=""
+        />
+      </article>
+      <article>
+        <img
+          src="https://www.biografiasyvidas.com/biografia/p/fotos/palma_ricardo.jpg"
+          alt=""
+        />
+      </article>
+    </section>
+  </body>
+</html>
