@@ -50,8 +50,7 @@
     }
 
     div:nth-child(2) {
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-family: 'Lucida Sans';
     }
 
     div:nth-child(3) {
@@ -77,6 +76,12 @@
     }
     .fs-italic {
       font-style: italic;
+    }
+
+    @media (max-width: 376px) {
+      section {
+        grid-template-columns: auto;
+      }
     }
   </style>
   <body>
