@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: relative;
+      }
+      div > span {
+        position: absolute;
+        visibility: hidden;
+        border: solid;
+        background-color: rgb(31, 30, 30);
+        border-radius: 5px;
+        font-size: x-small;
+        color: white;
+        padding: 5px;
+        width: 100px;
+        height: auto;
+        z-index: 1;
+      }
+      div:hover > span {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Some Text</h1>
+      <span>Here we've some description</span>
+    </div>
+  </body>
+</html>
