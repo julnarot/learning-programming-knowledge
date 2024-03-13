@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        position: relative;
+        height: 250px;
+        margin-bottom: 20px;
+        border: solid;
+      }
+      div {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        transition: 0.2s;
+      }
+
+      section:nth-child(1) > div:hover {
+        transform: scale(1.2);
+      }
+      section:nth-child(2) > div:hover {
+        transform: scaleX(.5);
+      }
+      section:nth-child(3) > div:hover {
+        transform: scaleY(.5);
+      }
+      section:nth-child(4) > div:hover {
+        transform: scaleX(-1);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div>4</div>
+    </section>
+  </body>
+</html>
