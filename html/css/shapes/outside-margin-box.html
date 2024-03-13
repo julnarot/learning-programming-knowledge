@@ -17,10 +17,21 @@
         border-radius: 50%;
         shape-outside: margin-box;
       }
-      
+      section {
+        overflow: auto;
+        margin-bottom: 20px;
+      }
+
+      section:nth-child(1) > div {
+        shape-outside: margin-box;
+      }
+      section:nth-child(2) > div {
+        shape-outside: border-box;
+      }
     </style>
   </head>
   <body>
+    <section>
       <div></div>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rem id
@@ -35,6 +46,22 @@
         necessitatibus! Quibusdam alias ullam voluptatum voluptate, reiciendis
         quaerat.
       </p>
-    
+    </section>
+    <section>
+      <div></div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rem id
+        repudiandae voluptates esse? Maxime magnam nulla quaerat adipisci
+        aliquid illum tenetur, commodi delectus veritatis deleniti accusantium
+        totam! Voluptatem, laboriosam!. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Temporibus, distinctio, eaque quo repellendus
+        excepturi amet deserunt aperiam dolor minus voluptatum harum itaque quos
+        sapiente ratione officia? Natus unde doloremque fugiat! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Dolores numquam, qui, eum
+        eligendi voluptate fuga sed, magni laboriosam quae accusamus esse dicta
+        necessitatibus! Quibusdam alias ullam voluptatum voluptate, reiciendis
+        quaerat.
+      </p>
+    </section>
   </body>
 </html>
