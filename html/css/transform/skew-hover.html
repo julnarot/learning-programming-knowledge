@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        position: relative;
+        height: 300px;
+        margin-bottom: 20px;
+        border: solid;
+      }
+      div {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        transition: 0.2s;
+        padding: 17px;
+      }
+
+      section:nth-child(1) > div:hover {
+        transform: skewX(20deg);
+      }
+      section:nth-child(2) > div:hover {
+        transform: skewY(16deg);
+      }
+      section:nth-child(3) > div:hover {
+        transform: skew(-30deg, 45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+        doloribus voluptate pariatur cumque magni illum provident optio deserunt
+        aliquam, tenetur iusto laboriosam in, nam animi totam odio omnis esse
+        officiis!
+      </div>
+    </section>
+    <section>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+        doloribus voluptate pariatur cumque magni illum provident optio deserunt
+        aliquam, tenetur iusto laboriosam in, nam animi totam odio omnis esse
+        officiis!
+      </div>
+    </section>
+    <section>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+        doloribus voluptate pariatur cumque magni illum provident optio deserunt
+        aliquam, tenetur iusto laboriosam in, nam animi totam odio omnis esse
+        officiis!
+      </div>
+    </section>
+  </body>
+</html>

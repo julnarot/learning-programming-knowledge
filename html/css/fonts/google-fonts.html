@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Caveat:wght@400..700&family=Shadows+Into+Light&family=Black+Ops+One&family=Caveat:wght@400..700&family=Orbitron:wght@400..900&family=Sacramento&display=swap');
+    body {
+      background-color: tomato;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    section {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      width: 70%;
+      grid-gap: 30px;
+    }
+    div {
+      height: 100px;
+      width: 100px;
+      padding: 40px;
+      border: solid;
+      border-radius: 8px;
+    }
+    div:hover footer {
+      display: block;
+    }
+    h1 {
+      font-size: xx-large;
+      margin-top: 0.3em;
+    }
+    span {
+      text-align: center;
+    }
+    div:hover {
+      color: aliceblue;
+      border: solid aliceblue;
+    }
+    footer {
+      margin: 5px;
+      display: flex;
+      gap: 7px;
+      justify-content: center;
+      display: none;
+    }
+
+    div:nth-child(2) {
+      font-family: "Dancing Script", cursive;
+    }
+
+    div:nth-child(3) {
+      font-family: "Exo 2";
+    }
+    div:nth-child(4) {
+      font-family: 'Caveat';
+    }
+    div:nth-child(5) {
+      font-family: 'Shadows Into Light', Courier, monospace;
+    }
+    div:nth-child(6) {
+      font-family: 'Black Ops One';
+    }
+    div:nth-child(7) {
+      font-family: 'Orbitron';
+    }
+    div:nth-child(8) {
+      font-family: 'Sacramento';
+    }
+    .fs-oblique {
+      font-style: oblique;
+    }
+    .fs-italic {
+      font-style: italic;
+    }
+
+    @media (max-width: 376px) {
+      body {
+        height: auto;
+        display: block;
+        margin: 10px;
+      }
+      section {
+        grid-template-columns: auto;
+        gap: 10px;
+      }
+      div {
+        width: 100%;
+      }
+    }
+   
+  </style>
+  <body>
+    <section>
+      <div>
+        <h1>F f</h1>
+        <span>(Default)</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Dancing Script</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Exo 2</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Caveat</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Shadows</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Black Ops One</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Orbitron</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+      <div>
+        <h1>F f</h1>
+        <span>Sacramento</span>
+        <footer>
+          <button onclick="selectButton('o',this)" class="fs-oblique">o</button>
+          <button onclick="selectButton('i',this)" class="fs-italic">i</button>
+        </footer>
+      </div>
+    </section>
+  </body>
+  <script>
+    FONT_STYLE_MAP = {
+      o: 'fs-oblique',
+      i: 'fs-italic',
+    };
+    function selectButton(fontStyle, actionButton) {
+      const [titleElement, subTitleElement] =
+        actionButton.parentElement.parentElement.children;
+      [titleElement, subTitleElement].forEach((element) => {
+        element.classList.toggle(FONT_STYLE_MAP[fontStyle]);
+      });
+    }
+  </script>
+</html>

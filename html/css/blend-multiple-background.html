@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 20px;
+        padding: 20px;
+        margin: auto;
+      }
+      div {
+        height: 300px;
+        width: 300px;
+        background-color: green;
+        background-image: url(https://www.mitsubishi-motors.com.pe/blog/wp-content/uploads/2020/06/auto-hatchbak-ventajas-mitsubishi.jpg.webp),
+          url(https://thumbs.dreamstime.com/b/puesta-del-sol-sobre-el-oc%C3%A9ano-104679894.jpg);
+        background-size: 180px;
+        background-position: left top, right bottom;
+        background-repeat: no-repeat, no-repeat;
+      }
+
+      div:nth-child(1) {
+        background-blend-mode: color;
+      }
+      div:nth-child(2) {
+        background-blend-mode: darken;
+      }
+      div:nth-child(3) {
+        background-blend-mode: difference;
+      }
+      div:nth-child(4) {
+        background-blend-mode: exclusion;
+      }
+      div:nth-child(5) {
+        background-blend-mode: hard-light;
+      }
+      div:nth-child(6) {
+        background-blend-mode: hue;
+      }
+      div:nth-child(7) {
+        background-blend-mode: lighten;
+      }
+      div:nth-child(8) {
+        background-blend-mode: multiply;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>

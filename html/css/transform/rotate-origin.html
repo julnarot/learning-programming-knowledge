@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-rows: repeat(2, 120px);
+        grid-template-columns: repeat(auto-fit, 120px);
+        grid-gap: 40px;
+        grid-auto-rows: 120px;
+        padding: 40px;
+      }
+      div {
+        position: relative;
+        background-color: rgb(247, 204, 196);
+        transition: 1s;
+      }
+
+      article {
+        position: relative;
+        background-color: tomato;
+        height: 100%;
+        transition: 1s;
+      }
+      article:hover {
+        transform: rotate(45deg);
+      }
+
+      div:nth-child(1) > article {
+        transform-origin: top left;
+      }
+      div:nth-child(2) > article {
+        transform-origin: top center;
+      }
+      div:nth-child(3) > article {
+        transform-origin: top right;
+      }
+      div:nth-child(4) > article {
+        transform-origin: center left;
+      }
+      div:nth-child(5) > article {
+        transform-origin: center center;
+      }
+      div:nth-child(6) > article {
+        transform-origin: center right;
+      }
+      div:nth-child(7) > article {
+        transform-origin: bottom left;
+      }
+      div:nth-child(8) > article {
+        transform-origin: bottom center;
+      }
+      div:nth-child(9) > article {
+        transform-origin: bottom right;
+      }
+      div:nth-child(10) > article {
+        transform-origin: 100% 80%;
+      }
+      div:nth-child(11) > article {
+        transform-origin: 100% 50%;
+      }
+      div:nth-child(12) > article {
+        transform-origin: 100% 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+    <div>
+      <article></article>
+    </div>
+  </body>
+</html>

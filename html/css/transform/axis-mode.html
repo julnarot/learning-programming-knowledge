@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        border: solid;
+        margin-bottom: 40px;
+        overflow: auto;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        position: relative;
+
+        transition: 1s;
+      }
+      div::before {
+        content: '';
+        display: inline-block;
+        height: 2px;
+        width: 200px;
+        background-color: blue;
+        position: absolute;
+        top: 50%;
+        left: -50%;
+      }
+      div::after {
+        content: '';
+        display: inline-block;
+        height: 200px;
+        width: 2px;
+        background-color: red;
+        position: absolute;
+        top: -50%;
+        left: 50%;
+      }
+      section:nth-child(1):hover div {
+        transform: rotate(45deg);
+      }
+      section:nth-child(2):hover div {
+        transform: translateX(100px) rotate(45deg);
+      }
+      section:nth-child(3):hover div {
+        transform: translateX(-100px) rotate(-45deg);
+      }
+      section:nth-child(4):hover div {
+        transform: rotate(45deg) translate(50px);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+  </body>
+</html>
