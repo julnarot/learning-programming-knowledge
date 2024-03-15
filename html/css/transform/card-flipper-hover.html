@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        width: 250px;
+        height: 350px;
+        
+        top: 20%;
+        left: 30%;
+        transition: 1s;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    article {
+        width: 100%;
+        height: 100%;
+        background-color: tomato;
+        transition: 1s;
+        position: absolute;
+        backface-visibility: hidden;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      div {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: chocolate;
+        border-radius: 10px;
+        transition: 1s;
+        position: absolute;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+      }
+
+      section:hover {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+ 
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <h3>Title</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+          iure nostrum quis dolore laboriosam assumenda, doloribus labore! Ullam
+          necessitatibus soluta enim totam facere asperiores quia, assumenda
+          magni aliquid exercitationem odit!
+        </p>
+      </article>
+      <div><h3>back</h3></div>
+    </section>
+  </body>
+</html>
