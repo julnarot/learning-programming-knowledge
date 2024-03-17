@@ -5,23 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      section {
+        margin-bottom: 20px;
+        border: solid;
+        height: 300px;
+      }
       div {
         background-color: tomato;
         border-radius: 50%;
         width: 200px;
         height: 200px;
         transition-property: background-color, width, height;
-        transition-duration: .5s, 2s, 4s;
-        transition-delay: 4s;
       }
-      div:hover {
+      section:nth-child(1):hover div {
         width: 250px;
         height: 250px;
         background-color: chocolate;
+        transition-duration: 0.5s, 2s, 4s;
+        transition-delay: 0s;
+      }
+      section:nth-child(2):hover div {
+        width: 250px;
+        height: 250px;
+        background-color: chocolate;
+        transition-duration: 0.5s;
+        transition-property: all;
       }
     </style>
   </head>
   <body>
-    <div></div>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
   </body>
 </html>
