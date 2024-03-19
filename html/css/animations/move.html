@@ -75,6 +75,12 @@
         animation-iteration-count: infinite;
         animation-direction: alternate;
       }
+      section:nth-child(11) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+      }
 
       @keyframes move {
         from {
@@ -90,6 +96,9 @@
     </style>
   </head>
   <body>
+    <section>
+      <div></div>
+    </section>
     <section>
       <div></div>
     </section>
