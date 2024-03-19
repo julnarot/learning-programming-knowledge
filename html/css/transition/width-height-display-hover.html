@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        margin-bottom: 20px;
+        border: solid;
+        height: 300px;
+      }
+      div {
+        background-color: tomato;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        display: block;
+      }
+
+      section:nth-child(1) div {
+        transition-duration: 0.5s, 2s, 4s;
+        transition-delay: 0s;
+        display: inline;
+      }
+      section:nth-child(2) div {
+        transition-duration: 0.5s;
+        transition-property: all;
+        display: inline-block;
+      }
+      
+      div:hover {
+        background-color: chocolate;
+        width: 250px;
+        height: 250px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+   
+  </body>
+</html>
