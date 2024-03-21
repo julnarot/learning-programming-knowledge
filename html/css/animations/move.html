@@ -88,6 +88,13 @@
         animation-timing-function: ease-in-out;
         animation-fill-mode: backwards;
       }
+      section:nth-child(13) > div {
+        animation-name: move2, move3;
+        animation-duration: 3s, .8s;
+        animation-iteration-count: 4;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+      }
 
       @keyframes move {
         from {
@@ -100,9 +107,29 @@
           left: 0px;
         }
       }
+      @keyframes move2 {
+        from {
+          left: 0px;
+        }
+      
+        to {
+          left: 25%;
+        }
+      }
+      @keyframes move3 {
+        from {
+          left: 0px;
+        }
+        to{
+          left: 75%;
+        }
+      }
     </style>
   </head>
   <body>
+    <section>
+      <div></div>
+    </section>
     <section>
       <div></div>
     </section>
