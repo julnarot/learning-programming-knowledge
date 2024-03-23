@@ -29,11 +29,19 @@
         writing-mode: vertical-rl;
       }
       article:nth-child(3) > header {
+        writing-mode: sideways-rl;
+      }
+      article:nth-child(3) > header > h1 {
+        direction: rtl;
+        unicode-bidi: bidi-override;
+        text-orientation: upright;
+      }
+      article:nth-child(4) > header {
         direction: ltr;
         text-orientation: upright;
         writing-mode: vertical-lr;
       }
-      article:nth-child(4) > * {
+      article:nth-child(5) > * {
         direction: ltr;
         text-orientation: upright;
         writing-mode: vertical-lr;
@@ -68,6 +76,18 @@
       </article>
       <article>
         <header>
+          <h1>العناوين</h1>
+          <span>ترجمات</span>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ad
+          ipsum quaerat provident ratione porro, doloribus accusantium deleniti
+          necessitatibus illo ea consectetur incidunt tempora exercitationem
+          perferendis est dolor voluptate quos.
+        </p>
+      </article>
+      <article>
+        <header>
           <h1>Default</h1>
           <span>subtitle</span>
         </header>
@@ -84,7 +104,7 @@
           <span>字幕</span>
         </header>
         <p>
-            これは段落の単純なテキストです。個別の向きでビューのテキストの単純なテキストをチェックしようとしています
+          これは段落の単純なテキストです。個別の向きでビューのテキストの単純なテキストをチェックしようとしています
         </p>
       </article>
     </section>
