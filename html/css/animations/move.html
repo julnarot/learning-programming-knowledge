@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        border: solid;
+        padding: 20px;
+        margin-bottom: 5px;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: gold;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      section:nth-child(1) > div {
+        animation-name: move;
+        animation-duration: 3s;
+      }
+      section:nth-child(2) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-delay: 2s;
+      }
+      section:nth-child(3) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-delay: -1.5s;
+      }
+      section:nth-child(4) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: 2;
+      }
+      section:nth-child(5) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: 5;
+        animation-timing-function: ease-in-out;
+      }
+      section:nth-child(6) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: 5;
+        animation-timing-function: steps(4);
+      }
+      section:nth-child(7) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: 5;
+        animation-timing-function: steps(4, start);
+      }
+      section:nth-child(8) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+      section:nth-child(9) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+      section:nth-child(9):hover > div {
+        animation-play-state: paused;
+      }
+
+      section:nth-child(10) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      section:nth-child(11) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: reverse;
+      }
+      section:nth-child(12) > div {
+        animation-name: move;
+        animation-duration: 3s;
+        animation-iteration-count: 4;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+      }
+      section:nth-child(13) > div {
+        animation-name: move2, move3;
+        animation-duration: 3s, 0.8s;
+        animation-iteration-count: 4;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+      }
+      section:nth-child(14) > div {
+        animation: move 1s 5s 2 ease both alternate;
+      }
+
+      @keyframes move {
+        from {
+          left: 0px;
+        }
+        50% {
+          left: 75%;
+        }
+        to {
+          left: 0px;
+        }
+      }
+      @keyframes move2 {
+        from {
+          left: 0px;
+        }
+
+        to {
+          left: 25%;
+        }
+      }
+      @keyframes move3 {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 75%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+    <section>
+      <div></div>
+    </section>
+  </body>
+</html>
