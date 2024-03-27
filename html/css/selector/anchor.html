@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        margin: 0;
+      }
       nav {
-        background-color: aqua;
+        background-color: rgb(13, 163, 163);
         height: 50px;
         display: flex;
         align-items: center;
@@ -21,13 +24,26 @@
         font-weight: bold;
       }
       a[title~='link'] {
-        color: chocolate;
+        text-decoration: underline;
       }
 
       a[href*='.pdf'] {
         text-decoration: line-through;
         color: gray;
         pointer-events: none;
+      }
+
+      a:link {
+        color: white;
+      }
+      a:visited {
+        color: lightgray;
+      }
+      a:hover {
+        color: aquamarine;
+      }
+      a:active {
+        color: rgb(4, 114, 114);
       }
     </style>
   </head>
@@ -38,9 +54,9 @@
       <a href="gallery.html" title="gallery">Gallery</a>
       <a href="cv.pdf" title="Curriculum vitae">Curriculum Vitae</a>
       <a href="services.html" title="services">Services</a>
-      <a href="link.html" title="link 1">link 1</a>
-      <a href="link.html" title="link 2">link 2</a>
-      <a href="link.html" title="link 3">link 3</a>
+      <a href="#" title="link 1">link 1</a>
+      <a href="#" title="link 2">link 2</a>
+      <a href="#" title="link 3">link 3</a>
     </nav>
   </body>
 </html>
