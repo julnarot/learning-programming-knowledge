@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --color-red: red;
+        --font: italic;
+      }
+      li {
+        color: var(--color-red);
+      }
+
+      h2 {
+        font-style: var(--font);
+      }
+
+      div:empty {
+        margin-top: 30px;
+        border: solid greenyellow;
+      }
+
+      ul > :first-child {
+        color: purple;
+      }
+      ul > :nth-child(3) {
+        color: rebeccapurple;
+      }
+      ul > :last-child {
+        color: rebeccapurple;
+      }
+      ol > :only-child {
+        color: goldenrod;
+      }
+    </style>
+  </head>
+  <body>
+    <p></p>
+    <h2>shopping list</h2>
+    <ul>
+      <li>element 01</li>
+      <li>element 02</li>
+      <li>element 03</li>
+      <li>element 04</li>
+      <li>element 05</li>
+      <li>element 06</li>
+      <li>element 07</li>
+    </ul>
+    <div></div>
+    <h2>shopping bought</h2>
+    <dl>
+      <dt>Firefox</dt>
+      <dd>
+        A free, open source, cross-platform, graphical web browser developed by
+        the Mozilla Corporation and hundreds of volunteers.
+      </dd>
+
+      <!-- Other terms and descriptions -->
+    </dl>
+    <div></div>
+    <ol>
+      <li>single element</li>
+    </ol>
+  </body>
+</html>
