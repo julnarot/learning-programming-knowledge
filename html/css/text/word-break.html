@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      width: 30%;
+      margin: auto;
+    }
+    div {
+      border: solid tomato;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: x-large;
+      width: 300px;
+      margin: 20px;
+    }
+    div:nth-child(1) {
+      word-break: normal;
+    }
+    div:nth-child(2) {
+      word-break: break-all;
+    }
+    div:nth-child(3) {
+      word-break: keep-all;
+    }
+    div:nth-child(4) {
+      hyphens: auto;
+    }
+  </style>
+  <body>
+    <section>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+        dolor sit amet consectetur
+      </div>
+      
+    </section>
+  </body>
+</html>
