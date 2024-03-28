@@ -18,6 +18,13 @@
       p:read-write {
         background-color: gray;
       }
+
+      input:placeholder-shown + label {
+        opacity: 0;
+      }
+      label {
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
@@ -34,5 +41,6 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum delectus
       quibusdam repellendus, voluptate, itaque, laudantium hic laboriosam
     </p>
+    <input type="text" placeholder="name" /><label for="">name</label>
   </body>
 </html>
