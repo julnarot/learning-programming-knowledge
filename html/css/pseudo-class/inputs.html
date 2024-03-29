@@ -27,6 +27,14 @@
         opacity: 1;
         transition: opacity 0.7s;
       }
+
+      input[type='radio']:indeterminate + label {
+        color: red;
+      }
+
+      input[type='checkbox']:checked + label {
+        color: royalblue;
+      }
     </style>
   </head>
   <body>
@@ -45,10 +53,10 @@
     </p>
     <input type="text" placeholder="name" /><label for="">name</label>
 
-    <br>
-    <input type="radio" name="" id="game">
-    <label for="game">Cricket</label><br>
-    <input type="checkbox" name="" id="course">
-    <label for="course">CSS</label><br>
+    <br />
+    <input type="radio" name="" id="game" />
+    <label for="game">Cricket</label><br />
+    <input type="checkbox" name="" id="course" />
+    <label for="course">CSS</label><br />
   </body>
 </html>
