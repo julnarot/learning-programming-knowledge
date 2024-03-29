@@ -32,8 +32,25 @@
         color: red;
       }
 
+      input[type='radio']:checked + label {
+        color: chocolate;
+      }
+
       input[type='checkbox']:checked + label {
         color: royalblue;
+      }
+
+      input[type='email']:valid {
+        border: solid green;
+        background-color: white;
+      }
+      input[type='email']:invalid {
+        background-color: white;
+        border: solid red;
+      }
+      input[type='email']: {
+        background-color: white;
+        border: solid red;
       }
     </style>
   </head>
@@ -58,5 +75,6 @@
     <label for="game">Cricket</label><br />
     <input type="checkbox" name="" id="course" />
     <label for="course">CSS</label><br />
+    <input type="email" required/>
   </body>
 </html>
