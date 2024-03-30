@@ -46,20 +46,23 @@
       }
       input[type='email']:invalid {
         background-color: white;
-        
       }
       input[type='text']:required {
         background-color: palevioletred;
-        
       }
 
-      input[type='number']:in-range{
+      input[type='number']:in-range {
         background-color: blue;
       }
-      input[type='number']:out-of-range{
+      input[type='number']:out-of-range {
         background-color: orange;
       }
-     
+      input[type='search']::placeholder {
+        font-style: italic;
+        color: coral;
+        text-indent: 20px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -83,11 +86,11 @@
     <label for="game">Cricket</label><br />
     <input type="checkbox" name="" id="course" />
     <label for="course">CSS</label><br />
-    <input type="email" required/><br>
-    <input type="text" placeholder="required" required/>
+    <input type="email" required /><br />
+    <input type="text" placeholder="required" required />
 
-    <br>
-    <input type="number" min="5" max="10" name="" id=""><br>
-    
+    <br />
+    <input type="number" min="5" max="10" name="" id="" /><br />
+    <input type="search" placeholder="search" />
   </body>
 </html>
