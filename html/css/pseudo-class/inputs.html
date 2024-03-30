@@ -48,6 +48,13 @@
         background-color: white;
         border: solid red;
       }
+
+      input[type='number']:in-range{
+        background-color: blue;
+      }
+      input[type='number']:out-of-range{
+        background-color: orange;
+      }
      
     </style>
   </head>
@@ -73,5 +80,8 @@
     <input type="checkbox" name="" id="course" />
     <label for="course">CSS</label><br />
     <input type="email" required/>
+    <br>
+    <input type="number" min="5" max="10" name="" id=""><br>
+    
   </body>
 </html>
