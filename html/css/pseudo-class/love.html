@@ -35,7 +35,7 @@
         border: solid;
         border-radius: 3px;
         padding: 3px;
-        content: attr(title);
+        content: attr(title) ' -> ' attr(data-content);
       }
     </style>
   </head>
@@ -48,7 +48,7 @@
       optio dolorem.
     </p>
 
-    <span title="First element">Tomatoes</span>
+    <span title="First element" data-content=";)">Tomatoes</span>
     <span title="Second element">Lemon</span>
   </body>
 </html>
