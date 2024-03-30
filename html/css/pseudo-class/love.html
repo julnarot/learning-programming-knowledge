@@ -29,6 +29,14 @@
       span::before {
         content: counter(span-count) '. ';
       }
+
+      span:hover::after {
+        margin-left: 50px;
+        border: solid;
+        border-radius: 3px;
+        padding: 3px;
+        content: attr(title);
+      }
     </style>
   </head>
   <body>
@@ -40,7 +48,7 @@
       optio dolorem.
     </p>
 
-    <span>Tomatoes</span>
-    <span>Lemon</span>
+    <span title="First element">Tomatoes</span>
+    <span title="Second element">Lemon</span>
   </body>
 </html>
