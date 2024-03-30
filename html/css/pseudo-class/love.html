@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        counter-reset: span-count;
+      }
       p {
         font-size: 40px;
         font-weight: bold;
@@ -17,6 +20,15 @@
         color: coral;
         content: ' ~';
       }
+
+      span {
+        display: block;
+        counter-increment: span-count;
+      }
+
+      span::before {
+        content: counter(span-count) '. ';
+      }
     </style>
   </head>
   <body>
@@ -27,5 +39,8 @@
       quod delectus iste eius, magni voluptatibus eos repellendus architecto,
       optio dolorem.
     </p>
+
+    <span>Tomatoes</span>
+    <span>Lemon</span>
   </body>
 </html>
