@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        grid-template: repeat(1, 300px) / repeat(3, 300px);
+      }
+      p:nth-child(1)::first-letter {
+        color: cornflowerblue;
+        font-size: 32px;
+      }
+      p:nth-child(2)::first-line {
+        color: cornflowerblue;
+        font-size: 32px;
+      }
+      p:nth-child(3)::selection {
+        color: red;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eligendi
+      officiis voluptatibus saepe assumenda,
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eligendi
+      officiis voluptatibus saepe assumenda,
+    </p>
+    <p>
+      ON SELECT ipsum dolor sit amet consectetur adipisicing elit. Illum
+      eligendi officiis voluptatibus
+    </p>
+  </body>
+</html>
