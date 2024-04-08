@@ -8,14 +8,18 @@
       function sumarUno(numero, callback) {
         setTimeout(() => {
           return callback(numero + 1);
-        }, 2000);
+        }, 1000);
       }
       sumarUno(3, function (resultado) {
-        console.log(resultado);
+        sumarUno(resultado, function (resultado2) {
+          sumarUno(resultado2, function (resultado3) {
+            console.log(resultado3);
+          });
+        });
       });
     </script>
   </head>
   <body>
-    Example 02
+    Example 03 callback Hell
   </body>
 </html>
