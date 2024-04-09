@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let sumOneSlowPromise = (num) => {
+        return new Promise((resolve, reject) =>
+          setTimeout(() => {
+            resolve(num + 1);
+          }, 800)
+        );
+      };
+      let sumOneQuickPromise = (num) => {
+        return new Promise((resolve, reject) =>
+          setTimeout(() => {
+            resolve(num + 1);
+          }, 300)
+        );
+      };
+      let someQuickErrorPromise = () => {
+        return new Promise((resolve, reject) =>
+          setTimeout(() => {
+            reject('error! :/');
+          }, 10)
+        );
+      };
+      let sumOneUltraQuickPromise = (num) => {
+        return new Promise((resolve, reject) =>
+          setTimeout(() => {
+            resolve(num + 1);
+          }, 8)
+        );
+      };
+      const allPromise = [
+        sumOneSlowPromise(3),
+        sumOneQuickPromise(9),
+        sumOneUltraQuickPromise(19),
+        someQuickErrorPromise(),
+      ];
+
+      Promise.race(allPromise)
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((err) => console.error(err));
+    </script>
+  </head>
+  <body>
+    <h1>Promise all</h1>
+  </body>
+</html>
