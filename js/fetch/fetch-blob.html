@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>fetch blob</h1>
+    <img src="" />
+  </body>
+  <script>
+    const imgElem = document.querySelector('img');
+    fetch(
+      'https://static.wikia.nocookie.net/neoencyclopedia/images/1/1b/Zeratul.png'
+    )
+      .then((result) => result.blob())
+      .then((image) => {
+        imgElem.src = URL.createObjectURL(image);
+      })
+      .catch((erro) => console.error);
+  </script>
+</html>
