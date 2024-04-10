@@ -8,15 +8,15 @@
       fetch('https://reqres.in/api/users/6666')
         .then((resp) => {
           if (resp.ok) {
-            resp.json();
+            return resp.json();
           } else if (resp.status == 404) {
-            console.error('User doesn exist');
+            throw new Error('User doesn exist');
           }
         })
         .then((data) => {
           console.log(data);
         })
-        .catch((err) => console.log('catching error:', err));
+        .catch((err) => console.error('catching error:', err));
     </script>
   </head>
   <body>
