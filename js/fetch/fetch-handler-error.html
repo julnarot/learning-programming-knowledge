@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      fetch('https://reqres.in/api/users/6666')
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          } else if (resp.status == 404) {
+            throw new Error('User doesn exist');
+          }
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((err) => console.error('catching error:', err));
+    </script>
+  </head>
+  <body>
+    <h1>fetch</h1>
+  </body>
+</html>

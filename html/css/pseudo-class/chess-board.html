@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --color: brown;
+        --board-border: solid var(--color);
+      }
+      body {
+        display: grid;
+        grid-template: repeat(8, 100px) / repeat(8, 100px);
+      }
+      div {
+        border-right: var(--board-border);
+        border-bottom: var(--board-border);
+      }
+      div:nth-child(n + 1):nth-child(-n + 9) {
+        border-top: var(--board-border);
+      }
+      div:nth-child(8n + 2) {
+        border-left: var(--board-border);
+      }
+
+      div:nth-child(16n + 2),
+      div:nth-child(16n + 4),
+      div:nth-child(16n + 6),
+      div:nth-child(16n + 8),
+      div:nth-child(16n + 11),
+      div:nth-child(16n + 13),
+      div:nth-child(16n + 15),
+      div:nth-child(16n + 17) {
+        background-color: var(--color);
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    Array(64)
+      .keys()
+      .forEach(() => {
+        const div_ = document.createElement('div');
+        document.body.appendChild(div_);
+      });
+  </script>
+</html>

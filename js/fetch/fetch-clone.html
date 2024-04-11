@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      fetch('https://reqres.in/api/users/1').then((resp) => {
+        resp.clone().json().then((user) => {
+          console.log(user);
+        });
+        resp.json().then((user) => {
+          console.log(user);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>fetch clone</h1>
+  </body>
+</html>

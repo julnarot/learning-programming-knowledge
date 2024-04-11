@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function sumOne(num) {
+        const promise = new Promise(function (resolve, error) {
+          setTimeout(() => {
+            resolve(num + 1);
+          }, 800);
+        });
+        return promise;
+      }
+      sumOne(5)
+        .then(function (result1) {
+          console.log(result1);
+          return sumOne(result1);
+        })
+        .then(function (result2) {
+          console.log(result2);
+          return sumOne(result2);
+        })
+        .then(function (result3) {
+          console.log(result3);
+        });
+    </script>
+  </head>
+  <body>
+    <h1>Promise nested</h1>
+  </body>
+</html>

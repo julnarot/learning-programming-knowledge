@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    section {
+      display: grid;
+      grid-template: repeat(3, 60px) / repeat(4, 250px);
+      gap: 10px;
+      padding: 30px;
+      width: 80%;
+      margin: auto;
+    }
+    div {
+      border: solid tomato;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: x-large;
+    }
+    div:nth-child(1) {
+      -webkit-text-emphasis-style: sesame;
+      -webkit-text-emphasis-color: tomato;
+      -webkit-text-emphasis-position: above;
+    }
+    div:nth-child(2) {
+      -webkit-text-emphasis-style: '*';
+      -webkit-text-emphasis-color: tomato;
+      -webkit-text-emphasis-position: under;
+    }
+    div:nth-child(3) {
+      -webkit-text-emphasis-style: '➛';
+      -webkit-text-emphasis-color: tomato;
+      -webkit-text-emphasis-position: above;
+    }
+    div:nth-child(4) {
+      -webkit-text-emphasis-style: '✎';
+      -webkit-text-emphasis-color: tomato;
+      -webkit-text-emphasis-position: under;
+    }
+    div:nth-child(5) {
+      text-transform: uppercase;
+    }
+    div:nth-child(6) {
+      text-transform: lowercase;
+    }
+    div:nth-child(7) {
+      text-transform: none;
+    }
+  </style>
+  <body>
+    <section>
+      <div>Text - Emphasis</div>
+      <div>Text - Emphasis</div>
+      <div>Text - Emphasis</div>
+      <div>Text - Emphasis</div>
+      <div>uppercase</div>
+      <div>LowerCase</div>
+      <div>Text - Emphasis</div>
+    </section>
+  </body>
+</html>

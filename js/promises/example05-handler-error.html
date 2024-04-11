@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function sumOne(num) {
+        const promise = new Promise(function (resolve, reject) {
+          if (num >= 7) {
+            reject('Number Longer');
+          }
+          setTimeout(() => {
+            resolve(num + 1);
+          }, 800);
+        });
+        return promise;
+      }
+      sumOne(8).then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log('erron on call promise');
+          console.error(error);
+        }
+      );
+    </script>
+  </head>
+  <body>
+    <h1>Promise handled error</h1>
+  </body>
+</html>

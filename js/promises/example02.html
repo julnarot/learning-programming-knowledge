@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function sumarUno(numero, callback) {
+        setTimeout(() => {
+          return callback(numero + 1);
+        }, 2000);
+      }
+      sumarUno(3, function (resultado) {
+        console.log(resultado);
+      });
+    </script>
+  </head>
+  <body>
+    Example 02
+  </body>
+</html>

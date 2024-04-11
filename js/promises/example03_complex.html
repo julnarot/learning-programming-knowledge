@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function sumarUno(num, callback) {
+        if (num >= 4) {
+          callback('Invalid number!!');
+        }
+        setTimeout(() => {
+          return callback(null, num + 1);
+        }, 1000);
+      }
+
+
+      sumarUno(3, function (err, result) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        sumarUno(result, function (err, result2) {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          sumarUno(result2, function (err, result3) {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            console.log(result3);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Example 03 callback Hell
+  </body>
+</html>

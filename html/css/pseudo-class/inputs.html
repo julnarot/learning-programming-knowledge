@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input:enabled {
+        background-color: aquamarine;
+      }
+      input:read-only {
+        background-color: chocolate;
+      }
+      input:disabled {
+        background-color: red;
+      }
+
+      p:read-write {
+        background-color: gray;
+      }
+
+      input:placeholder-shown + label {
+        opacity: 0;
+        transition: opacity 0.7s;
+      }
+      label {
+        opacity: 1;
+        transition: opacity 0.7s;
+      }
+
+      input[type='radio']:indeterminate + label {
+        color: red;
+      }
+
+      input[type='radio']:checked + label {
+        color: chocolate;
+      }
+
+      input[type='checkbox']:checked + label {
+        color: royalblue;
+      }
+
+      input[type='email']:valid {
+        border: solid green;
+        background-color: white;
+      }
+      input[type='email']:invalid {
+        background-color: white;
+      }
+      input[type='text']:required {
+        background-color: palevioletred;
+      }
+
+      input[type='number']:in-range {
+        background-color: blue;
+      }
+      input[type='number']:out-of-range {
+        background-color: orange;
+      }
+      input[type='search']::placeholder {
+        font-style: italic;
+        color: coral;
+        text-indent: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" enabled />
+    <input type="text" readonly placeholder="is in readonly" />
+    <input type="text" disabled placeholder="disabled" />
+    <br />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum delectus
+      quibusdam repellendus, voluptate, itaque, laudantium hic laboriosam
+    </p>
+    p editable:
+    <p contenteditable="true">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum delectus
+      quibusdam repellendus, voluptate, itaque, laudantium hic laboriosam
+    </p>
+    <input type="text" placeholder="name" /><label for="">name</label>
+
+    <br />
+    <input type="radio" name="" id="game" />
+    <label for="game">Cricket</label><br />
+    <input type="checkbox" name="" id="course" />
+    <label for="course">CSS</label><br />
+    <input type="email" required /><br />
+    <input type="text" placeholder="required" required />
+
+    <br />
+    <input type="number" min="5" max="10" name="" id="" /><br />
+    <input type="search" placeholder="search" />
+  </body>
+</html>

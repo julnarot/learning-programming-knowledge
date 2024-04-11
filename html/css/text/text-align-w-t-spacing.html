@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    section {
+      display: grid;
+      grid-template: repeat(3, 1fr) / repeat(3, 250px);
+      gap: 10px;
+      padding: 30px;
+      width: 60%;
+      margin: auto;
+    }
+    div {
+      border: solid tomato;
+
+      font-size: x-large;
+      padding: 5px;
+    }
+    div:nth-child(1) {
+      text-align: start;
+    }
+    div:nth-child(2) {
+      text-align: center;
+    }
+    div:nth-child(3) {
+      text-align: end;
+    }
+    div:nth-child(4) {
+      text-align: justify;
+    }
+    div:nth-child(4) {
+      text-align: justify;
+    }
+    div:nth-child(5) {
+      text-align: left;
+      word-spacing: 20px;
+    }
+    div:nth-child(6) {
+      text-align: left;
+      letter-spacing: 6px;
+      text-indent: 90px;
+    }
+  </style>
+  <body>
+    <section>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+        fugiat, qui molestiae Lorem ipsum
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+        fugiat, qui molestiae Lorem ipsum
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+        fugiat, qui molestiae Lorem ipsum
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+        fugiat, qui molestiae Lorem ipsum
+      </div>
+
+      <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+      <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+    </section>
+  </body>
+</html>

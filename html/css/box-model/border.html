@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: grid;
+        grid-template: repeat(2, 400px) / repeat(2, 400px);
+      }
+      div:nth-child(1) {
+        margin: 100px;
+        background-color: gold;
+        border: 25px solid green;
+        border-image: url('https://www.w3schools.com/css/ocean.jpg') 2 round;
+      }
+      div:nth-child(2) {
+        margin: 100px;
+        background-color: gold;
+        border: 25px solid green;
+        border-image-source: url('https://www.w3schools.com/css/ocean.jpg');
+        border-image-slice: 10% 20% 30% 40%;
+        border-image-width: 2;
+        border-image-repeat: repeat;
+        border-image-outset: 60px;
+      }
+      div:nth-child(3) {
+        background-color: gold;
+        border-top-left-radius: 200px;
+        border-top-right-radius: 200px;
+        border-bottom-right-radius: 200px;
+      }
+      div:nth-child(4) {
+        background-color: gold;
+        width: 200px;
+        height: 200px;
+        padding: 30px;
+        border: 10px solid green;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </body>
+</html>

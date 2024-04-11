@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        counter-reset: span-count;
+      }
+      p {
+        font-size: 40px;
+        font-weight: bold;
+      }
+      p::before {
+        color: coral;
+        content: '~ ';
+      }
+      p::after {
+        color: coral;
+        content: ' ~';
+      }
+
+      span {
+        display: block;
+        counter-increment: span-count;
+      }
+
+      span::before {
+        content: counter(span-count) '. ';
+      }
+
+      span:hover::after {
+        margin-left: 50px;
+        border: solid;
+        border-radius: 3px;
+        padding: 3px;
+        content: attr(title) ' \20B9 ' attr(data-content);
+      }
+    </style>
+  </head>
+  <body>
+    <p>Love</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque possimus
+      velit ducimus beatae voluptatem odio, earum consectetur quaerat laboriosam
+      quod delectus iste eius, magni voluptatibus eos repellendus architecto,
+      optio dolorem.
+    </p>
+
+    <span title="First element" data-content=";)">Tomatoes</span>
+    <span title="Second element">Lemon</span>
+  </body>
+</html>
