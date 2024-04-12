@@ -11,9 +11,18 @@ if (window.caches) {
       .addAll([
         '/index.html',
         '/css/style.css',
+        '/pages/not-found.html',
         'https://static.wikia.nocookie.net/neoencyclopedia/images/1/1b/Zeratul.png',
       ])
       .then(() => {
+
+        cache.put('/pages/not-found.html', new Response(
+          `<h2>Not found :'(</h2>`, {
+            headers: {
+              'Content-Type': 'text/html'
+            }
+          }
+        ))
         setTimeout(() => {
           cache.delete('/css/style.css');
         }, 5000);
