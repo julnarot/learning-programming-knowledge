@@ -15,14 +15,14 @@ if (window.caches) {
         'https://static.wikia.nocookie.net/neoencyclopedia/images/1/1b/Zeratul.png',
       ])
       .then(() => {
-
-        cache.put('/pages/not-found.html', new Response(
-          `<h2>Not found :'(</h2>`, {
+        cache.put(
+          '/pages/not-found.html',
+          new Response(`<h2>Not found :'(</h2>`, {
             headers: {
-              'Content-Type': 'text/html'
-            }
-          }
-        ))
+              'Content-Type': 'text/html',
+            },
+          })
+        );
         setTimeout(() => {
           cache.delete('/css/style.css');
         }, 5000);
@@ -34,4 +34,5 @@ if (window.caches) {
   });
 
   caches.has('Prueba 9').then(console.log);
+  caches.keys().then(console.log);
 }
