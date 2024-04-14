@@ -32,6 +32,9 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   const resp_ = fetch(event.request)
     .then((res) => {
+      if (!res) {
+        return caches.match(event.request);
+      }
       caches.open(CACHE_DYNAMIC_NAME).then((cache) => {
         cache.put(event.request, res);
         cleanCache(CACHE_DYNAMIC_NAME, 5);
@@ -41,5 +44,5 @@ self.addEventListener('fetch', (event) => {
     .catch((err) => {
       return caches.match(event.request);
     });
-    event.respondWith(resp_)
+  event.respondWith(resp_);
 });
