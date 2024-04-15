@@ -61,14 +61,13 @@ self.addEventListener('fetch', (event) => {
       .then((resp) => {
         resp.ok ? resolve(resp) : faillingOneTime();
       })
-      .catch(faillingOneTime());
-
+      .catch(faillingOneTime);
     caches
       .match(event.request)
       .then((resp) => {
         resp ? resolve(resp) : faillingOneTime();
       })
-      .catch(faillingOneTime());
+      .catch(faillingOneTime);
   });
 
   event.respondWith(respPromise);
