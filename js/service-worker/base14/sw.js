@@ -19,7 +19,6 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
   const checkCacheAndRemote = caches.match(event.request).then((cache) => {
     if (cache) return cache;
-    console.log('doesnt exist!!', event.request.url);
     return fetch(event.request).then((resp) => {
       caches.open(CACHE_DYNAMIC_NAME).then((mainCache) => {
         mainCache.put(event.request, resp);

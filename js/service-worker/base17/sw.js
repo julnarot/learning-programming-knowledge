@@ -42,7 +42,6 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  //provitional
   if (event.request.url.includes('daisyui')) {
     return event.respondWith(caches.match(event.request));
   }
