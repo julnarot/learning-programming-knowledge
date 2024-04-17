@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      fetch(
+        'https://www.diainternacionalde.com/cumplea%C3%B1os-famosos/julio/19'
+      )
+        .then((f) => f.text())
+        .then((html) => {
+          const html_ = new DOMParser().parseFromString(html, 'text/html');
+          const sportsArt = html_.getElementsByClassName('efemeride famoso');
+          const gro = [...sportsArt]
+            .map((article) => {
+              const { children } = article;
+              const name = children[0].innerHTML;
+              const [talent, born] = children[1].innerHTML.split('<br>');
+              return {
+                name,
+                born,
+                talent,
+              };
+            })
+            .reduce((rv, x) => {
+              (rv[x['talent']] = rv[x['talent']] || []).push(x);
+              return rv;
+            }, {});
+          console.data(gro);
+        });
+    </script>
+  </head>
+  <body>
+    <h2>check console</h2>
+  </body>
+</html>
