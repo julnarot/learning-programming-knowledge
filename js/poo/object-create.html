@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Perro(nombre, edad) {
+        const perro = Object.create(ObjetoConstructor);
+        perro.nombre = nombre;
+        perro.edad = edad;
+        return perro;
+      }
+
+      const ObjetoConstructor = {
+        habla: function () {
+          return '¡Soy un perro!';
+        },
+      };
+
+      const firulais = Perro('Firulais', 9);
+      console.log(firulais);
+    </script>
+  </head>
+  <body>
+    <h2>Object - create</h2>
+  </body>
+</html>
