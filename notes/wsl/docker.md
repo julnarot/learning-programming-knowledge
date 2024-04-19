@@ -27,5 +27,7 @@ export DOCKER_HOST="unix:///mnt/wsl/shared-docker/docker.sock"
 docker run --rm hello-world
 ```
 
+### Change `iptables-nft` by `iptables-legacy`
 
+Run `sudo update-alternatives --config iptables` select option `1` (iptables-legacy)
 
