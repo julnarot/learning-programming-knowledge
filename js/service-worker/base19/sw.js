@@ -51,14 +51,20 @@ self.addEventListener('fetch', (event) => {
 
     console.log('Doesnt Exist', event.request.url);
 
-    return fetch(event.request).then((resp) => {
-      caches.open(CACHE_DYNAMIC_NAME).then((newCache) => {
-        newCache.put(event.request, resp);
-        cleanCache(CACHE_DYNAMIC_NAME, 50);
-      });
+    return fetch(event.request)
+      .then((resp) => {
+        caches.open(CACHE_DYNAMIC_NAME).then((newCache) => {
+          newCache.put(event.request, resp);
+          cleanCache(CACHE_DYNAMIC_NAME, 50);
+        });
 
-      return resp.clone();
-    });
+        return resp.clone();
+      })
+      .catch(() => {
+        if (event.request.headers.get('accept').includes('text/html')) {
+          caches.match('/pages/offline.html');
+        }
+      });
   });
 
   event.respondWith(cacheResp);
