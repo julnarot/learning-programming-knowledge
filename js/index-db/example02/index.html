@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const DB_NAME = 'my-hero-database';
+      const HERO_TABLE_NAME = 'hero';
+
+      //Creating db
+      let request = window.indexedDB.open(DB_NAME, 1);
+      request.onupgradeneeded = (event) => {
+        console.log('Updating DB');
+        let db = event.target.result;
+        db.createObjectStore(HERO_TABLE_NAME, {
+          keyPath: 'id',
+        });
+      };
+
+      // handler error
+
+      request.onerror = (event) => {
+        console.log('[INDEX DB]: Error', event.target.error);
+      };
+
+      // insert data
+
+      request.onsuccess = (event) => {
+        let db = event.target.result;
+
+        let heroTransaction = db.transaction(HERO_TABLE_NAME, 'readwrite');
+        heroTransaction.onerror = (event) => {
+          console.log('[INDEX DB]: Error insert', event.target.error);
+        };
+        heroTransaction.oncomplete = (event) => {
+          console.log('[INDEX DB]: Success', event);
+        };
+
+        let heroStore = heroTransaction.objectStore(HERO_TABLE_NAME);
+        ['Spiderman', 'Ironman']
+          .map((h, i) => {
+            return { id: i + 1, name: h };
+          })
+          .forEach((hero) => {
+            heroStore.add(hero);
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <h2>index db - insert and error handler</h2>
+  </body>
+</html>
