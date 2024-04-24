@@ -55,3 +55,8 @@ if method has too many parameters
 - An action take
 - A delegator(kind of a proxy)
 - An orchectrator
+
+## configs
+
+problems with zs
+https://stackoverflow.com/questions/75875351/zscaler-cannot-stop-the-service-without-passwords
