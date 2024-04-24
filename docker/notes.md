@@ -16,3 +16,11 @@ host$ telnet localhost 666
 Trying 127.0.0.1...
 Connected to localhost.
 ```
+
+Check ip of container
+
+```bash
+container$ docker inspect -f "{{ .NetworkSettings.IPAddress }}" [CONTAINER_ID]
+
+172.2.0.1
+```
