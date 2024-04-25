@@ -58,6 +58,14 @@ CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS     
 b7237dd86f54   node:latest  "docker-entrypoint.s…"   5 minutes ago   Exited (0) 37 seconds ago                          node-lts-http-server
 ```
 > check the container was created with container name `node-lts-http-server`
+- commiting recente container with `docker commit node-lts-http-server node-lts-http-server` like these
+
+```bash
+julnarot@aiur$ docker commit node-lts-http-server node-lts-http-server
+sha256:b244f2005a34dd8b509c178135f2f91b07164d66d936bfe57dd550747f6222e
+```
+
+
 
 # utils commands
 
