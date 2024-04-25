@@ -24,3 +24,27 @@ container$ docker inspect -f "{{ .NetworkSettings.IPAddress }}" [CONTAINER_ID]
 
 172.2.0.1
 ```
+
+# Build custom container
+
+## Creating node container with module http-server
+
+
+
+# utils commands
+
+## usin node http-server container for serve current folder on port 8885
+
+
+
+running current host path temporally
+```bash
+docker run --rm -p 8885:8080 --name here-http -v "$(pwd)":/app node-lts-http http-server /app
+
+```
+Add flag `-d` for running in mode *desatending*
+```bash
+docker run --rm -d -p 8885:8080 --name here-http -v "$(pwd)":/app node-lts-http http-server /app
+```
+> dont forget that you need a container with node and `http-server` module installed
+
