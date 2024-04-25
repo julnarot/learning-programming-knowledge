@@ -29,7 +29,7 @@ container$ docker inspect -f "{{ .NetworkSettings.IPAddress }}" [CONTAINER_ID]
 
 ## Creating node container with module http-server
 
-- create container with dns `8.8.8.8` and mode `bash` with lts node image  `node:latest` like next example
+- create container with flags dns `8.8.8.8` and mode `bash` using lts `node` image  `node:latest` like next example. Inside on container install `http-server` module  and finally exit them
 
 ```bash
 julnarot@aiur$ docker run --dns 8.8.8.8 -it --name node-lts-http-server node:latest /bin/bash
