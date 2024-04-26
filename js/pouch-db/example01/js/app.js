@@ -19,7 +19,9 @@
   // We have to create a new todo document and enter it in the database
   function addTodo(text) {
 
-    var todo = {
+    if (text.length <= 0) return;
+
+    const todo = {
       _id: new Date().toISOString(),
       title: text,
       completed: false
@@ -44,16 +46,26 @@
 
   }
 
-  function checkboxChanged(todo, event) {
+  function checkboxChanged(todo, { target: { checked } }) {
+    todo.completed = checked;
+    db.put(todo).then();
   }
 
   // User pressed the delete button for a todo, delete it
   function deleteButtonPressed(todo) {
+    db.remove(todo).then();
   }
 
   // The input box when editing a todo has blurred, we should save
   // the new title or delete the todo if the title is empty
   function todoBlurred(todo, event) {
+    const trimmedText = event.target.value.trim();
+    if (!trimmedText) {
+      db.remove(todo);
+    } else {
+      todo.title = trimmedText;
+      db.put(todo);
+    }
   }
 
   // Initialise a sync with the remote server
