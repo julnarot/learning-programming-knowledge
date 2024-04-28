@@ -81,4 +81,8 @@ Add flag `-d` for running in mode *desatending*
 docker run --rm -d -p 8885:8080 --name here-http -v "$(pwd)":/app node-lts-http-server http-server /app
 ```
 > dont forget that you need a container with node and `http-server` module installed
+## usin node http-ser container for install and run node application
 
+```bash
+docker run --rm -p 8888:3000 --name here-http -v "$(pwd)":/app -w /app node-lts-http-server sh -c 'npm i && npm start'
+```

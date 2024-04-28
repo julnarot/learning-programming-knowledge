@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+</head>
+
+<body>
+    <h2>PouchDB practice</h2>
+
+    <script>
+        var db = new PouchDB('chat-db');
+
+
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(res => res.json())
+            .then(json => {
+                const message = [...json.map(r=>r.title)][parseInt(Math.random() * (json.length - 0) + 0)]
+                const data = {
+                    _id: new Date().toISOString(),
+                    user: '@Julnarot',
+                    msj: message,
+                    syncing: false,
+                }
+        
+                db.put(data).then(console.log('added...'))
+                onList()
+        
+                db.allDocs({ include_docs: true, descending: false }).then(({ rows }) => {
+                    if (rows.length > 3) {
+                        const { doc: lastDoc } = [...rows].pop();
+                        lastDoc.syncing = true;
+                        db.put(lastDoc).then(console.log('last message was updated'))
+                        onList()
+        
+                    }
+                })
+        
+        
+        
+                setTimeout(() => {
+        
+                    db.allDocs({ include_docs: true }).then(({ rows }) => {
+                        rows.map(r => r.doc).filter(doc => doc.syncing).forEach(doc => {
+                            db.remove(doc).then(console.log('it was remove message'))
+                        })
+                        onList()
+                    })
+        
+        
+                }, 200);
+            })
+
+
+        function onList() {
+            db.allDocs({ include_docs: true }).then(({ rows }) => {
+                console.table([...rows.map(m => m.doc)])
+            })
+        }
+    </script>
+</body>
+
+</html>
