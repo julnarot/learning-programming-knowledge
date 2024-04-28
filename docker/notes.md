@@ -84,5 +84,5 @@ docker run --rm -d -p 8885:8080 --name here-http -v "$(pwd)":/app node-lts-http-
 ## usin node http-ser container for install and run node application
 
 ```bash
-docker run --rm -p 8888:3000 --name here-http -v "$(pwd)":/app -w /app node-lts-http-server sh -c 'npm i'
+docker run --rm -p 8888:3000 --name here-http -v "$(pwd)":/app -w /app node-lts-http-server sh -c 'npm i && npm start'
 ```
