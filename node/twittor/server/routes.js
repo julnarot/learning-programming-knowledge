@@ -7,8 +7,17 @@ var router = express.Router();
 const MESSAGES = [
   {
     id: '92238',
-    user: 'Julnarot',
+    user: 'wolverine',
     message: 'Hello world'
+  }, {
+    id: '92239',
+    user: 'spiderman',
+    message: 'Hiii'
+  
+  }, {
+    id: '92240',
+    user: 'hulk',
+    message: 'xd'
   }
 ]
 
