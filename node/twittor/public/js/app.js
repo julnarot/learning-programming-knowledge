@@ -140,6 +140,19 @@ postBtn.on('click', function () {
         return;
     }
 
+    fetch('/api', {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            message: mensaje,
+            user: usuario
+        })
+    })
+        .then(resp => resp.json())
+        .then(console.log)
+        .catch(console.error)
+
     crearMensajeHTML(mensaje, usuario);
 
 });
