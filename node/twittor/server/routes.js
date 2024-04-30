@@ -13,7 +13,7 @@ const MESSAGES = [
     id: '92239',
     user: 'spiderman',
     message: 'Hiii'
-  
+
   }, {
     id: '92240',
     user: 'hulk',
@@ -26,6 +26,12 @@ const MESSAGES = [
 // Get mensajes
 router.get('/', function (req, res) {
   res.json(MESSAGES);
+});
+
+// Save mensajes
+router.post('/', function (req, res) {
+  MESSAGES = [...MESSAGES, req]
+  res.json(req);
 });
 
 
