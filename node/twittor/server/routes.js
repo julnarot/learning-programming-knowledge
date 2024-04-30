@@ -29,9 +29,13 @@ router.get('/', function (req, res) {
 });
 
 // Save mensajes
-router.post('/', function (req, res) {
-  MESSAGES = [...MESSAGES, req]
-  res.json(req);
+router.post('/', function ({ body: { message, user } }, res) {
+  const data = { message, user };
+  MESSAGES = [...MESSAGES, data]
+  res.json({
+    ok: true,
+    data
+  });
 });
 
 
