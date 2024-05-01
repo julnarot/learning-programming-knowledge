@@ -1,0 +1,3 @@
+## RUN
+
+`mvn tomcat:run`
