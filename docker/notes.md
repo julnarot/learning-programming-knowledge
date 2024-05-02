@@ -87,8 +87,14 @@ docker run --rm -d -p 8885:8080 --name here-http -v "$(pwd)":/app node-lts-http-
 docker run --rm -p 8888:3000 --name here-http -v "$(pwd)":/app -w /app node-lts-http-server sh -c 'npm i && npm start'
 ```
 
-Installing mvn packages with jdk maven customized container
+## Run spring boot application with openjdk image
+Pull openjdk:17 image
 ```bash
-docker run --rm -p 8885:8080 --name here-http -v "$(pwd)":/app jdk-11-mvn sh -c 'cd app && ./mvnw install'  /app
+docker pull openjdk:17
+```
+
+Run spring-boot application
+```bash
+docker run --rm -p 8885:8080 --name here-http -v "$(pwd)":/app openjdk:17 sh -c 'cd app && ./mvnw spring-boot:run'  /app
 ```
 
