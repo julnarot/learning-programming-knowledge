@@ -10,7 +10,7 @@
   <url>http://maven.apache.org</url>
   <dependencies>
     <!-- Spring Framework 3.0 -->
-    <dependency>
+    <!-- <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
       <version>3.0.0.RELEASE</version>
@@ -19,18 +19,43 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>3.0.0.RELEASE</version>
-    </dependency>
+    </dependency> -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>3.0.0.RELEASE</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework.ws/spring-ws-core -->
     <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>3.0.0.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.ws/spring-ws-core -->
+    <!-- <dependency>
       <groupId>org.springframework.ws</groupId>
       <artifactId>spring-ws-core</artifactId>
       <version>2.0.2.RELEASE</version>
-    </dependency>
+    </dependency> -->
+    
+    <!-- Servlet -->
+		<dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>jstl-api</artifactId>
+      <version>1.2</version>
+  </dependency>
+  <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+  </dependency>
+  <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>2.2</version>
+      <scope>provided</scope>
+  </dependency>
+    <!-- jeje je -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
