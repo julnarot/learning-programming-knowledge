@@ -17,3 +17,5 @@ Para correr en desarrollo
 ```
 npm run dev
 ```
+
+> if you want to use docker [check here](https://github.com/julnarot/learning-programming-knowledge/blob/main/docker/notes.md#usin-node-http-ser-container-for-install-and-run-node-application)
