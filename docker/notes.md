@@ -103,3 +103,7 @@ recover `UID` and GID from sysmtem and defining like a environment variables aft
 ```bash
 docker exec -it -e USER=$USER -e USER_ID=$(id -u $USER) -e GROUP_ID=$(id -g $USER) here-here bash -c 'chown $USER_ID:$GROUP_ID -R /app'
 ```
+Other example giving permision to `src/app/components` folder 
+```bash
+docker exec -it -e USER=$USER -e USER_ID=$(id -u $USER) -e GROUP_ID=$(id -g $USER) here-here bash -c 'chown $USER_ID:$GROUP_ID -R src/app/components'
+```
