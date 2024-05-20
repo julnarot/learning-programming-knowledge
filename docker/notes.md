@@ -107,3 +107,10 @@ Other example giving permision to `src/app/components` folder
 ```bash
 docker exec -it -e USER=$USER -e USER_ID=$(id -u $USER) -e GROUP_ID=$(id -g $USER) here-here bash -c 'chown $USER_ID:$GROUP_ID -R src/app/components'
 ```
+Run angular application
+
+```bash
+docker run --rm -p 4200:4200 --name here-http -v "$(pwd)":/app -w /app node:16 sh -c 'npm i && npm start'
+```
+> don´t forget download node version `docker pull node:16`
+
