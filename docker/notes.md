@@ -98,3 +98,7 @@ Run spring-boot application
 docker run --rm -p 8885:8080 --name here-http -v "$(pwd)":/app openjdk:17 sh -c 'cd app && ./mvnw spring-boot:run'  /app
 ```
 
+#Docker hub
+
+- docker tag
+- docker build -t demo
