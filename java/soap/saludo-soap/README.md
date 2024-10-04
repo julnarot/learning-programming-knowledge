@@ -41,10 +41,25 @@ Now you can try run the application
 ```bash
 mvn clean install
 ```
+Adding  `-U`
 
-### Run application
+```bash
+mvn clean install -U
+```
+
+### Run publish
 
 use the next
 ```bash
-mvn exec:java -Dexec.mainClass="julnarot.App"
+mvn compile exec:java -Dexec.mainClass="julnarot.PublicService"
+```
+
+### Try with curl
+
+
+```bash
+
+curl -X POST http://localhost:8080/hello -H "Content-Type: text/xml" -d '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jul="http://julnarot/"><soapenv:Header/><soapenv:Body><jul:sayHello><arg0>YourName</arg0></jul:sayHello></soapenv:Body></soapenv:Envelope>'
+
+
 ```
