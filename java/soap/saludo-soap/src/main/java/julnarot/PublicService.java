@@ -14,7 +14,7 @@ public class PublicService {
 
         // Implementar el servicio
         HelloServiceImpl implementor = new HelloServiceImpl();
-        String address = "http://localhost:8080/hello";
+        String address = "http://0.0.0.0:8080/hello";
 
         // Publicar el servicio
         EndpointImpl endpoint = new EndpointImpl(bus, implementor);
