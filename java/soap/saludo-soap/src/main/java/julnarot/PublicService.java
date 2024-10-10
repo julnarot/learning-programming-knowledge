@@ -9,7 +9,6 @@ public class PublicService {
     public static void main(String[] args) {
         // Crear el bus y registrar el transporte HTTP
         Bus bus = CXFBusFactory.getDefaultBus();
-        HTTPTransportFactory httpTransportFactory = new HTTPTransportFactory();
         bus.getExtension(HTTPTransportFactory.class);
 
         // Implementar el servicio
