@@ -98,8 +98,27 @@ Run spring-boot application
 docker run --rm -p 8885:8080 --name here-http -v "$(pwd)":/app openjdk:17 sh -c 'cd app && ./mvnw spring-boot:run'  /app
 ```
 
+
+## Give host user permision on folder
+recover `UID` and GID from sysmtem and defining like a environment variables after using in to chown comand inside container
+```bash
+docker exec -it -e USER=$USER -e USER_ID=$(id -u $USER) -e GROUP_ID=$(id -g $USER) here-here bash -c 'chown $USER_ID:$GROUP_ID -R /app'
+```
+Other example giving permision to `src/app/components` folder 
+```bash
+docker exec -it -e USER=$USER -e USER_ID=$(id -u $USER) -e GROUP_ID=$(id -g $USER) here-here bash -c 'chown $USER_ID:$GROUP_ID -R src/app/components'
+```
+Run angular application
+
+```bash
+docker run --rm -p 4200:4200 --name here-http -v "$(pwd)":/app -w /app node:16 sh -c 'npm i && npm start'
+```
+> don´t forget download node version `docker pull node:16`
+
+
 #Docker hub
 
 - docker tag
 - docker build -t demo
 - docker push USER/IMAGES:TAG
+
