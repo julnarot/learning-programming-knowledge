@@ -1,0 +1,45 @@
+* {
+    font-family: sans-serif;
+    color: #292420;
+}
+
+.main-container {
+    margin: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+    background-color: #f0d09a;
+}
+
+.intro-container {
+    padding: 100px;
+}
+
+.intro-container h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    font-size: 78px;
+    line-height: 1.2em;
+    margin-bottom: 24px;
+}
+
+.intro-container p {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.container-graphic {
+    background-size: contain;
+    mix-blend-mode: darken;
+    position: absolute;
+    z-index: 0;
+
+}
+
+.creative {
+    background: url(https://www.pngplay.com/wp-content/uploads/13/Drawing-Art-PNG-Pic-Background.png);
+    bottom: 0;
+    left: 0;
+    width: 18%;
+    height: 375px;
+}
