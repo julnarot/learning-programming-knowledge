@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const { Client } = require('pg');
 const app = express();
+
+const client = new Client();
 
 const myProfileData = {
     email: "rauljhonatan.tola@gmail.com",
@@ -19,10 +21,45 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+
+app.get('/', async (req, res) => {
+    await connectDB();
+    let result = [];
+    try {
+        const resp = await client.query('SELECT * FROM dual');
+        if (resp) {
+            this.result = resp.rows;
+            console.log(resp.rows)
+        }
+    } catch (err) {
+        console.error('Error executing query:', err);
+    } finally {
+        await disconnectDB();
+    }
+    console.log(result);
+
     res.render('index', myProfileData)
 });
 
 app.listen(3000, () => {
     console.log('Running on: http://localhost:3000')
 })
+
+
+const connectDB = async () => {
+    try {
+        await client.connect();
+        console.log('Connected to PostgreSQL database');
+    } catch (err) {
+        console.error('Error connecting to PostgreSQL database:', err);
+    }
+};
+
+const disconnectDB = async () => {
+    try {
+        await client.end();
+        console.log('Connection to PostgreSQL closed');
+    } catch (err) {
+        console.error('Error closing connection:', err);
+    }
+};
